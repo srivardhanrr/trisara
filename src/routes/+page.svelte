@@ -1,59 +1,46 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+    import Activity from "lucide-svelte/icons/activity";
+    import ArrowUpRight from "lucide-svelte/icons/arrow-up-right";
+    import CreditCard from "lucide-svelte/icons/credit-card";
+    import DollarSign from "lucide-svelte/icons/dollar-sign";
+    import Users from "lucide-svelte/icons/users";
+    import * as Avatar from "$lib/components/ui/avatar/index.js";
+    import {Badge} from "$lib/components/ui/badge/index.js";
+    import {Button} from "$lib/components/ui/button/index.js";
+    import * as Card from "$lib/components/ui/card/index.js";
+    import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+    import * as Sheet from "$lib/components/ui/sheet/index.js";
+    import * as Table from "$lib/components/ui/table/index.js";
+    import Hero from "$lib/components/Hero.svelte";
+    import Categories from "$lib/components/Categories.svelte";
+    import FeaturedProducts from "$lib/components/FeaturedProducts.svelte";
+    import Newsletter from "$lib/components/Newsletter.svelte";
+    import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
+    import CategoriesCarousel from "$lib/components/CategoriesCarousel.svelte";
+    import HeroCarousel from "$lib/components/HeroCarousel.svelte";
+    import RoomCategories from "$lib/components/RoomCategories.svelte";
+    import InstagramGallery from "$lib/components/InstagramGallery.svelte";
+    import ProductCarousel from "$lib/components/ProductCarousel.svelte";
+    import RecentPosts from "$lib/components/RecentPosts.svelte";
+    import RecentPostNew from "$lib/components/RecentPostNew.svelte";
+    import FeaturedSection from "$lib/components/FeaturedSection.svelte";
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="flex min-h-screen w-full flex-col">
+    <HeroCarousel />
+<!--    <Hero/>-->
+    <main class="flex flex-1 flex-col gap-4  md:gap-8 md:p-8">
+        <FeaturedProducts/>
+        <CategoriesCarousel/>
+<!--        <Categories/>-->
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+        <InfiniteScroll />
+        <RoomCategories />
+        <InstagramGallery />
+        <ProductCarousel />
+        <Newsletter/>
+        <FeaturedSection />
+        <RecentPosts/>
+        <RecentPostNew/>
+    </main>
+</div>
