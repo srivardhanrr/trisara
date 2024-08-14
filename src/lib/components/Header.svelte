@@ -1,5 +1,6 @@
 <script lang="ts">
     import CircleUser from "lucide-svelte/icons/circle-user";
+    import { Share2 } from 'lucide-svelte';
     import Menu from "lucide-svelte/icons/menu";
     import Search from "lucide-svelte/icons/search";
     import {Button} from "$lib/components/ui/button";
@@ -65,7 +66,7 @@
                         size="icon"
                         class="rounded-full"
                     >
-                        <CircleUser class="h-6 w-6"/>
+                        <Share2 class="h-6 w-6"/>
                         <span class="sr-only">Toggle Social Links</span>
                     </Button>
                 </DropdownMenu.Trigger>

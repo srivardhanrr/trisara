@@ -1,35 +1,58 @@
 <script lang="ts">
-  import * as Card from "$lib/components/ui/card/index.js";
-  import * as Carousel from "$lib/components/ui/carousel/index.js";
+    import * as Card from "$lib/components/ui/card/index.js";
+    import * as Carousel from "$lib/components/ui/carousel/index.js";
 
+    import Autoplay from "embla-carousel-autoplay";
+
+
+    const items = [
+        {
+            name: 'Hero 1',
+            src: '/images/hero1.png'
+        },
+        {
+            name: 'Hero 1',
+            src: '/images/hero2.png'
+        }, {
+            name: 'Hero 1',
+            src: '/images/hero3.png'
+        },
+    ]
+
+    const plugin = Autoplay({delay: 5000, stopOnInteraction: true});
 
 
 </script>
 
-<Carousel.Root class="w-full">
-  <Carousel.Content>
-<!--    <div class="relative h-56 overflow-hidden md:h-96">-->
+<Carousel.Root
+        opts={{align: "start"}}
+        plugins={[plugin]}
+        class="w-full"
+        on:mousenter={plugin.stop}
+        on:mouseleave={plugin.reset}>
+    <Carousel.Content>
+        <!--    <div class="relative h-56 overflow-hidden md:h-96">-->
 
-    {#each Array(5) as _, i (i)}
-      <Carousel.Item>
-            <img src="https://www.ellementry.com/cdn/shop/files/Lucknow-Desktop2-Aug12.jpg?v=1723447578&width=1500" class="" alt="...">
+        {#each items as item}
+            <Carousel.Item>
+                <img src="{item.src}"
+                     class="" alt="{item.name}">
+                <!--        <div class="p-1">-->
+                <!--          <Card.Root>-->
+                <!--            <Card.Content-->
+                <!--              class="flex aspect-square items-center justify-center p-6"-->
+                <!--            >-->
+                <!--              <span class="text-4xl font-semibold">{i + 1}</span>-->
+                <!--            </Card.Content>-->
+                <!--          </Card.Root>-->
+                <!--        </div>-->
 
-<!--        <div class="p-1">-->
-<!--          <Card.Root>-->
-<!--            <Card.Content-->
-<!--              class="flex aspect-square items-center justify-center p-6"-->
-<!--            >-->
-<!--              <span class="text-4xl font-semibold">{i + 1}</span>-->
-<!--            </Card.Content>-->
-<!--          </Card.Root>-->
-<!--        </div>-->
-
-      </Carousel.Item>
-    {/each}
-<!--    </div>-->
-  </Carousel.Content>
-  <Carousel.Previous class="ml-16"/>
-  <Carousel.Next class="mr-16"/>
+            </Carousel.Item>
+        {/each}
+        <!--    </div>-->
+    </Carousel.Content>
+    <Carousel.Previous class="ml-16"/>
+    <Carousel.Next class="mr-16"/>
 </Carousel.Root>
 
 

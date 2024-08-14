@@ -38,9 +38,9 @@
         <RoomCategories />
         <InstagramGallery />
         <ProductCarousel />
-        <Newsletter/>
+<!--        <Newsletter/>-->
         <FeaturedSection />
-        <RecentPosts/>
+<!--        <RecentPosts/>-->
         <RecentPostNew/>
     </main>
 </div>

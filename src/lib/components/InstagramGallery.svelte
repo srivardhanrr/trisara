@@ -1,17 +1,38 @@
 <script lang="ts">
-    // import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "$lib/components/ui/carousel";
     import * as Carousel from "$lib/components/ui/carousel/index.js";
+    import Autoplay from "embla-carousel-autoplay";
 
     const images = [
-        {src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-3.jpg?v=1658374861", alt: "Gallery image 1"},
-        {src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-4.jpg?v=1658374875", alt: "Gallery image 1"},
-        {src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-1.jpg?v=1658374891", alt: "Gallery image 1"},
-        {src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-3.jpg?v=1658374861", alt: "Gallery image 1"},
-        {src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-1.jpg?v=1658374891", alt: "Gallery image 1"},
-        {src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-4.jpg?v=1658374875", alt: "Gallery image 1"},
+        {
+            src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-3.jpg?v=1658374861",
+            alt: "Gallery image 1"
+        },
+        {
+            src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-4.jpg?v=1658374875",
+            alt: "Gallery image 1"
+        },
+        {
+            src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-1.jpg?v=1658374891",
+            alt: "Gallery image 1"
+        },
+        {
+            src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-3.jpg?v=1658374861",
+            alt: "Gallery image 1"
+        },
+        {
+            src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-1.jpg?v=1658374891",
+            alt: "Gallery image 1"
+        },
+        {
+            src: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-4.jpg?v=1658374875",
+            alt: "Gallery image 1"
+        },
 
         // Add more images as needed
     ];
+
+    const plugin = Autoplay({delay: 2000, stopOnInteraction: true});
+
 </script>
 
 <section class="py-12">
@@ -24,7 +45,11 @@
             Step into our kitchen and explore the world of culinary delights through our Image Gallery.
         </p>
 
-        <Carousel.Root opts={{ align: "start" }}>
+        <Carousel.Root opts={{align: "start"}}
+                       plugins={[plugin]}
+                       class="w-full"
+                       on:mousenter={plugin.stop}
+                       on:mouseleave={plugin.reset}>
             <Carousel.Content>
                 {#each images as image, index}
                     <Carousel.Item class="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
