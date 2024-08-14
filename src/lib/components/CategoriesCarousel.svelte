@@ -7,34 +7,38 @@
 
     const categories = [
         {
-            name: "Chairs",
-            image: "https://new-ella-demo-11.myshopify.com/cdn/shop/files/Home-Furniture-Brand-2_220x.jpg?v=1658374702"
+            name: "Kitchenware",
+            image: "https://www.ellementry.com/cdn/shop/files/kitchenware_1_b52a67b3-656c-4be6-92d4-69fbe7d37def.svg?v=1704290116"
         },
         {
-            name: "Bedrooms",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
+            name: "Tableware",
+            image: "https://www.ellementry.com/cdn/shop/files/table-ware_1_45037930-91fa-4a70-92f0-f6c543fcbfd6.svg?v=1704301895"
         },
         {
-            name: "TV Cabinet",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
-        },
-        {name: "Chairs", image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"},
-        {
-            name: "Sectional Sofas",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
+            name: "Serveware",
+            image: "https://www.ellementry.com/cdn/shop/files/serveware_2.svg?v=1704301942"
         },
         {
-            name: "Sectional Sofas",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
+            name: "Lighting",
+            image: "https://www.ellementry.com/cdn/shop/files/lighting.svg?v=1704302104"
+        },
+                {
+            name: "Kitchenware",
+            image: "https://www.ellementry.com/cdn/shop/files/kitchenware_1_b52a67b3-656c-4be6-92d4-69fbe7d37def.svg?v=1704290116"
         },
         {
-            name: "Sectional Sofas",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
+            name: "Tableware",
+            image: "https://www.ellementry.com/cdn/shop/files/table-ware_1_45037930-91fa-4a70-92f0-f6c543fcbfd6.svg?v=1704301895"
         },
         {
-            name: "Sectional Sofas",
-            image: "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"
+            name: "Serveware",
+            image: "https://www.ellementry.com/cdn/shop/files/serveware_2.svg?v=1704301942"
         },
+        {
+            name: "Lighting",
+            image: "https://www.ellementry.com/cdn/shop/files/lighting.svg?v=1704302104"
+        },
+
     ];
 
     const plugin = Autoplay({delay: 2000, stopOnInteraction: true});
@@ -62,7 +66,7 @@
 <!--                            </Card.Root>-->
 <!--                        </div>-->
                         <div class="relative w-full overflow-hidden">
-                            <img src={category.image} alt={category.name} class="w-full h-full object-cover ease-in"/>
+                            <img src={category.image} alt={category.name} class="w-full aspect-square h-full object-cover ease-in"/>
                             <div class="category-title">{category.name}</div>
                         </div>
                     </Carousel.Item>
