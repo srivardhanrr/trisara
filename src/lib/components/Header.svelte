@@ -14,7 +14,7 @@
         <nav class="hidden md:flex items-center space-x-6 flex-1">
             <a href="#" class="text-foreground hover:text-primary transition-colors">Our Story</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Kitchenware</a>
-            <a href="/product" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>
+            <a href="/products/italian-marble" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>
             <a href="#" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
         </nav>
 
@@ -34,7 +34,7 @@
                 <nav class="grid gap-6 text-lg font-medium pt-16">
                     <a href="#" class="hover:text-primary">Our Story</a>
                     <a href="#" class="hover:text-primary">Kitchenware</a>
-                    <a href="/product" class="hover:text-primary">Cookbooks</a>
+                    <a href="/products" class="hover:text-primary">Cookbooks</a>
                     <a href="#" class="hover:text-primary">Contact Us</a>
                 </nav>
             </Sheet.Content>

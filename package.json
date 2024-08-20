@@ -30,6 +30,7 @@
 	"type": "module",
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
+		"@vercel/postgres": "^0.9.0",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"embla-carousel-autoplay": "^8.1.8",
@@ -41,6 +42,7 @@
 		"svelte-radix": "^1.1.0",
 		"swiper": "^11.1.9",
 		"tailwind-merge": "^2.5.2",
-		"tailwind-variants": "^0.2.1"
+		"tailwind-variants": "^0.2.1",
+		"vercel": "^36.0.0"
 	}
 }

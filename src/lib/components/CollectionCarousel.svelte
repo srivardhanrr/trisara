@@ -2,19 +2,19 @@
     import * as Carousel from "$lib/components/ui/carousel";
     import * as Card from "$lib/components/ui/card";
     import ProductCard from "$lib/components/ProductCard.svelte";
-    export let products;
+    export let collection;
 </script>
 
 <section class="py-8">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-orange-500">Hello</h2>
-            <a href="/products" class="text-orange-500 hover:underline">View All</a>
+            <h2 class="text-2xl font-bold text-orange-500">{collection.name}</h2>
+            <a href="/products/{collection.slug}" class="text-orange-500 hover:underline">View All</a>
         </div>
 
         <Carousel.Root opts={{ align: "start" }}>
             <Carousel.Content>
-                {#each products as product}
+                {#each collection.products as product}
                     <Carousel.Item class="basis-1/2 lg:basis-1/3 xl:basis-1/4">
                         <ProductCard product={product} />
                     </Carousel.Item>

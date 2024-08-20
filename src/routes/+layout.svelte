@@ -6,7 +6,7 @@
     import {transitioning} from '$lib/stores/transition';
     import LogoTransition from '$lib/components/LogoTransition.svelte';
 
-    let transitionDuration = 600; // Adjust as needed
+    let transitionDuration = 1000; // Adjust as needed
 
     onNavigate((navigation) => {
         if (!navigation.from || !navigation.to || navigation.type === 'popstate') {

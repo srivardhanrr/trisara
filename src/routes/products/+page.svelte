@@ -4,11 +4,12 @@
   import * as Carousel from "$lib/components/ui/carousel";
   import ProductCarousel from "$lib/components/ProductCarousel.svelte";
 
+
   // Mock data for the product
   const product = {
     name: "Bowl",
     description: "A bowl is a round container with a wide, open top and deep sides, typically used for preparing, serving, storing, or consuming food and liquids. The interior of a bowl is characteristically shaped like a spherical cap, with seamless curves from the edges to the bottom, making it especially suited for holding liquids and loose food, as gravity concentrates the contents in the center",
-    images: ["https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267", "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"],
+    images: ["/images/trisara-logo.png", "https://trisara.in/cdn/shop/files/lossy-page1-1200px-thumbnail_tif.jpg?v=1722882267"],
   };
 
   // Mock data for related products

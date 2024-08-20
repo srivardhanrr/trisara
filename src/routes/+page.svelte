@@ -24,23 +24,26 @@
     import RecentPosts from "$lib/components/RecentPosts.svelte";
     import RecentPostNew from "$lib/components/RecentPostNew.svelte";
     import FeaturedSection from "$lib/components/FeaturedSection.svelte";
+    import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
+
+    export let data;
 </script>
 
 <div class="flex min-h-screen w-full flex-col">
-    <HeroCarousel />
-<!--    <Hero/>-->
+    <HeroCarousel/>
+    <!--    <Hero/>-->
     <main class="flex flex-1 flex-col gap-4  md:gap-8 md:p-8">
         <FeaturedProducts/>
-        <CategoriesCarousel/>
-<!--        <Categories/>-->
-
-        <InfiniteScroll />
-        <RoomCategories />
-        <InstagramGallery />
-        <ProductCarousel />
-<!--        <Newsletter/>-->
-        <FeaturedSection />
-<!--        <RecentPosts/>-->
+        <CategoriesCarousel categories={data.categories}/>
+        <!--        <Categories/>-->
+        <RoomCategories/>
+        <InstagramGallery/>
+<!--        <ProductCarousel products={data.collection.products}/>-->
+        <CollectionCarousel collection="{data.collection1}" />
+        <InfiniteScroll/>
+        <!--        <Newsletter/>-->
+<!--        <FeaturedSection/>-->
+        <!--        <RecentPosts/>-->
         <RecentPostNew/>
     </main>
 </div>

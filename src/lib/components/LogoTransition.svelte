@@ -12,7 +12,7 @@
     out:fade={{ duration }}
   >
     <!-- Replace with your company logo -->
-    <img src="https://trisara.in/cdn/shop/files/Trisara_Final_Logo-01.png?v=1720348656&width=300" alt="Company Logo" class="logo" />
+    <img src="/images/trisara-logo.png" alt="Company Logo" class="logo" />
   </div>
 {/if}
 
