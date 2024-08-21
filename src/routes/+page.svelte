@@ -39,8 +39,8 @@
         <RoomCategories/>
         <InstagramGallery/>
 <!--        <ProductCarousel products={data.collection.products}/>-->
-        <CollectionCarousel collection="{data.collection1}" />
         <InfiniteScroll/>
+        <CollectionCarousel collection="{data.collection1}" />
         <!--        <Newsletter/>-->
 <!--        <FeaturedSection/>-->
         <!--        <RecentPosts/>-->

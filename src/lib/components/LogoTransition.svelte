@@ -1,37 +1,56 @@
-<script lang="ts">
-  import { fade } from 'svelte/transition';
-  import { transitioning } from '$lib/stores/transition';
+<script>
+  import { onNavigate } from '$app/navigation';
+  import { fade, fly } from 'svelte/transition';
 
-  export let duration = 600;
+  // let transitioning = false;
+  // let showLogo = false;
+  //
+  // onNavigate(() => {
+  //   transitioning = true;
+  //   setTimeout(() => showLogo = true, 1000);
+  //
+  //   return new Promise(resolve => {
+  //     setTimeout(() => {
+  //       transitioning = false;
+  //       showLogo = false;
+  //       resolve();
+  //     }, 2500);
+  //   });
+  // });
+
+  let transitioning = false;
+  let showLogo = false;
+  let exitTransition = false;
+
+  onNavigate(() => {
+    transitioning = true;
+    setTimeout(() => showLogo = true, 1000);
+
+    return new Promise(resolve => {
+      setTimeout(() => {
+        showLogo = false;
+        exitTransition = true;
+        setTimeout(() => {
+          transitioning = false;
+          exitTransition = false;
+          resolve();
+        }, 300);
+      }, 2500);
+    });
+  });
 </script>
 
-{#if $transitioning}
-  <div
-    class="logo-container bg-white"
-    in:fade={{ duration }}
-    out:fade={{ duration }}
-  >
-    <!-- Replace with your company logo -->
-    <img src="/images/trisara-logo.png" alt="Company Logo" class="logo" />
-  </div>
-{/if}
+<div class={`fixed inset-x-0 bottom-0 bg-white transition-[height] duration-500 ease-in-out z-50 ${transitioning ? 'h-full' : 'h-0'}`}>
+  {#if showLogo}
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>
+      <!-- Add your logo here -->
+      <img src="/images/trisara-logo.png" alt="Logo" class="w-32 h-32 object-contain" /> <!-- Adjust size as needed -->
+    </div>
+<!--    <div class={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-in-out-->
+<!--              ${transitioning ? 'top-1/2 -translate-y-1/2' : 'top-full'}`}>-->
+<!--    <img src="/images/trisara-logo.png" alt="Logo" class="w-32 h-32 object-contain" />-->
+<!--  </div>-->
+  {/if}
+</div>
 
-<style>
-  .logo-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-  }
 
-  .logo {
-    width: 150px;
-    height: auto;
-  }
-</style>

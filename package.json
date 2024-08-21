@@ -39,7 +39,7 @@
 		"flowbite-svelte": "^0.46.15",
 		"lucide-svelte": "^0.427.0",
 		"mode-watcher": "^0.4.1",
-		"svelte-radix": "^1.1.0",
+		"svelte-radix": "^1.1.1",
 		"swiper": "^11.1.9",
 		"tailwind-merge": "^2.5.2",
 		"tailwind-variants": "^0.2.1",

@@ -5,31 +5,38 @@
     import {onNavigate} from '$app/navigation';
     import {transitioning} from '$lib/stores/transition';
     import LogoTransition from '$lib/components/LogoTransition.svelte';
+    import {fly} from 'svelte/transition';
+    import {page} from '$app/stores';
 
-    let transitionDuration = 1000; // Adjust as needed
+    // let transitionDuration = 1000; // Adjust as needed
 
-    onNavigate((navigation) => {
-        if (!navigation.from || !navigation.to || navigation.type === 'popstate') {
-            return;
-        }
-
-        transitioning.set(true);
-
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                transitioning.set(false);
-                resolve();
-            }, transitionDuration);
-        });
-    });
+    // onNavigate((navigation) => {
+    //     if (!navigation.from || !navigation.to || navigation.type === 'popstate') {
+    //         return;
+    //     }
+    //
+    //     transitioning.set(true);
+    //
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             transitioning.set(false);
+    //             resolve();
+    //         }, transitionDuration);
+    //     });
+    // });
 </script>
 
 <div class="app">
     <Header/>
     <main>
-        <slot/>
+        {#key $page.url.pathname}
+            <div in:fly={{ y: 50, duration: 100, delay: 100 }}>
+                <slot/>
+            </div>
+        {/key}
         <Footer/>
     </main>
 </div>
 
-<LogoTransition duration={transitionDuration}/>
+<LogoTransition/>
+
