@@ -4,6 +4,7 @@
     import * as Accordion from "$lib/components/ui/accordion";
     import * as Card from "$lib/components/ui/card";
     import {Separator} from "$lib/components/ui/separator";
+    import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
 
 
     let isSticky = false;
@@ -11,7 +12,7 @@
 
     export let data;
 
-    $: ({product} = data);
+    $: ({product, collection} = data);
 
     let mainImage;
 
@@ -209,10 +210,22 @@
                     </Accordion.Item>
                 </Accordion.Root>
             </Card.Root>
-
         </div>
     </div>
 </div>
+
+<div class="w-full mt-8">
+    <h2 class="text-2xl font-bold mb-4 text-center">Product Features</h2>
+    <div class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4">
+        <img src="/images/feature/eth.png" alt="Feature 1" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>
+        <img src="/images/feature/etc.png" alt="Feature 2" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>
+        <img src="/images/feature/hqss.png" alt="Feature 3"
+             class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>
+        <img src="/images/feature/if.png" alt="Feature 4" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>
+    </div>
+</div>
+
+<CollectionCarousel collection="{data.collection}"/>
 
 <style>
     .sticky {

@@ -25,6 +25,7 @@
     import RecentPostNew from "$lib/components/RecentPostNew.svelte";
     import FeaturedSection from "$lib/components/FeaturedSection.svelte";
     import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
+    import CollectionCarousel2 from "$lib/components/CollectionCarousel2.svelte";
 
     export let data;
 </script>
@@ -35,12 +36,15 @@
     <main class="flex flex-1 flex-col gap-4  md:gap-8 md:p-8">
         <FeaturedProducts/>
         <CategoriesCarousel categories={data.categories}/>
+        <CollectionCarousel collection="{data.collection1}" />
+
         <!--        <Categories/>-->
-        <RoomCategories/>
+<!--        <RoomCategories/>-->
         <InstagramGallery/>
 <!--        <ProductCarousel products={data.collection.products}/>-->
         <InfiniteScroll/>
         <CollectionCarousel collection="{data.collection1}" />
+        <CollectionCarousel2 />
         <!--        <Newsletter/>-->
 <!--        <FeaturedSection/>-->
         <!--        <RecentPosts/>-->

@@ -7,9 +7,9 @@
 
 <section class="py-8">
     <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center mb-6">
+        <div class="flex justify-between items-center lg:mb-6">
             <h2 class="text-2xl font-bold text-orange-500">{collection.name}</h2>
-            <a href="/products/{collection.slug}" class="text-orange-500 hover:underline">View All</a>
+            <a href="/collections/{collection.slug}" class="text-orange-500 hover:underline">View All</a>
         </div>
 
         <Carousel.Root opts={{ align: "start" }}>

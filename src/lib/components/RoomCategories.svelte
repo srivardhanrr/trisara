@@ -10,9 +10,9 @@
   ];
 </script>
 
-<section class="py-12 bg-gray-100">
+<section class="bg-orange-50">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {#each categories as category}
         <div class="relative overflow-hidden group">
           <img src={category.image} alt={category.name} class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />

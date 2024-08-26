@@ -7,23 +7,7 @@
     import LogoTransition from '$lib/components/LogoTransition.svelte';
     import {fly} from 'svelte/transition';
     import {page} from '$app/stores';
-
-    // let transitionDuration = 1000; // Adjust as needed
-
-    // onNavigate((navigation) => {
-    //     if (!navigation.from || !navigation.to || navigation.type === 'popstate') {
-    //         return;
-    //     }
-    //
-    //     transitioning.set(true);
-    //
-    //     return new Promise((resolve) => {
-    //         setTimeout(() => {
-    //             transitioning.set(false);
-    //             resolve();
-    //         }, transitionDuration);
-    //     });
-    // });
+    import "@fontsource/noto-serif-jp";
 </script>
 
 <div class="app">
@@ -39,4 +23,3 @@
 </div>
 
 <LogoTransition/>
-

@@ -22,15 +22,7 @@
             <Carousel.Content>
                 {#each categories as category}
                     <Carousel.Item class="basis-1/2 md:basis-1/10 lg:basis-1/6">
-                        <!--                        <div class="p-1">-->
-                        <!--                            <Card.Root>-->
-                        <!--                                <Card.Content class="flex aspect-square items-center justify-center p-6">-->
-                        <!--                                    <img src="{category.src}" alt="{category.name}"/>-->
-                        <!--                                    <span class="text-xl md:text-2xl font-semibold">{category.name}</span>-->
-                        <!--                                </Card.Content>-->
-                        <!--                            </Card.Root>-->
-                        <!--                        </div>-->
-                        <a href="/products/{category.slug}">
+                        <a href="/categories/{category.slug}">
                             <div class="relative w-full overflow-hidden">
                                 <img src={category.image} alt={category.name}
                                      class="w-full aspect-square h-full object-cover ease-in"/>

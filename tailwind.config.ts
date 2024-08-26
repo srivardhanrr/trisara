@@ -4,10 +4,10 @@ import type {Config} from "tailwindcss";
 const config: Config = {
     darkMode: ["class"],
     content: ["./src/**/*.{html,js,svelte,ts}",
-    "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
+        "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
     ],
     plugins: [
-      require('flowbite/plugin')
+        require('flowbite/plugin')
     ],
     safelist: ["dark"],
     animation: {
@@ -69,7 +69,7 @@ const config: Config = {
                 sm: "calc(var(--radius) - 4px)"
             },
             fontFamily: {
-                sans: [...fontFamily.sans]
+                sans: ['"Noto Serif JP"', 'serif']
             }
         }
     },

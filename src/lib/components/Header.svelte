@@ -13,9 +13,9 @@
     <div class="container mx-auto h-full flex items-center justify-between">
         <nav class="hidden md:flex items-center space-x-6 flex-1">
             <a href="#" class="text-foreground hover:text-primary transition-colors">Our Story</a>
-            <a href="#" class="text-foreground hover:text-primary transition-colors">Kitchenware</a>
+            <a href="/products" class="text-foreground hover:text-primary transition-colors">All Products</a>
             <a href="/products/italian-marble" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>
-            <a href="#" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
         </nav>
 
         <Sheet.Root>
@@ -33,9 +33,9 @@
             <Sheet.Content side="left">
                 <nav class="grid gap-6 text-lg font-medium pt-16">
                     <a href="#" class="hover:text-primary">Our Story</a>
-                    <a href="#" class="hover:text-primary">Kitchenware</a>
+                    <a href="/products" class="hover:text-primary">All Products</a>
                     <a href="/products" class="hover:text-primary">Cookbooks</a>
-                    <a href="#" class="hover:text-primary">Contact Us</a>
+                    <a href="/contact" class="hover:text-primary">Contact Us</a>
                 </nav>
             </Sheet.Content>
         </Sheet.Root>

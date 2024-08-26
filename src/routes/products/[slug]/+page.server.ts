@@ -3,5 +3,6 @@ import { api } from '$lib/api';
 
 export const load: PageLoad = async ({ params }) => {
   const product = await api.getProduct(params.slug);
-  return { product };
+  const collection = await api.getCollection("newly-arrived");
+  return { product, collection };
 };

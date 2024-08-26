@@ -35,8 +35,8 @@
 
         {#each items as item}
             <Carousel.Item>
-                <img src="{item.src}"
-                     class="" alt="{item.name}">
+                <img loading="lazy" src="{item.src}"
+                     class="lg:h-full h-64" alt="{item.name}">
                 <!--        <div class="p-1">-->
                 <!--          <Card.Root>-->
                 <!--            <Card.Content-->

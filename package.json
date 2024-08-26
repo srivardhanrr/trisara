@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/noto-serif-jp": "^5.0.14",
 		"@popperjs/core": "^2.11.8",
 		"@vercel/postgres": "^0.9.0",
 		"bits-ui": "^0.21.13",
