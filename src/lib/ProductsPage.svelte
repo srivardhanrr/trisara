@@ -27,17 +27,17 @@
                     <p class="mt-3 max-w-md mx-auto text-xl text-white">
                         {description}
                     </p>
-                    <div class="mt-8">
-                        <Button variant="secondary" class="bg-white text-black hover:bg-gray-100">
-                            View Now
-                        </Button>
-                    </div>
+<!--                    <div class="mt-8">-->
+<!--                        <Button variant="secondary" class="bg-white text-black hover:bg-gray-100">-->
+<!--                            View Now-->
+<!--                        </Button>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
     {/if}
 
-    <h1 class="text-3xl font-bold m-6 items-center justify-center text-center">{title}</h1>
+    <h1 class="text-3xl font-bold m-6 text-orange-500 items-center justify-center text-center">{title}</h1>
 
     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
         {#each products as product}

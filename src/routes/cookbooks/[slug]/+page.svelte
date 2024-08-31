@@ -44,7 +44,7 @@
 
     <div class="grid md:grid-cols-2 gap-8">
       <div>
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Ingredients</h2>
+        <h2 class="text-2xl font-semibold text-orange-500 mb-4">Ingredients</h2>
         <ul class="list-disc pl-5 space-y-2">
           {#each cookbook.ingredients as ingredient}
             <li class="text-gray-700">{ingredient.description}</li>
@@ -53,7 +53,7 @@
       </div>
 
       <div>
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Method</h2>
+        <h2 class="text-2xl font-semibold text-orange-500 mb-4">Method</h2>
         <ol class="list-decimal pl-5 space-y-4">
           {#each cookbook.preparation_steps as step}
             <li class="text-gray-700">{step.description}</li>
