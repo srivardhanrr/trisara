@@ -5,36 +5,37 @@
     export let brands = [
         {
             name: 'Brand 1',
-            logo: 'https://www.apto.digital/wp-content/uploads/2022/12/Zepto-logo.png'
+            logo: '/images/zepto-new.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://www.rewardone.in/wp-content/uploads/2024/05/b4a0607481.png'
+            logo: '/images/blinkit.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://static.vecteezy.com/system/resources/previews/019/766/240/non_2x/amazon-logo-amazon-icon-transparent-free-png.png'
+            logo: '/images/amazon.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://logos-world.net/wp-content/uploads/2020/11/Flipkart-Logo.png'
-        },
-                {
-            name: 'Brand 1',
-            logo: 'https://www.apto.digital/wp-content/uploads/2022/12/Zepto-logo.png'
+            logo: '/images/flipkart-new.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://www.rewardone.in/wp-content/uploads/2024/05/b4a0607481.png'
+            logo: '/images/zepto-new.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://static.vecteezy.com/system/resources/previews/019/766/240/non_2x/amazon-logo-amazon-icon-transparent-free-png.png'
+            logo: '/images/blinkit.png'
         },
         {
             name: 'Brand 1',
-            logo: 'https://logos-world.net/wp-content/uploads/2020/11/Flipkart-Logo.png'
+            logo: '/images/amazon.png'
         },
+        {
+            name: 'Brand 1',
+            logo: '/images/flipkart-new.png'
+        },
+
 
     ];
 
@@ -85,7 +86,9 @@
     >
         {#each brands as brand}
             <Card class="shadow-none border-0 flex-shrink-0 w-36 md:w-48 h-24 mx-4 flex items-center justify-center">
+                <div class="grayscale hover:grayscale-0">
                 <img src={brand.logo} alt={brand.name} class="max-w-full max-h-full"/>
+                    </div>
             </Card>
         {/each}
     </div>

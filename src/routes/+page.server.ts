@@ -10,12 +10,13 @@ import type {PageLoad} from './$types';
 import {api} from '$lib/api';
 
 export const load: PageLoad = async () => {
-    const [categories, products, collections, collection1] = await Promise.all([
+    const [categories, products, collections, collection1, cookbookCategories] = await Promise.all([
         api.getCategories(),
         api.getProducts(),
         api.getCollections(),
         api.getCollection(HOME_COLLECTION_1),
+        api.getCookbookCategories(),
     ]);
 
-    return {categories, products, collections, collection1};
+    return {categories, products, collections, collection1, cookbookCategories};
 };

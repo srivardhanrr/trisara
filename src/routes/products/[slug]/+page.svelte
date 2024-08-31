@@ -78,44 +78,38 @@
                 </Breadcrumb.Item>
                 <Breadcrumb.Separator/>
                 <Breadcrumb.Item>
-                    <Breadcrumb.Page>{product.name}</Breadcrumb.Page>
+                    <Breadcrumb.Page class="text-orange-600">{product.name}</Breadcrumb.Page>
                 </Breadcrumb.Item>
             </Breadcrumb.List>
         </Breadcrumb.Root>
-        <h1 class="text-3xl mt-4 font-bold mb-2">{product.name}</h1>
-        <p class="text-gray-600 mb-4">{product.description}</p>
+        <h1 class="text-3xl mt-4 lg:mt-10 font-bold mb-2">{product.name}</h1>
+        <p class="text-gray-600 mt-5 lg:mt-10 mb-4">{product.description}</p>
 
         <!-- Star rating placeholder -->
-        <div class="flex mb-2">
-            {#each Array(5) as _, i}
-                <span class={i < 4 ? "text-yellow-400" : "text-gray-300"}>★</span>
-            {/each}
-        </div>
+<!--        <div class="flex mb-2">-->
+<!--            {#each Array(5) as _, i}-->
+<!--                <span class={i < 4 ? "text-yellow-400" : "text-gray-300"}>★</span>-->
+<!--            {/each}-->
+<!--        </div>-->
 
         <button class="w-full flex gap-2 h-12 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">
-
-            <span class="align-text-top">Buy On</span>
-            <img src="/images/amazon-icon.webp" class="h-5" alt="">
-
+            <span class="align-text-top animate-bounce translate-x-1/3 translate-y-1.5">Buy On Amazon</span>
+<!--            <img src="/images/amazon.png" class="h-5" alt="">-->
         </button>
-        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">
+<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
+<!--            <span class="align-text-top">Buy On</span>-->
+<!--            <img src="/images/flipkart.png" class="h-20 overflow-hidden" alt="">-->
+<!--        </button>-->
+<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
 
-            <span class="align-text-top">Buy On</span>
-            <img src="/images/flipkart.png" class="h-20 overflow-hidden" alt="">
+<!--            <span class="align-text-top">Buy On</span>-->
+<!--            <img src="/images/zepto.png" class="h-20 overflow-hidden" alt="">-->
 
-        </button>
-        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">
-
-            <span class="align-text-top">Buy On</span>
-            <img src="/images/zepto.png" class="h-20 overflow-hidden" alt="">
-
-        </button>
-        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">
-
-            <span class="align-text-top">Buy On</span>
-            <img src="/images/blinkit.png" class="h-5 overflow-hidden" alt="">
-
-        </button>
+<!--        </button>-->
+<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
+<!--            <span class="align-text-top">Buy On</span>-->
+<!--            <img src="/images/blinkit.png" class="h-5 overflow-hidden" alt="">-->
+<!--        </button>-->
 
         <div class="mt-8">
             <Card.Root class="bg-gray-100">
