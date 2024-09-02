@@ -3,6 +3,7 @@
     import * as Breadcrumb from "$lib/components/ui/breadcrumb";
     import * as Accordion from "$lib/components/ui/accordion";
     import * as Card from "$lib/components/ui/card";
+    import * as Carousel from "$lib/components/ui/carousel";
     import {Separator} from "$lib/components/ui/separator";
     import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
 
@@ -49,19 +50,27 @@
 
 </script>
 
-<div class="product-container flex flex-col md:flex-row gap-8 p-6">
+<div class="product-container flex flex-col md:flex-row gap-8 p-2 sm:p-6">
     <div class="image-section w-full md:w-1/2" class:sticky={isSticky && !isMobile}>
-
-        <img src={product.images[0].image} alt={product.name}
-             class="md:px-8 w-full h-fit flex items-center object-cover"/>
-
+        <Carousel.Root>
+            <Carousel.Content>
+                {#each product.images as image}
+                    <Carousel.Item>
+                        <img src={image.image} alt={product.name}
+                             class="md:px-8 w-full h-fit flex items-center object-fit"/>
+                    </Carousel.Item>
+                {/each}
+            </Carousel.Content>
+            <Carousel.Previous class="ml-16 sm:ml-24"/>
+            <Carousel.Next class="mr-16 sm:mr-24" />
+        </Carousel.Root>
         <!-- Thumbnail images -->
         <div class="flex gap-2 mt-4 items-center justify-center">
             {#each product.images as image}
-                <div class="cursor-pointer" on:click={changeMainImage(image)}>
+                <button class="cursor-pointer" on:click={changeMainImage(image)}>
                     <img src={image.image} alt={product.name}
                          class="w-20 rounded-lg h-20 flex items-center justify-center"/>
-                </div>
+                </button>
             {/each}
         </div>
     </div>
@@ -86,30 +95,30 @@
         <p class="text-gray-600 mt-5 lg:mt-10 mb-4">{product.description}</p>
 
         <!-- Star rating placeholder -->
-<!--        <div class="flex mb-2">-->
-<!--            {#each Array(5) as _, i}-->
-<!--                <span class={i < 4 ? "text-yellow-400" : "text-gray-300"}>★</span>-->
-<!--            {/each}-->
-<!--        </div>-->
+        <!--        <div class="flex mb-2">-->
+        <!--            {#each Array(5) as _, i}-->
+        <!--                <span class={i < 4 ? "text-yellow-400" : "text-gray-300"}>★</span>-->
+        <!--            {/each}-->
+        <!--        </div>-->
 
         <button class="w-full flex gap-2 h-12 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">
             <span class="align-text-top animate-bounce translate-x-1/3 translate-y-1.5">Buy On Amazon</span>
-<!--            <img src="/images/amazon.png" class="h-5" alt="">-->
+            <!--            <img src="/images/amazon.png" class="h-5" alt="">-->
         </button>
-<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
-<!--            <span class="align-text-top">Buy On</span>-->
-<!--            <img src="/images/flipkart.png" class="h-20 overflow-hidden" alt="">-->
-<!--        </button>-->
-<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
+        <!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
+        <!--            <span class="align-text-top">Buy On</span>-->
+        <!--            <img src="/images/flipkart.png" class="h-20 overflow-hidden" alt="">-->
+        <!--        </button>-->
+        <!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
 
-<!--            <span class="align-text-top">Buy On</span>-->
-<!--            <img src="/images/zepto.png" class="h-20 overflow-hidden" alt="">-->
+        <!--            <span class="align-text-top">Buy On</span>-->
+        <!--            <img src="/images/zepto.png" class="h-20 overflow-hidden" alt="">-->
 
-<!--        </button>-->
-<!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
-<!--            <span class="align-text-top">Buy On</span>-->
-<!--            <img src="/images/blinkit.png" class="h-5 overflow-hidden" alt="">-->
-<!--        </button>-->
+        <!--        </button>-->
+        <!--        <button class="w-full my-2 flex h-12 gap-2 items-center justify-center hover:bg-yellow-100 active:bg-yellow-100 text-black font-bold py-2 px-4 rounded-lg border border-yellow-200 transition duration-200 ease-in-out">-->
+        <!--            <span class="align-text-top">Buy On</span>-->
+        <!--            <img src="/images/blinkit.png" class="h-5 overflow-hidden" alt="">-->
+        <!--        </button>-->
 
         <div class="mt-8">
             <Card.Root class="bg-gray-100">

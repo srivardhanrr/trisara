@@ -35,17 +35,25 @@
 
         {#each items as item}
             <Carousel.Item>
-                <img loading="lazy" src="{item.src}"
-                     class="lg:h-full h-64" alt="{item.name}">
-                <!--        <div class="p-1">-->
-                <!--          <Card.Root>-->
-                <!--            <Card.Content-->
-                <!--              class="flex aspect-square items-center justify-center p-6"-->
-                <!--            >-->
-                <!--              <span class="text-4xl font-semibold">{i + 1}</span>-->
-                <!--            </Card.Content>-->
-                <!--          </Card.Root>-->
-                <!--        </div>-->
+                <div class="relative lg:h-full h-64 overflow-hidden">
+                                <img class="top-0 left-0 w-full h-full object-cover" src="{item.src}"
+                                     alt="Kitchen utilities">
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h2 class="text-white text-xl">{item.name}</h2>
+                                </div>
+                </div>
+<!--                <img loading="lazy" src="{item.src}"-->
+<!--                     class="lg:h-full h-64" alt="{item.name}">-->
+
+<!--                        <div class="p-1">-->
+<!--                          <Card.Root>-->
+<!--                            <Card.Content-->
+<!--                              class="flex aspect-square items-center justify-center p-6"-->
+<!--                            >-->
+<!--                              <span class="text-4xl font-semibold">item</span>-->
+<!--                            </Card.Content>-->
+<!--                          </Card.Root>-->
+<!--                        </div>-->
 
             </Carousel.Item>
         {/each}

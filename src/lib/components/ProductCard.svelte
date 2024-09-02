@@ -6,7 +6,7 @@
 
 
 
-<div class="relative w-full overflow-hidden my-1 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+<div class="relative w-full max-w-72 overflow-hidden my-1 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
     <a href="/products/{product.slug}">
   <div class="relative overflow-hidden">
     <img loading="lazy" src="{product.images[0].image}" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />

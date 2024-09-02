@@ -38,8 +38,8 @@
 <section class="py-12">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-orange-500">#Instagram Gallery</h2>
-            <a href="/gallery" class="text-orange-500 hover:underline">View Gallery</a>
+            <h2 class="text-lg sm:text-2xl font-bold text-orange-500">#Instagram Gallery</h2>
+            <a href="/gallery" class="text-orange-500 text-sm hover:underline">View Gallery</a>
         </div>
         <p class="text-gray-600 mb-8">
             Step into our kitchen and explore the world of culinary delights through our Image Gallery.

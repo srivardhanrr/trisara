@@ -1,56 +1,71 @@
 <script lang="ts">
     import {ScrollArea} from "$lib/components/ui/scroll-area/index.js";
-    import * as Card from "$lib/components/ui/card";
     import ProductCard from "$lib/components/ProductCard.svelte";
 
-    const products = [
+    type Artwork = {
+        artist: string;
+        art: string;
+    };
+
+    export let products;
+
+    const works: Artwork[] = [
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/files/SWSWA3232_01_1920x.webp?v=1712134523"
+            artist: "Ornella Binni",
+            art: "https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80"
         },
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/products/swtea2780_01_1920x.jpg?v=1706524428"
+            artist: "Tom Byrom",
+            art: "https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80"
         },
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/products/gstea2562_01_1920x.jpg?v=1706522686"
+            artist: "Vladimir Malyavko",
+            art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80"
         },
+
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/files/WDDEA3337_01_1920x.webp?v=1712755561"
+            artist: "Vladimir Malyavko",
+            art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80"
         },
+
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/files/SWTEA3092_01_1920x.webp?v=1712063713"
+            artist: "Vladimir Malyavko",
+            art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80"
         },
+
         {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/files/WDDEA3337_01_1920x.webp?v=1712755561"
-        },
-        {
-            title: "Example Product Title",
-            price: "Rs. 19.99",
-            image: "https://www.ellementry.com/cdn/shop/products/gstea2562_01_1920x.jpg?v=1706522686"
+            artist: "Vladimir Malyavko",
+            art: "https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80"
         },
     ];
-
 </script>
 
 <ScrollArea
-        class="whitespace-nowrap"
+        class="whitespace-nowrap rounded-md border"
         orientation="horizontal"
 >
-    <div class="flex w-full space-x-5 p-4">
+    <div class="flex w-max space-x-4 p-4">
         {#each products as product}
-            <ProductCard name="{product.title}" originalPrice=100 discount=10 price=90 image="{product.image}"/>
-
+            <!--   <figure class="shrink-0">-->
+            <!--    <div class="overflow-hidden rounded-md">-->
+            <!--     <img-->
+            <!--      src={artwork.art}-->
+            <!--      alt={`Photo by ${artwork.artist}`}-->
+            <!--      class="aspect-[3/4] h-fit w-fit object-cover"-->
+            <!--      width={300}-->
+            <!--      height={400}-->
+            <!--     />-->
+            <!--    </div>-->
+            <!--    <figcaption class="text-muted-foreground pt-2 text-xs">-->
+            <!--     Photo by-->
+            <!--     <span class="text-foreground font-semibold">-->
+            <!--      {artwork.artist}-->
+            <!--     </span>-->
+            <!--    </figcaption>-->
+            <!--   </figure>-->
+            <div class="max-w-44 sm:max-w-72">
+            <ProductCard product={product}/>
+            </div>
         {/each}
     </div>
 </ScrollArea>

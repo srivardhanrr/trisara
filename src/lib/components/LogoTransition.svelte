@@ -2,22 +2,6 @@
   import { onNavigate } from '$app/navigation';
   import { fade, fly } from 'svelte/transition';
 
-  // let transitioning = false;
-  // let showLogo = false;
-  //
-  // onNavigate(() => {
-  //   transitioning = true;
-  //   setTimeout(() => showLogo = true, 1000);
-  //
-  //   return new Promise(resolve => {
-  //     setTimeout(() => {
-  //       transitioning = false;
-  //       showLogo = false;
-  //       resolve();
-  //     }, 2500);
-  //   });
-  // });
-
   let transitioning = false;
   let showLogo = false;
   let exitTransition = false;
@@ -46,10 +30,6 @@
       <!-- Add your logo here -->
       <img src="/images/trisara-logo.png" alt="Logo" class="w-32 h-32 object-contain" /> <!-- Adjust size as needed -->
     </div>
-<!--    <div class={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-in-out-->
-<!--              ${transitioning ? 'top-1/2 -translate-y-1/2' : 'top-full'}`}>-->
-<!--    <img src="/images/trisara-logo.png" alt="Logo" class="w-32 h-32 object-contain" />-->
-<!--  </div>-->
   {/if}
 </div>
 

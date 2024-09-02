@@ -29,9 +29,10 @@
 </script>
 
 
-<section class="py-12 bg-orange-50">
-    <div class="container mx-auto px-4">
-         <div class="flex justify-between items-center mb-6">
+<section class="py-12 relative bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-image.png');">
+    <div class="absolute inset-0 opacity-50"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold text-orange-500">buy Collection</h2>
             <a href="/collections/" class="text-orange-500 hover:underline">View All</a>
         </div>

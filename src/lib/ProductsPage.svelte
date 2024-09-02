@@ -27,11 +27,11 @@
                     <p class="mt-3 max-w-md mx-auto text-xl text-white">
                         {description}
                     </p>
-<!--                    <div class="mt-8">-->
-<!--                        <Button variant="secondary" class="bg-white text-black hover:bg-gray-100">-->
-<!--                            View Now-->
-<!--                        </Button>-->
-<!--                    </div>-->
+                    <!--                    <div class="mt-8">-->
+                    <!--                        <Button variant="secondary" class="bg-white text-black hover:bg-gray-100">-->
+                    <!--                            View Now-->
+                    <!--                        </Button>-->
+                    <!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -41,7 +41,21 @@
 
     <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
         {#each products as product}
-            <ProductCard product={product}/>
+            <!--            <ProductCard product={product}/>-->
+            <div class="relative w-full max-w-72 overflow-hidden my-1 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <a href="/products/{product.slug}">
+                    <div class="relative overflow-hidden">
+                        <img loading="lazy" src="{product.images[0].image}" alt="Product"
+                             class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"/>
+                        <img loading="lazy" src="{product.images[1].image}" alt="Product Hover"
+                             class="aspect-square absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"/>
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-xs md:text-sm font-semibold truncate  ">{product.name}</h3>
+                        <p class="text-sm text-gray-600">{product.material}</p>
+                    </div>
+                </a>
+            </div>
         {/each}
     </div>
 </main>
