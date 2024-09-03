@@ -86,7 +86,7 @@
     >
         {#each brands as brand}
             <Card class="shadow-none border-0 flex-shrink-0 w-36 md:w-48 h-24 mx-4 flex items-center justify-center">
-                <div class="grayscale hover:grayscale-0">
+                <div class="">
                 <img src={brand.logo} alt={brand.name} class="max-w-full max-h-full"/>
                     </div>
             </Card>

@@ -1,10 +1,6 @@
 <script>
 
-    // import {cookbookCategories} from "$lib/stores/cookbookStore.js";
-
     export let data;
-
-    $: ({cookbookCategories} = data);
 
 </script>
 
@@ -12,7 +8,7 @@
     <div class="container mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-12">Our Cookbooks</h1>
 
-        {#each cookbookCategories as cookbookCategory}
+        {#each data.cookbookCategories as cookbookCategory}
             <div class="mb-16">
                 <h2 class="text-3xl font-semibold text-orange-500 mb-6">{cookbookCategory.name}</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

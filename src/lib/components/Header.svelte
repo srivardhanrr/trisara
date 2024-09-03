@@ -7,16 +7,54 @@
     import {Input} from "$lib/components/ui/input";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Sheet from "$lib/components/ui/sheet";
+
+    export let categories;
+    export let cookbookCategories;
+
 </script>
 
 <header class="bg-background z-50 sticky top-0 h-20 md:h-22 border-b md:px-8 lg:px-12">
     <div class="container mx-auto h-full flex items-center justify-between">
         <nav class="hidden md:flex items-center space-x-6 flex-1">
             <a href="/our-story" class="text-foreground hover:text-primary transition-colors">Our Story</a>
-            <a href="/products" class="text-foreground hover:text-primary transition-colors">All Products</a>
+            <DropdownMenu.Root>
+                <DropdownMenu.Trigger>All Products</DropdownMenu.Trigger>
+                <DropdownMenu.Content>
+                    <DropdownMenu.Group>
+                        <DropdownMenu.Label class='text-orange-500'>Categories</DropdownMenu.Label>
+                        <DropdownMenu.Separator/>
+                        {#each categories as category}
+                            <DropdownMenu.Item><a href="/categories/{category.slug}">{category.name}</a>
+                            </DropdownMenu.Item>
+                        {/each}
+                        <DropdownMenu.Item><a href="/categories">View All</a>
+                        </DropdownMenu.Item>
+                    </DropdownMenu.Group>
+                </DropdownMenu.Content>
+            </DropdownMenu.Root>
+            <DropdownMenu.Root>
+                <DropdownMenu.Trigger>Cookbooks</DropdownMenu.Trigger>
+                <DropdownMenu.Content>
+                    <DropdownMenu.Group>
+                        <DropdownMenu.Label class="text-orange-500">Cookbook Categories</DropdownMenu.Label>
+                        <DropdownMenu.Separator/>
+                        {#each cookbookCategories as cookbookCategory}
+                           <DropdownMenu.Sub>
+                                <DropdownMenu.SubTrigger>{cookbookCategory.name}</DropdownMenu.SubTrigger>
+                                <DropdownMenu.SubContent>
+                                    {#each cookbookCategory.cookbooks as cookbook}
+                                        <DropdownMenu.Item class="truncate"><a href="/cookbooks/{cookbook.slug}">{cookbook.title}</a></DropdownMenu.Item>
+                                    {/each}
+                                </DropdownMenu.SubContent>
+                            </DropdownMenu.Sub>
+                        {/each}
+                    </DropdownMenu.Group>
+                </DropdownMenu.Content>
+            </DropdownMenu.Root>
 
-            <a href="/cookbooks" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>
-            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <!--            <a href="/cookbooks" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>-->
+            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact
+                Us</a>
         </nav>
 
         <Sheet.Root>
@@ -43,7 +81,8 @@
 
         <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <a href="/" class="flex items-center justify-center">
-                <img src="/images/trisara-logo.png" alt="Trisara" class="h-16 w-16 rounded-full"/>
+                <img src="/images/trisara-logo.png" alt="Trisara"
+                     class="h-16 w-16 rounded-full"/>
                 <span class="sr-only">Trisara</span>
             </a>
         </div>
@@ -72,8 +111,8 @@
                     </Button>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content align="end">
-<!--                    <DropdownMenu.Label>Social Media</DropdownMenu.Label>-->
-<!--                    <DropdownMenu.Separator/>-->
+                    <!--                    <DropdownMenu.Label>Social Media</DropdownMenu.Label>-->
+                    <!--                    <DropdownMenu.Separator/>-->
                     <DropdownMenu.Item>Instagram</DropdownMenu.Item>
                     <DropdownMenu.Item>Facebook</DropdownMenu.Item>
                     <DropdownMenu.Item>X</DropdownMenu.Item>

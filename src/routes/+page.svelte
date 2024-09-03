@@ -12,6 +12,7 @@
     import FeaturedSection from "$lib/components/FeaturedSection.svelte";
     import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
     import CollectionCarousel2 from "$lib/components/CollectionCarousel2.svelte";
+    import Header from "$lib/components/Header.svelte";
 
     export let data;
 </script>
@@ -30,9 +31,9 @@
 <!--        <ProductCarousel products={data.collection1.products}/>-->
         <InfiniteScroll/>
         <CollectionCarousel collection="{data.collection1}" />
-        <CollectionCarousel2 />
+<!--        <CollectionCarousel2 />-->
 <!--                <Newsletter/>-->
-        <FeaturedSection products="{data.collection1.products}"/>
+<!--        <FeaturedSection products="{data.collection1.products}"/>-->
         <!--        <RecentPosts/>-->
         <RecentPostNew/>
     </main>
