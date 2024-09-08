@@ -2,6 +2,8 @@
     import * as Carousel from "$lib/components/ui/carousel/index.js";
     import Autoplay from "embla-carousel-autoplay";
 
+    export let instagramPosts;
+
     const images = [
         {
             src: "http://new-ella-demo-11.myshopify.com/cdn/shop/files/image-gallery-3.jpg?v=1658374861",
@@ -35,7 +37,7 @@
 
 </script>
 
-<section class="py-12">
+<section class="py-12 bg-gradient-to-r from-orange-50 to-orange-100">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-lg sm:text-2xl font-bold text-orange-500">#Instagram Gallery</h2>
@@ -51,10 +53,10 @@
                        on:mousenter={plugin.stop}
                        on:mouseleave={plugin.reset}>
             <Carousel.Content>
-                {#each images as image, index}
+                {#each instagramPosts as post}
                     <Carousel.Item class="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                         <div class="aspect-square relative overflow-hidden">
-                            <img src={image.src} alt={image.alt} class="object-cover w-full h-full"/>
+                            <img src={post.image} alt={post.description} class="object-cover w-full h-full"/>
                         </div>
                     </Carousel.Item>
                 {/each}

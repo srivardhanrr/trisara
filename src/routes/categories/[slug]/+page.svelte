@@ -7,4 +7,12 @@
 
 </script>
 
+<svelte:head>
+	<title>Trisara | {category.name}</title>
+	<meta
+		name="description"
+		content="{category.description}"
+	/>
+</svelte:head>
+
 <ProductsPage products={category.products} bannerImage={category.image} showBanner=true title={category.name} description={category.description} />

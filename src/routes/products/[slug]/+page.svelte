@@ -1,24 +1,23 @@
 <script lang="ts">
-    import {onMount} from 'svelte';
+    import { onMount } from 'svelte';
     import * as Breadcrumb from "$lib/components/ui/breadcrumb";
     import * as Accordion from "$lib/components/ui/accordion";
     import * as Card from "$lib/components/ui/card";
     import * as Carousel from "$lib/components/ui/carousel";
-    import {Separator} from "$lib/components/ui/separator";
+    import { Separator } from "$lib/components/ui/separator";
     import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
-
 
     export let data;
 
-    $: ({product, collection} = data);
+    $: ({ product, collection } = data);
 
     let activeCard = 0;
     let scrollYProgress = 0;
-
     let isMobile: boolean;
+    let currentImageIndex = 0; // New: Track the current image index
 
     function checkMobile() {
-        isMobile = window.innerWidth < 768; // Adjust this breakpoint as needed
+        isMobile = window.innerWidth < 768;
     }
 
     let ref: HTMLDivElement;
@@ -47,29 +46,36 @@
         };
     });
 
+    // New: Function to change the current image
+    function changeImage(index: number) {
+        currentImageIndex = index;
+    }
 </script>
 
-<div bind:this={ref}
-     class="product-container flex flex-col md:flex-row gap-8 p-2 sm:p-6 transition ease-in-out">
+<svelte:head>
+	<title>Trisara | {product.name}</title>
+	<meta
+		name="description"
+		content="{product.description}"
+	/>
+</svelte:head>
+
+
+
+<div bind:this={ref} class="product-container flex flex-col md:flex-row gap-8 p-2 sm:p-6 transition ease-in-out">
     <div class:sticky={!isMobile} class="sticky overflow-hidden image-section w-full md:w-1/2 image-section">
-        <Carousel.Root>
-            <Carousel.Content>
-                {#each product.images as image}
-                    <Carousel.Item>
-                        <img src={image.image} alt={product.name}
-                             class="md:px-8 w-full h-fit flex items-center object-fit"/>
-                    </Carousel.Item>
-                {/each}
-            </Carousel.Content>
-            <Carousel.Previous class="ml-16 sm:ml-24"/>
-            <Carousel.Next class="mr-16 sm:mr-24"/>
-        </Carousel.Root>
+        <!-- Main image -->
+        <img src={product.images[currentImageIndex].image} alt={product.name}
+             class="md:px-8 w-full h-fit flex items-center object-fit"/>
+
         <!-- Thumbnail images -->
         <div class="flex gap-2 mt-4 items-center justify-center">
-            {#each product.images as image}
-                <button class="cursor-pointer">
+            {#each product.images as image, index}
+                <button class="cursor-pointer" on:click={() => changeImage(index)}>
                     <img src={image.image} alt={product.name}
-                         class="w-20 rounded-lg h-20 flex items-center justify-center"/>
+                         class="w-20 rounded-lg h-20 flex items-center justify-center"
+                         class:border-2={index === currentImageIndex}
+                         class:border-orange-500={index === currentImageIndex}/>
                 </button>
             {/each}
         </div>
@@ -254,17 +260,6 @@
 
     </div>
 </div>
-
-<!--<div class="w-full mt-8">-->
-<!--    <h2 class="text-2xl font-bold mb-4 text-center">Product Features</h2>-->
-<!--    <div class="grid grid-cols-2 gap-4 md:flex md:justify-center md:space-x-4">-->
-<!--        <img src="/images/feature/eth.png" alt="Feature 1" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>-->
-<!--        <img src="/images/feature/etc.png" alt="Feature 2" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>-->
-<!--        <img src="/images/feature/hqss.png" alt="Feature 3"-->
-<!--             class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>-->
-<!--        <img src="/images/feature/if.png" alt="Feature 4" class="h-40 w-full md:h-64 md:w-64 object-cover rounded-lg"/>-->
-<!--    </div>-->
-<!--</div>-->
 
 <CollectionCarousel collection="{data.collection}"/>
 

@@ -2,6 +2,10 @@
     // You can add any necessary JavaScript here
 </script>
 
+<svelte:head>
+	<title>Trisara | Our Story</title>
+</svelte:head>
+
 <div class="bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-12">
         <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 text-gray-800 mb-8">Our Story</h1>

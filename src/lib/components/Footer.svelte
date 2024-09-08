@@ -1,5 +1,3 @@
-
-
 <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
@@ -22,8 +20,13 @@
                 </li>
             </ul>
         </div>
+        <div class="mt-4 sm:flex sm:items-center sm:justify-between">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                <p><strong>Phone:</strong> <a href="tel:+919353258820" class="hover:underline">+91 93532 58820</a></p>
+                <p><strong>Address:</strong> #45, Embassy Square, 4th Main, Chamrajpet, Bangalore, 560018</p>
+            </div>
+        </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://trisara.in/" class="hover:underline">Trisara™</a>. All Rights Reserved.</span>
     </div>
 </footer>
-

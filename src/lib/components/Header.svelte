@@ -18,7 +18,7 @@
         <nav class="hidden md:flex items-center space-x-6 flex-1">
             <a href="/our-story" class="text-foreground hover:text-primary transition-colors">Our Story</a>
             <DropdownMenu.Root>
-                <DropdownMenu.Trigger>All Products</DropdownMenu.Trigger>
+                <DropdownMenu.Trigger class="hover:text-orange-500">All Products</DropdownMenu.Trigger>
                 <DropdownMenu.Content>
                     <DropdownMenu.Group>
                         <DropdownMenu.Label class='text-orange-500'>Categories</DropdownMenu.Label>
@@ -33,17 +33,19 @@
                 </DropdownMenu.Content>
             </DropdownMenu.Root>
             <DropdownMenu.Root>
-                <DropdownMenu.Trigger>Cookbooks</DropdownMenu.Trigger>
+                <DropdownMenu.Trigger class="hover:text-orange-500">Cookbooks</DropdownMenu.Trigger>
                 <DropdownMenu.Content>
                     <DropdownMenu.Group>
                         <DropdownMenu.Label class="text-orange-500">Cookbook Categories</DropdownMenu.Label>
                         <DropdownMenu.Separator/>
                         {#each cookbookCategories as cookbookCategory}
-                           <DropdownMenu.Sub>
+                            <DropdownMenu.Sub>
                                 <DropdownMenu.SubTrigger>{cookbookCategory.name}</DropdownMenu.SubTrigger>
                                 <DropdownMenu.SubContent>
                                     {#each cookbookCategory.cookbooks as cookbook}
-                                        <DropdownMenu.Item class="truncate"><a href="/cookbooks/{cookbook.slug}">{cookbook.title}</a></DropdownMenu.Item>
+                                        <DropdownMenu.Item class="truncate"><a
+                                                href="/cookbooks/{cookbook.slug}">{cookbook.title}</a>
+                                        </DropdownMenu.Item>
                                     {/each}
                                 </DropdownMenu.SubContent>
                             </DropdownMenu.Sub>

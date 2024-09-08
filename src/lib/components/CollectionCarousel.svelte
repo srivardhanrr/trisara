@@ -5,7 +5,8 @@
     export let collection;
 </script>
 
-<section class="py-8">
+{#if (collection)}
+<section class="py-8 md:p-8">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center lg:mb-6">
             <h2 class="text-lg sm:text-2xl font-bold text-orange-500">{collection.name}</h2>
@@ -25,3 +26,4 @@
         </Carousel.Root>
     </div>
 </section>
+{/if}

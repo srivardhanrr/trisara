@@ -31,6 +31,14 @@
   };
 </script>
 
+<svelte:head>
+	<title>Trisara | {cookbook.title}</title>
+	<meta
+		name="description"
+		content="{cookbook.description}"
+	/>
+</svelte:head>
+
 <div class="bg-gray-100 min-h-screen py-12">
   <div class="container mx-auto px-4 max-w-4xl">
     <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">{cookbook.title}</h1>

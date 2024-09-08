@@ -4,6 +4,10 @@
 
 </script>
 
+<svelte:head>
+	<title>Trisara | Cookbooks</title>
+</svelte:head>
+
 <div class="bg-gray-100 min-h-screen py-12">
     <div class="container mx-auto px-4">
         <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-12">Our Cookbooks</h1>

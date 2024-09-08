@@ -1,56 +1,22 @@
-<script>
-    import {Card} from "$lib/components/ui/card";
-    import {onMount, afterUpdate} from 'svelte';
+<script lang="ts">
+    import { Card } from "$lib/components/ui/card";
+    import { onMount, afterUpdate } from 'svelte';
 
-    export let brands = [
-        {
-            name: 'Brand 1',
-            logo: '/images/zepto-new.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/blinkit.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/amazon.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/flipkart-new.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/zepto-new.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/blinkit.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/amazon.png'
-        },
-        {
-            name: 'Brand 1',
-            logo: '/images/flipkart-new.png'
-        },
+    interface Brand {
+        name: string;
+        logo: string;
+    }
 
-
+    export let brands: Brand[] = [
+        { name: 'Zepto', logo: '/images/zepto-new.png' },
+        { name: 'Blinkit', logo: '/images/blinkit.png' },
+        { name: 'Amazon', logo: '/images/amazon.png' },
+        { name: 'Flipkart', logo: '/images/flipkart-new.png' }
     ];
 
-    let containerRef;
-    let scrollerRef;
+    let containerRef: HTMLDivElement;
+    let scrollerRef: HTMLDivElement;
     let isHovering = false;
-
-    function cloneItems() {
-        const items = scrollerRef.children;
-        const itemsArray = Array.from(items);
-        itemsArray.forEach(item => {
-            const clone = item.cloneNode(true);
-            scrollerRef.appendChild(clone);
-        });
-    }
 
     function checkScroll() {
         if (isHovering) return;
@@ -62,9 +28,9 @@
     }
 
     onMount(() => {
-        cloneItems();
         scrollerRef.scrollLeft = 0;
-        setInterval(checkScroll, 10);
+        const interval = setInterval(checkScroll, 10);
+        return () => clearInterval(interval);
     });
 
     afterUpdate(() => {
@@ -74,23 +40,24 @@
     });
 </script>
 
-<div
-        class="relative w-full overflow-hidden bg-background"
+<div class="flex items-center">
+    <div class="mr-4 text-lg font-semibold">Available on</div>
+    <div
+        class="relative flex-1 overflow-hidden bg-background"
         bind:this={containerRef}
         on:mouseenter={() => isHovering = true}
         on:mouseleave={() => isHovering = false}
->
-    <div
+    >
+        <div
             class="flex scroller"
             bind:this={scrollerRef}
-    >
-        {#each brands as brand}
-            <Card class="shadow-none border-0 flex-shrink-0 w-36 md:w-48 h-24 mx-4 flex items-center justify-center">
-                <div class="">
-                <img src={brand.logo} alt={brand.name} class="max-w-full max-h-full"/>
-                    </div>
-            </Card>
-        {/each}
+        >
+            {#each [...brands, ...brands] as brand}
+                <Card class="shadow-none border-0 flex-shrink-0 w-36 md:w-48 h-24 mx-4 flex items-center justify-center">
+                    <img src={brand.logo} alt={brand.name} class="max-w-full max-h-full" aria-label={`${brand.name} logo`} />
+                </Card>
+            {/each}
+        </div>
     </div>
 </div>
 

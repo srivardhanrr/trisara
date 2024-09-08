@@ -3,7 +3,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 async function fetchAPI(endpoint: string) {
     const response = await fetch(`${API_URL}${endpoint}`);
     if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        // throw new Error(`HTTP error! status: ${response.status}`);
+        return null;
     }
     return await response.json();
 }
@@ -14,6 +15,7 @@ export const api = {
     getProducts: () => fetchAPI('/products/'),
     getProduct: (slug: string) => fetchAPI(`/products/${slug}/`),
     getCollections: () => fetchAPI('/collections/'),
+    getInstagramPosts: () => fetchAPI('/instagram/'),
     getCollection: (slug: string) => fetchAPI(`/collections/${slug}/`),
     getCookbooks: () => fetchAPI('/cookbooks/'),
     getCookbook: (slug: string) => fetchAPI(`/cookbooks/${slug}/`),

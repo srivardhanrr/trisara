@@ -13,24 +13,39 @@
     import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
     import CollectionCarousel2 from "$lib/components/CollectionCarousel2.svelte";
     import Header from "$lib/components/Header.svelte";
+	import NewCategories from "$lib/components/ui/NewCategories.svelte";
 
     export let data;
 </script>
 
+<svelte:head>
+	<title>Trisara Homeware | Home</title>
+	<meta
+		name="description"
+		content="Trisara Homeware | Home"
+	/>
+</svelte:head>
+
 <div class="flex min-h-screen w-full flex-col">
     <HeroCarousel/>
     <!--    <Hero/>-->
-    <main class="flex flex-1 flex-col gap-4  md:gap-8 md:p-8">
-        <FeaturedProducts/>
-        <CategoriesCarousel categories={data.categories}/>
+    <main class="flex flex-1 flex-col gap-4  md:gap-8">
+        <div class="md:px-8">
+            <CategoriesCarousel categories={data.categories}/>
+        </div>̥
+        <NewCategories/>
         <CollectionCarousel collection="{data.collection1}" />
 
         <!--        <Categories/>-->
 <!--        <RoomCategories/>-->
-        <InstagramGallery/>
+        <div class="md:px-8">
+            <InfiniteScroll/>
+        </div>
+        <CollectionCarousel collection="{data.collection2}" />
+
+        <InstagramGallery instagramPosts={data.instagramPosts}/>
+
 <!--        <ProductCarousel products={data.collection1.products}/>-->
-        <InfiniteScroll/>
-        <CollectionCarousel collection="{data.collection1}" />
 <!--        <CollectionCarousel2 />-->
 <!--                <Newsletter/>-->
 <!--        <FeaturedSection products="{data.collection1.products}"/>-->
