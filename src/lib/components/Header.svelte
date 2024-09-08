@@ -27,7 +27,7 @@
                             <DropdownMenu.Item><a href="/categories/{category.slug}">{category.name}</a>
                             </DropdownMenu.Item>
                         {/each}
-                        <DropdownMenu.Item><a href="/categories">View All</a>
+                        <DropdownMenu.Item><a href="/products">View All</a>
                         </DropdownMenu.Item>
                     </DropdownMenu.Group>
                 </DropdownMenu.Content>

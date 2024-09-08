@@ -18,12 +18,12 @@
 		{
 			name: 'Cast Iron Series',
 			description: 'Elegant plates and bowls for your dining table',
-			image: '/images/hero2.png'
+			image: '/images/category1.JPG'
 		},
 		{
 			name: 'Stainless Steel Series',
 			description: 'Stylish utensils for a perfect dining experience',
-			image: '/images/hero3.png'
+			image: '/images/category2.JPG'
 		},
 		// {
 		// 	name: 'Kitchen Accessories',
@@ -50,7 +50,7 @@
 </script>
 
 {#if !isMobile}
-	<div class="relative hidden h-[400px] w-full overflow-hidden md:block">
+	<div class="relative hidden h-[450px] w-full overflow-hidden md:block">
 		<div
 			class="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-in-out"
 			style="background-image: url({activeCategory?.image || categories[0].image});"
