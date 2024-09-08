@@ -10,26 +10,26 @@
 	}
 
 	const categories: Category[] = [
+		// {
+		// 	name: 'Cookware',
+		// 	description: 'High-quality pots and pans for your kitchen',
+		// 	image: '/images/hero1.png'
+		// },
 		{
-			name: 'Cookware',
-			description: 'High-quality pots and pans for your kitchen',
-			image: '/images/hero1.png'
-		},
-		{
-			name: 'Dinnerware',
+			name: 'Cast Iron Series',
 			description: 'Elegant plates and bowls for your dining table',
 			image: '/images/hero2.png'
 		},
 		{
-			name: 'Cutlery',
+			name: 'Stainless Steel Series',
 			description: 'Stylish utensils for a perfect dining experience',
 			image: '/images/hero3.png'
 		},
-		{
-			name: 'Kitchen Accessories',
-			description: 'Essential tools to enhance your cooking',
-			image: '/images/hero1.png'
-		}
+		// {
+		// 	name: 'Kitchen Accessories',
+		// 	description: 'Essential tools to enhance your cooking',
+		// 	image: '/images/hero1.png'
+		// }
 	];
 
 	let activeCategory: Category | null = null;
@@ -59,7 +59,7 @@
 		<div class="relative z-10 flex h-full">
 			{#each categories as category, index}
 				<div
-					class="border-1 flex flex-1 flex-col items-center justify-center border border-gray-300 p-4 text-white transition-all duration-300 ease-in-out"
+					class="hover:bg-orange-700 hover:bg-opacity-25 border-1 flex flex-1 flex-col items-center justify-center border  border-gray-300 p-4 text-white transition-all duration-300 ease-in-out"
 					on:mouseenter={() => (activeCategory = category)}
 					on:mouseleave={() => (activeCategory = null)}
 				>
