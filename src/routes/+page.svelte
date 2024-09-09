@@ -14,6 +14,7 @@
     import CollectionCarousel2 from "$lib/components/CollectionCarousel2.svelte";
     import Header from "$lib/components/Header.svelte";
 	import NewCategories from "$lib/components/ui/NewCategories.svelte";
+	import Hero from "$lib/components/Hero.svelte";
 
     export let data;
 </script>
@@ -27,22 +28,26 @@
 </svelte:head>
 
 <div class="flex min-h-screen w-full flex-col">
-    <HeroCarousel/>
+    <Hero/>
+    <!-- <HeroCarousel/> -->
     <!--    <Hero/>-->
     <main class="flex flex-1 flex-col gap-4  md:gap-8">
         <div class="md:px-8">
             <CategoriesCarousel categories={data.categories}/>
         </div>̥
         <NewCategories/>
+        <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection1}" />
+        </div>
 
         <!--        <Categories/>-->
 <!--        <RoomCategories/>-->
         <div class="md:px-8">
             <InfiniteScroll/>
         </div>
+        <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection2}" />
-
+        </div>
         <InstagramGallery instagramPosts={data.instagramPosts}/>
 
 <!--        <ProductCarousel products={data.collection1.products}/>-->

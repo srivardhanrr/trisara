@@ -10,11 +10,6 @@
 	}
 
 	const categories: Category[] = [
-		// {
-		// 	name: 'Cookware',
-		// 	description: 'High-quality pots and pans for your kitchen',
-		// 	image: '/images/hero1.png'
-		// },
 		{
 			name: 'Cast Iron Series',
 			description: 'Elegant plates and bowls for your dining table',
@@ -25,11 +20,6 @@
 			description: 'Stylish utensils for a perfect dining experience',
 			image: '/images/category2.JPG'
 		},
-		// {
-		// 	name: 'Kitchen Accessories',
-		// 	description: 'Essential tools to enhance your cooking',
-		// 	image: '/images/hero1.png'
-		// }
 	];
 
 	let activeCategory: Category | null = null;
@@ -50,7 +40,7 @@
 </script>
 
 {#if !isMobile}
-	<div class="relative hidden h-[450px] w-full overflow-hidden md:block">
+	<div class="relative hidden  h-[450px] w-full overflow-hidden md:block">
 		<div
 			class="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-in-out"
 			style="background-image: url({activeCategory?.image || categories[0].image});"

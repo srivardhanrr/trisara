@@ -36,7 +36,7 @@
 	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
 </script>
 
-<section class="bg-gradient-to-r from-orange-50 to-orange-100 py-12">
+<section class="py-12">
 	<div class="container mx-auto px-4">
 		<div class="mb-6 flex items-center justify-between">
 			<h2 class="text-lg font-bold text-orange-500 sm:text-2xl">#Instagram Gallery</h2>
