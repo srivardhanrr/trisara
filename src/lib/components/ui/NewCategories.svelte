@@ -22,7 +22,6 @@
 		},
 	];
 
-	let activeCategory: Category | null = null;
 	let isMobile: boolean = false;
 
 	onMount(() => {
@@ -40,21 +39,21 @@
 </script>
 
 {#if !isMobile}
-	<div class="relative hidden  h-[450px] w-full overflow-hidden md:block">
-		<div
-			class="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-in-out"
-			style="background-image: url({activeCategory?.image || categories[0].image});"
-		></div>
-		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
-		<div class="relative z-10 flex h-full">
+	<div class="relative hidden h-[450px] w-full overflow-hidden md:block">
+		<div class="flex h-full">
 			{#each categories as category, index}
 				<div
-					class="hover:bg-orange-700 hover:bg-opacity-25 border-1 flex flex-1 flex-col items-center justify-center border  border-gray-300 p-4 text-white transition-all duration-300 ease-in-out"
-					on:mouseenter={() => (activeCategory = category)}
-					on:mouseleave={() => (activeCategory = null)}
+					class="relative flex-1 flex flex-col items-center justify-center p-4 text-white transition-all duration-300 ease-in-out overflow-hidden"
 				>
-					<h3 class="mb-2 text-center text-2xl font-bold uppercase">{category.name}</h3>
-					<p class="text-center">{category.description}</p>
+					<div
+						class="absolute inset-0 bg-cover bg-center"
+						style="background-image: url({category.image});"
+					></div>
+					<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+					<div class="relative z-10">
+						<h3 class="mb-2 text-center text-2xl font-bold uppercase">{category.name}</h3>
+						<p class="text-center">{category.description}</p>
+					</div>
 					{#if index < categories.length - 1}
 						<Separator orientation="vertical" class="absolute right-0 h-full bg-white/20" />
 					{/if}

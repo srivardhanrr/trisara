@@ -1,62 +1,80 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import CircleUser from "lucide-svelte/icons/circle-user";
     import {Share2} from 'lucide-svelte';
     import Menu from "lucide-svelte/icons/menu";
     import Search from "lucide-svelte/icons/search";
     import {Button} from "$lib/components/ui/button";
     import {Input} from "$lib/components/ui/input";
-    import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as Sheet from "$lib/components/ui/sheet";
 
     export let categories;
     export let cookbookCategories;
 
+    let productsOpen = false;
+    let cookbooksOpen = false;
+
+    function openProducts() {
+        productsOpen = true;
+    }
+
+    function closeProducts() {
+        productsOpen = false;
+    }
+
+    function openCookbooks() {
+        cookbooksOpen = true;
+    }
+
+    function closeCookbooks() {
+        cookbooksOpen = false;
+    }
 </script>
 
 <header class="bg-background z-50 sticky top-0 h-20 md:h-22 border-b md:px-8 lg:px-12">
     <div class="container mx-auto h-full flex items-center justify-between">
         <nav class="hidden md:flex items-center space-x-6 flex-1">
             <a href="/our-story" class="text-foreground hover:text-primary transition-colors">Our Story</a>
-            <DropdownMenu.Root>
-                <DropdownMenu.Trigger class="hover:text-orange-500">All Products</DropdownMenu.Trigger>
-                <DropdownMenu.Content>
-                    <DropdownMenu.Group>
-                        <DropdownMenu.Label class='text-orange-500'>Categories</DropdownMenu.Label>
-                        <DropdownMenu.Separator/>
-                        {#each categories as category}
-                            <DropdownMenu.Item><a href="/categories/{category.slug}">{category.name}</a>
-                            </DropdownMenu.Item>
-                        {/each}
-                        <DropdownMenu.Item><a href="/products">View All</a>
-                        </DropdownMenu.Item>
-                    </DropdownMenu.Group>
-                </DropdownMenu.Content>
-            </DropdownMenu.Root>
-            <DropdownMenu.Root>
-                <DropdownMenu.Trigger class="hover:text-orange-500">Cookbooks</DropdownMenu.Trigger>
-                <DropdownMenu.Content>
-                    <DropdownMenu.Group>
-                        <DropdownMenu.Label class="text-orange-500">Cookbook Categories</DropdownMenu.Label>
-                        <DropdownMenu.Separator/>
-                        {#each cookbookCategories as cookbookCategory}
-                            <DropdownMenu.Sub>
-                                <DropdownMenu.SubTrigger>{cookbookCategory.name}</DropdownMenu.SubTrigger>
-                                <DropdownMenu.SubContent>
-                                    {#each cookbookCategory.cookbooks as cookbook}
-                                        <DropdownMenu.Item class="truncate"><a
-                                                href="/cookbooks/{cookbook.slug}">{cookbook.title}</a>
-                                        </DropdownMenu.Item>
-                                    {/each}
-                                </DropdownMenu.SubContent>
-                            </DropdownMenu.Sub>
-                        {/each}
-                    </DropdownMenu.Group>
-                </DropdownMenu.Content>
-            </DropdownMenu.Root>
+            
+            <div class="dropdown" on:mouseenter={openProducts} on:mouseleave={closeProducts}>
+                <button class="dropdown-trigger">All Products</button>
+                {#if productsOpen}
+                    <div class="dropdown-content">
+                        <div class="dropdown-group">
+                            <div class="dropdown-label">Categories</div>
+                            <hr class="dropdown-separator" />
+                            {#each categories as category}
+                                <a href="/categories/{category.slug}" class="dropdown-item">{category.name}</a>
+                            {/each}
+                            <a href="/products" class="dropdown-item view-all">View All</a>
+                        </div>
+                    </div>
+                {/if}
+            </div>
+            
+            <div class="dropdown" on:mouseenter={openCookbooks} on:mouseleave={closeCookbooks}>
+                <button class="dropdown-trigger">Cookbooks</button>
+                {#if cookbooksOpen}
+                    <div class="dropdown-content">
+                        <div class="dropdown-group">
+                            <div class="dropdown-label">Cookbook Categories</div>
+                            <hr class="dropdown-separator" />
+                            {#each cookbookCategories as cookbookCategory}
+                                <div class="dropdown-sub">
+                                    <button class="dropdown-sub-trigger">{cookbookCategory.name}</button>
+                                    <div class="dropdown-sub-content">
+                                        {#each cookbookCategory.cookbooks as cookbook}
+                                            <a href="/cookbooks/{cookbook.slug}" class="dropdown-item truncate">{cookbook.title}</a>
+                                        {/each}
+                                    </div>
+                                </div>
+                            {/each}
+                        </div>
+                    </div>
+                {/if}
+            </div>
 
-            <!--            <a href="/cookbooks" class="text-foreground hover:text-primary transition-colors">Cookbooks</a>-->
-            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact
-                Us</a>
+            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
         </nav>
 
         <Sheet.Root>
@@ -83,8 +101,7 @@
 
         <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <a href="/" class="flex items-center justify-center">
-                <img src="/images/trisara-logo.png" alt="Trisara"
-                     class="h-16 w-16 rounded-full"/>
+                <img src="/images/trisara-logo.png" alt="Trisara" class="h-16 w-16 rounded-full"/>
                 <span class="sr-only">Trisara</span>
             </a>
         </div>
@@ -100,26 +117,126 @@
                     />
                 </div>
             </form>
-            <DropdownMenu.Root>
-                <DropdownMenu.Trigger asChild let:builder>
-                    <Button
-                            builders={[builder]}
-                            variant="ghost"
-                            size="icon"
-                            class="rounded-full"
-                    >
-                        <Share2 class="h-6 w-6"/>
-                        <span class="sr-only">Toggle Social Links</span>
-                    </Button>
-                </DropdownMenu.Trigger>
-                <DropdownMenu.Content align="end">
-                    <!--                    <DropdownMenu.Label>Social Media</DropdownMenu.Label>-->
-                    <!--                    <DropdownMenu.Separator/>-->
-                    <DropdownMenu.Item>Instagram</DropdownMenu.Item>
-                    <DropdownMenu.Item>Facebook</DropdownMenu.Item>
-                    <DropdownMenu.Item>X</DropdownMenu.Item>
-                </DropdownMenu.Content>
-            </DropdownMenu.Root>
+            <Button
+                variant="ghost"
+                size="icon"
+                class="rounded-full"
+            >
+                <Share2 class="h-6 w-6"/>
+                <span class="sr-only">Toggle Social Links</span>
+            </Button>
         </div>
     </div>
 </header>
+
+<style>
+    .dropdown {
+        position: relative;
+        /* display: inline-block; */
+    }
+
+    .dropdown-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        /* padding: 0.5rem 1rem; */
+        transition: color 0.3s ease;
+    }
+
+    .dropdown-trigger:hover {
+        color: #ff6b35; /* Adjust this color to match your primary color */
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        min-width: 220px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .dropdown-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown-label {
+        font-weight: 600;
+        color: #ff6b35; /* Adjust this color to match your primary color */
+        margin-bottom: 0.5rem;
+    }
+
+    .dropdown-separator {
+        border: none;
+        border-top: 1px solid #e2e8f0;
+        margin: 0.5rem 0;
+    }
+
+    .dropdown-item {
+        color: #4a5568;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        display: block;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+        color: #ff6b35; /* Adjust this color to match your primary color */
+        padding-left: 0.5rem;
+    }
+
+    .dropdown-item.view-all {
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown-sub {
+        position: relative;
+    }
+
+    .dropdown-sub-trigger {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem 0;
+        color: #4a5568;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .dropdown-sub-trigger:hover {
+        color: #ff6b35; /* Adjust this color to match your primary color */
+        padding-left: 0.5rem;
+    }
+
+    .dropdown-sub-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #ffffff;
+        min-width: 200px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .dropdown-sub:hover .dropdown-sub-content {
+        display: block;
+    }
+</style>

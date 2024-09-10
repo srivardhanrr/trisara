@@ -40,11 +40,11 @@
         <CollectionCarousel collection="{data.collection1}" />
         </div>
 
-        <!--        <Categories/>-->
+               <!-- <Categories/>-->
 <!--        <RoomCategories/>-->
-        <div class="md:px-8">
+        <!-- <div class="md:px-8">
             <InfiniteScroll/>
-        </div>
+        </div> -->
         <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection2}" />
         </div>

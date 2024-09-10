@@ -202,7 +202,7 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
-		<div class="mt-8">
+		<!-- <div class="mt-8">
 			<Card.Root class="bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
@@ -248,7 +248,7 @@
 					</Accordion.Item>
 				</Accordion.Root>
 			</Card.Root>
-		</div>
+		</div> -->
 		<div class="mt-8">
 			<Card.Root class="rounded-lg border bg-orange-50 border-orange-200 shadow-sm">
 				<Accordion.Root value="item-1">
@@ -257,7 +257,7 @@
 							<Accordion.Trigger class="w-full">
 								<div class="flex items-center justify-between text-orange-500">
 									<h2 class="text-lg font-semibold">PRODUCT SPECIFICATION</h2>
-									<ChevronDown class="h-5 w-5 transition-transform duration-200" />
+									<!-- <ChevronDown class="h-5 w-5 transition-transform duration-200" /> -->
 								</div>
 							</Accordion.Trigger>
 						</Card.Title>
@@ -298,7 +298,7 @@
 									<b>Address</b>: No. 45, Embassy Square, 4th Main Road, Chamarajpet,
 									Bangalore-560018
 								</li>
-								<li><b>Contact</b>: care.arvindindustries@gmail.com | +91-7349061709</li>
+								<li><b>Contact</b>: +91-7349061709</li>
 							</ul>
 						</Accordion.Content>
 					</Accordion.Item>
