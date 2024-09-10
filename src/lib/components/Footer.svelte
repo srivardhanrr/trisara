@@ -1,6 +1,6 @@
 <footer class="bg-orange-50 rounded-lg shadow m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center justify-center">
+        <div class="flex items-center justify-center">
             <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <!-- <img src="/images/trisara-logo.png" class="h-8" alt="Trisara Logo" /> -->
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">trisara</span>

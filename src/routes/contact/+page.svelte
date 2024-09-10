@@ -9,7 +9,7 @@
 	<title>Trisara | Contact Us</title>
 	<meta
 		name="description"
-		content="{product.description}"
+		content="Trisara | Contact Us"
 	/>
 </svelte:head>
 
