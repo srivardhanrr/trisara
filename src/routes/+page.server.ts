@@ -4,10 +4,10 @@ import {HOME_COLLECTION_1, HOME_COLLECTION_2} from "$env/static/private";
 // it so that it gets served as a static asset in production
 export const prerender = false;
 
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { api } from '$lib/api';
 
-export const load: PageLoad = async () => {
+export const load: PageServerLoad = async () => {
     const [categories, products, collections, collection1, collection2, instagramPosts] = await Promise.all([
         api.getCategories(),
         api.getProducts(),
