@@ -1,9 +1,9 @@
 export const prerender = false;
 
-import type { LayoutServerLoad } from './$types';
+import type { LayoutLoad } from './$types';
 import { api } from '$lib/api';
 
-export const load: LayoutServerLoad = async () => {
+export const load: LayoutLoad = async () => {
     const [categories, cookbookCategories] = await Promise.all([
         api.getCategories(),
         api.getCookbookCategories(),

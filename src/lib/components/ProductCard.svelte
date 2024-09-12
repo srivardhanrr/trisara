@@ -11,7 +11,9 @@
   <div class="relative overflow-hidden">
     {#if product.images.length > 0}
     <img loading="lazy" src="{product.images[0].image}" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />
+    {#if product.images.length > 1}
     <img loading="lazy" src="{product.images[1].image}" alt="Product Hover" class="aspect-square absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100" />
+    {/if}
     {:else}
     <img loading="lazy" src="https://placehold.co/500x500" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />
     {/if}
