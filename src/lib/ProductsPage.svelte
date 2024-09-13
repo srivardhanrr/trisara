@@ -58,8 +58,12 @@
                         {/if}
                     </div>
                     <div class="p-2">
+                        {#if product.name}
                         <h3 class="text-xs md:text-sm font-semibold truncate  ">{product.name}</h3>
+                        {/if}
+                        {#if product.material}
                         <p class="text-sm text-gray-600 truncate">{product.material}</p>
+                        {/if}
                     </div>
                 </a>
             </div>
