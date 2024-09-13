@@ -12,6 +12,8 @@ async function fetchAPI(endpoint: string) {
 export const api = {
     getCategories: () => fetchAPI('/categories/'),
     getCategory: (slug: string) => fetchAPI(`/categories/${slug}/`),
+    getSeries: () => fetchAPI('/series/'),
+    getSerie: (slug: string) => fetchAPI(`/series/${slug}/`),
     getProducts: () => fetchAPI('/products/'),
     getProduct: (slug: string) => fetchAPI(`/products/${slug}/`),
     getCollections: () => fetchAPI('/collections/'),
@@ -21,4 +23,6 @@ export const api = {
     getCookbook: (slug: string) => fetchAPI(`/cookbooks/${slug}/`),
     getCookbookCategories: () => fetchAPI('/cookbook-categories/'),
     getCookbookCategory: (slug: string) => fetchAPI(`/cookbook-categories/${slug}/`),
+    getBlogPosts: () => fetchAPI('/blogs/'),
+    getBlogPost: (slug: string) => fetchAPI(`/blogs/${slug}/`),
 };

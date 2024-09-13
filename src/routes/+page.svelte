@@ -35,7 +35,7 @@
         <div class="md:px-8">
             <CategoriesCarousel categories={data.categories}/>
         </div>̥
-        <NewCategories/>
+        <NewCategories series={data.series} />
         <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection1}" />
         </div>
@@ -55,6 +55,6 @@
 <!--                <Newsletter/>-->
 <!--        <FeaturedSection products="{data.collection1.products}"/>-->
         <!--        <RecentPosts/>-->
-        <RecentPostNew/>
+        <RecentPostNew posts={data.blogPosts}/>
     </main>
 </div>

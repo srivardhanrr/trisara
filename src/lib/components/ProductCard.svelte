@@ -20,7 +20,7 @@
   </div>
   <div class="p-2 bg-white">
     <h3 class="text-sm md:text-sm font-semibold truncate  ">{product.name}</h3>
-    <p class="text-sm text-gray-600">{product.material}</p>
+    <p class="text-sm text-gray-600 truncate">{product.material}</p>
   </div>
     </a>
 </div>
