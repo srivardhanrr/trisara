@@ -118,9 +118,10 @@
 		<button
 			class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
 		>
-			<span class="items-center text-center align-text-top"
+			<span class="text-center align-text-top"
 				>Buy On Amazon</span
 			>
+			<!--            <img src="/images/amazon.png" class="h-5" alt="">-->
 		</button>
 		<div class="mt-8">
 			<Card.Root class="bg-orange-50">

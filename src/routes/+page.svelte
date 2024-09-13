@@ -45,9 +45,9 @@
         <!-- <div class="md:px-8">
             <InfiniteScroll/>
         </div> -->
-        <div class="bg-orange-100">
+        <!-- <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection2}" />
-        </div>
+        </div> -->
         <InstagramGallery instagramPosts={data.instagramPosts}/>
 
 <!--        <ProductCarousel products={data.collection1.products}/>-->
