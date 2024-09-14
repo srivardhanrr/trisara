@@ -58,7 +58,7 @@
 					{:else}
 						<div class="absolute inset-0 bg-black bg-opacity-50"></div>
 					{/if}
-					<div class="absolute inset-0 bg-black hover:bg-orange-600 hover:opacity-30 bg-opacity-50"></div>
+					<div class="absolute inset-0 bg-black hover:bg-orange-900 hover:opacity-30 bg-opacity-50"></div>
 					<div class="relative z-10">
 						<h3 class="mb-2 text-center text-2xl font-bold uppercase">{category.name}</h3>
 						<p class="text-center">{category.description}</p>
