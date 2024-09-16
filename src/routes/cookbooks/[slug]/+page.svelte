@@ -44,7 +44,11 @@
     <h1 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">{cookbook.title}</h1>
 
     <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
-      <img src={cookbook.image} alt={cookbook.title} class="w-full h-80 object-cover">
+      {#if cookbook.image}
+        <img src={cookbook.image} alt={cookbook.title} class="w-full h-80 object-cover">
+      {:else}
+        <img src="https://placehold.co/600x400" alt="Default Cookbook Image" class="w-full h-80 object-cover">
+      {/if}
       <div class="p-6">
         <p class="text-lg text-gray-700 mb-4">{cookbook.description}</p>
       </div>

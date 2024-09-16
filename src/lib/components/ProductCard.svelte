@@ -1,34 +1,63 @@
 <script lang="ts">
+  export let product;
 
+  let isHovered = false;
 
-    export let product;
+  // Assuming these properties exist in your product object
+  // If not, you'll need to add logic to determine when to show these badges
+  $: isNew = product.isNew;
+  $: isBestSeller = product.isBestSeller;
 </script>
 
-
-
-<div class="relative w-full max-w-72 overflow-hidden my-1 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
-    <a href="/products/{product.slug}">
-  <div class="relative overflow-hidden">
-    {#if product.images.length > 1}
-    <img loading="lazy" src="{product.images[1].image}" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />
-    {:else}
-    <img loading="lazy" src="https://placehold.co/500x500" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />
-    {/if}
-    {#if product.images.length > 0}
-    <img loading="lazy" src="{product.images[0].image}" alt="Product Hover" class="aspect-square absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100" />
-    {:else}
-    <img loading="lazy" src="https://placehold.co/500x500" alt="Product" class="aspect-square w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110" />
-    {/if}
-  </div>
-  <div class="p-2 bg-white">
-    <h3 class="text-sm md:text-sm font-semibold truncate  ">{product.name}</h3>
-    <p class="text-sm text-gray-600 truncate">{product.material}</p>
-  </div>
-    </a>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div 
+  class="group relative w-full max-w-72 overflow-hidden my-4 rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
+  on:mouseenter={() => isHovered = true}
+  on:mouseleave={() => isHovered = false}
+>
+  <a href="/products/{product.slug}" class="block">
+    <div class="relative aspect-square overflow-hidden bg-gray-100">
+      {#if product.images.length > 0}
+        <img 
+          loading="lazy" 
+          src="{product.images[0].image}" 
+          alt="{product.name}" 
+          class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+        />
+        {#if product.images.length > 1}
+          <img 
+            loading="lazy" 
+            src="{product.images[1].image}" 
+            alt="{product.name} - Alternate View" 
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+        {/if}
+      {:else}
+        <div class="w-full h-full flex items-center justify-center text-gray-400">
+          No Image Available
+        </div>
+      {/if}
+      
+      <!-- Badges -->
+      <div class="absolute top-3 left-3 flex flex-col gap-2">
+        {#if product.new_badge}
+          <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-md">New</span>
+        {/if}
+        {#if product.best_seller}
+          <span class="bg-black text-white text-xs font-bold px-2 py-1 rounded-md">Best Seller</span>
+        {/if}
+      </div>
+    </div>
+    <div class="p-2 md:p-4 bg-white">
+      <h4 class="text-sm font-medium text-gray-900 truncate">{product.name}</h4>
+      <div class="mt-2 flex items-center justify-between">
+        <!-- <p class="text-sm font-semibold text-gray-900">${product.price}</p> -->
+        <!-- <div 
+          class="text-xs font-medium hover:bg-orange-500 text-black bg-brand-primary px-2 py-1 rounded transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100"
+        >
+          View Details
+        </div> -->
+      </div>
+    </div>
+  </a>
 </div>
-
-<style>
-  .hover\:opacity-100:hover {
-    opacity: 1;
-  }
-</style>

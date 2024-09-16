@@ -6,7 +6,7 @@
 	import * as Carousel from '$lib/components/ui/carousel';
 	import { Separator } from '$lib/components/ui/separator';
 	import CollectionCarousel from '$lib/components/CollectionCarousel.svelte';
-    import { ChevronDown } from 'lucide-svelte';
+	import { ChevronDown } from 'lucide-svelte';
 
 	export let data;
 
@@ -60,7 +60,7 @@
 
 <div
 	bind:this={ref}
-	class="product-container flex flex-col gap-8 p-2 transition ease-in-out sm:p-6 md:flex-row"
+	class="product-container flex flex-col mb-8 gap-8 p-2 transition ease-in-out sm:p-6 md:flex-row"
 >
 	<div
 		class:sticky={!isMobile}
@@ -101,7 +101,7 @@
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
-					<Breadcrumb.Page class="truncate text-orange-600">{product.name}</Breadcrumb.Page>
+					<Breadcrumb.Page class="truncate overflow-hidden text-orange-600">{product.name}</Breadcrumb.Page>
 				</Breadcrumb.Item>
 			</Breadcrumb.List>
 		</Breadcrumb.Root>
@@ -109,22 +109,52 @@
 		<p class="mb-4 mt-5 text-gray-600 lg:mt-10">{product.description}</p>
 
 		<!-- Star rating placeholder -->
-		<!--        <div class="flex mb-2">-->
-		<!--            {#each Array(5) as _, i}-->
-		<!--                <span class={i < 4 ? "text-yellow-400" : "text-gray-300"}>★</span>-->
-		<!--            {/each}-->
-		<!--        </div>-->
+		<div class="mb-4 flex">
+			{#each Array(5) as _, i}
+				<span class={i < 4 ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+			{/each}
+		</div>
 
-		<button
-			class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
-		>
-			<span class="text-center align-text-top"
-				>Buy On Amazon</span
-			>
-			<!--            <img src="/images/amazon.png" class="h-5" alt="">-->
-		</button>
+		{#if product.amazon_buy_link}
+			<a href={product.amazon_buy_link} target="_blank">
+				<button
+					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
+				>
+					<span class="text-center align-text-top">Buy On Amazon</span>
+				</button>
+			</a>
+		{/if}
+
+		{#if product.flipkart_buy_link}
+			<a href={product.flipkart_buy_link} target="_blank">
+				<button
+					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
+				>
+					<span class="text-center align-text-top">Buy On Flipkart</span>
+				</button>
+			</a>
+		{/if}
+		{#if product.zepto_buy_link}
+			<a href={product.zepto_buy_link} target="_blank">
+				<button
+					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
+				>
+					<span class="text-center align-text-top">Buy On Zepto</span>
+				</button>
+			</a>
+		{/if}
+		{#if product.blinkIt_buy_link}
+			<a href={product.blinkIt_buy_link} target="_blank">
+				<button
+					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
+				>
+					<span class="text-center align-text-top">Buy On BlinkIt</span>
+				</button>
+			</a>
+		{/if}
+
 		<div class="mt-8">
-			<Card.Root class="bg-orange-50">
+			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
 						<Card.Title class="mx-5 text-xl">
@@ -146,7 +176,7 @@
 		</div>
 
 		<div class="mt-8">
-			<Card.Root class="bg-orange-50">
+			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
 						<Card.Title class="mx-5 text-xl">
@@ -166,13 +196,7 @@
 			<Card.Root class="bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
-						<Card.Title class="mx-5 text-xl">
-							<!--                            <Accordion.Trigger>-->
-							<!--                                <h2 class="text-orange-500 text-lg">-->
-							<!--                                    PRODUCT DESCRIPTION-->
-							<!--                                </h2>-->
-							<!--                            </Accordion.Trigger>-->
-						</Card.Title>
+						<Card.Title class="mx-5 text-xl"></Card.Title>
 
 						<Accordion.Content class="mx-4 mt-4">
 							<div class="grid grid-cols-4 gap-4 md:flex md:justify-center md:space-x-4">
@@ -202,74 +226,23 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
-		<!-- <div class="mt-8">
-			<Card.Root class="bg-orange-50">
+		<div class="mt-8">
+			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
 						<Card.Title class="mx-5 text-xl">
 							<Accordion.Trigger>
-								<h2 class="text-lg text-orange-500">PRODUCT SPECIFICATION</h2>
+								<h2 class="text-lg text-orange-500">PRODUCT DESCRIPTION</h2>
 							</Accordion.Trigger>
 						</Card.Title>
-
-						<Accordion.Content>
-							<div class="mx-4 space-y-4">
-								<div class="flex justify-between">
-									<span class=" font-semibold">Dimensions</span>
-									<span>{product.dimensions}</span>
-								</div>
-								<Separator class="bg-gray-700" />
-								<div class="flex justify-between">
-									<span class=" font-semibold">Capacity</span>
-									<span>{product.capacity}</span>
-								</div>
-								<Separator class="bg-gray-700" />
-								<div class="flex justify-between">
-									<span class=" font-semibold">Material</span>
-									<span>{product.material}</span>
-								</div>
-								<Separator class="bg-gray-700" />
-								<div class="flex justify-between">
-									<span class=" font-semibold">Weight</span>
-									<span>{product.weight}</span>
-								</div>
-								<Separator class="bg-gray-700" />
-								<div class="flex justify-between">
-									<span class=" font-semibold">Suitable Heat Sources</span>
-									<span>{product.suitable_heat_sources}</span>
-								</div>
-								<Separator class="bg-gray-700" />
-								<div class="flex justify-between">
-									<span class=" font-semibold">Made In</span>
-									<span>{product.made_in}</span>
-								</div>
-							</div>
-						</Accordion.Content>
-					</Accordion.Item>
-				</Accordion.Root>
-			</Card.Root>
-		</div> -->
-		<div class="mt-8">
-			<Card.Root class="rounded-lg border bg-orange-50 border-orange-200 shadow-sm">
-				<Accordion.Root value="item-1">
-					<Accordion.Item value="item-1">
-						<Card.Title class="p-4">
-							<Accordion.Trigger class="w-full">
-								<div class="flex items-center justify-between text-orange-500">
-									<h2 class="text-lg font-semibold">PRODUCT SPECIFICATION</h2>
-									<!-- <ChevronDown class="h-5 w-5 transition-transform duration-200" /> -->
-								</div>
-							</Accordion.Trigger>
-						</Card.Title>
-
 						<Accordion.Content>
 							<div class="px-4 pb-4">
 								<table class="w-full">
 									<tbody>
-										{#each [{ label: 'Dimensions', value: product.dimensions }, { label: 'Capacity', value: product.capacity }, { label: 'Material', value: product.material }, { label: 'Weight', value: product.weight }, { label: 'Suitable Heat Sources', value: product.suitable_heat_sources }, { label: 'Made In', value: product.made_in }] as { label, value }, i}
+										{#each product.specifications as specification}
 											<tr class="border-b border-gray-200 last:border-b-0">
-												<td class="py-3 font-semibold text-gray-700">{label}</td>
-												<td class="py-3 text-right text-gray-600">{value}</td>
+												<td class="py-3 font-semibold text-gray-700">{specification.label}</td>
+												<td class="py-3 text-right text-gray-600">{specification.value}</td>
 											</tr>
 										{/each}
 									</tbody>
@@ -281,8 +254,32 @@
 			</Card.Root>
 		</div>
 
+		{#if product.instructions > 0}
+			<div class="mt-8">
+				<Card.Root class="border-orange-200 bg-orange-50">
+					<Accordion.Root value="item-1">
+						<Accordion.Item value="item-1">
+							<Card.Title class="mx-5 text-xl">
+								<Accordion.Trigger>
+									<h2 class="text-lg text-orange-500">USAGE INSTRUCTIONS</h2>
+								</Accordion.Trigger>
+							</Card.Title>
+
+							<Accordion.Content>
+								<ul class="mx-4 list-disc space-y-2 pl-5">
+									{#each product.instructions as instruction}
+										<li>{instruction.instruction}</li>
+									{/each}
+								</ul>
+							</Accordion.Content>
+						</Accordion.Item>
+					</Accordion.Root>
+				</Card.Root>
+			</div>
+		{/if}
+
 		<div class="mt-8">
-			<Card.Root class="bg-orange-50">
+			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
 						<Card.Title class="mx-5 text-xl">

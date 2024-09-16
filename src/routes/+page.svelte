@@ -32,13 +32,11 @@
     <!-- <HeroCarousel/> -->
     <!--    <Hero/>-->
     <main class="flex flex-1 flex-col gap-4  md:gap-8">
-        <div class="md:px-8">
+        <div class="md:px-8 md:pt-6">
             <CategoriesCarousel categories={data.categories}/>
         </div>̥
         <NewCategories series={data.series} />
-        <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection1}" />
-        </div>
 
                <!-- <Categories/>-->
 <!--        <RoomCategories/>-->

@@ -4,12 +4,7 @@
   
     export let data;
     let post = data.post;
-
-        // Function to process content and fix image paths
-        function processContent(content: string) {
-        return content.replace(/src="\/media\//g, 'src="http://localhost:8000/media/');
-    }
-
+    let updatedContent = data.updatedContent;
   </script>
   
   <svelte:head>
@@ -35,7 +30,7 @@
         {/if}
   
           <div class="prose prose-lg max-w-none font-inter">
-            {@html processContent(post.content)}
+            {@html updatedContent}
           </div>
         </article>
       {:else}
