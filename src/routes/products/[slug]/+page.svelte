@@ -152,7 +152,8 @@
 				</button>
 			</a>
 		{/if}
-
+		
+		{#if product.features > 0}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -174,7 +175,8 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
-
+		{/if}
+		{#if product.description}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -192,6 +194,7 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
+		{/if}
 		<div class="mt-8">
 			<Card.Root class="bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -226,13 +229,14 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
+		{#if product.specifications > 0}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
 					<Accordion.Item value="item-1">
 						<Card.Title class="mx-5 text-xl">
 							<Accordion.Trigger>
-								<h2 class="text-lg text-orange-500">PRODUCT DESCRIPTION</h2>
+								<h2 class="text-lg text-orange-500">PRODUCT SPECIFICATIONS</h2>
 							</Accordion.Trigger>
 						</Card.Title>
 						<Accordion.Content>
@@ -252,7 +256,8 @@
 					</Accordion.Item>
 				</Accordion.Root>
 			</Card.Root>
-		</div>
+			</div>
+		{/if}
 
 		{#if product.instructions > 0}
 			<div class="mt-8">
