@@ -11,7 +11,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
-  class="group relative w-full max-w-72 overflow-hidden my-4 rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
+  class="group relative w-full max-w-72 shadow-xl overflow-hidden my-4 rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
   on:mouseenter={() => isHovered = true}
   on:mouseleave={() => isHovered = false}
 >
@@ -54,15 +54,25 @@
       </div>
     </div>
     <div class="p-2 md:p-4 bg-white">
-      <h4 class="text-sm font-medium text-gray-900 truncate">{product.name}</h4>
+      <h4 class="text-sm font-medium product-title text-gray-900 truncate">{product.name}</h4>
       <div class="mt-2 flex items-center justify-between">
-        <!-- <p class="text-sm font-semibold text-gray-900">${product.price}</p> -->
-        <!-- <div 
-          class="text-xs font-medium hover:bg-orange-500 text-black bg-brand-primary px-2 py-1 rounded transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100"
-        >
-          View Details
-        </div> -->
       </div>
     </div>
   </a>
 </div>
+
+
+<style>
+  .product-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #111827; /* text-gray-900 */
+    line-height: 1.25rem; /* Adjust as needed */
+    max-height: 2.5rem; /* 2 lines * 1.25rem line-height */
+  }
+</style>
