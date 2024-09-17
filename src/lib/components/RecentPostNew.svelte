@@ -41,7 +41,7 @@
 </script>
 
 {#if posts.length > 0}
-<section class="py-12 bg-white">
+<section class=" bg-white">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-8">
             <h2 class="text-3xl font-bold">Recent Posts</h2>

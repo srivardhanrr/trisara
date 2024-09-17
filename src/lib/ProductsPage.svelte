@@ -39,8 +39,8 @@
 
 	<div class="grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
 		{#each products as product}
-			<!--            <ProductCard product={product}/>-->
-			<div
+            <ProductCard product={product} />
+			<!-- <div
 				class="relative my-1 w-full max-w-72 overflow-hidden rounded-lg shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl"
 			>
 				<a href="/products/{product.slug}">
@@ -85,7 +85,7 @@
 						{/if}
 					</div>
 				</a>
-			</div>
+			</div> -->
 		{/each}
 	</div>
 </main>

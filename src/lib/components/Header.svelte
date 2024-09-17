@@ -61,7 +61,9 @@
                             <hr class="dropdown-separator" />
                             {#each cookbookCategories as cookbookCategory}
                                 <div class="dropdown-sub">
+                                <a href="cookbooks">
                                     <button class="dropdown-sub-trigger">{cookbookCategory.name}</button>
+                                </a>
                                     <div class="dropdown-sub-content">
                                         {#each cookbookCategory.cookbooks as cookbook}
                                             <a href="/cookbooks/{cookbook.slug}" class="dropdown-item truncate">{cookbook.title}</a>
@@ -69,6 +71,7 @@
                                     </div>
                                 </div>
                             {/each}
+                            <a href="/cookbooks" class="dropdown-item view-all">View All</a>
                         </div>
                     </div>
                 {/if}

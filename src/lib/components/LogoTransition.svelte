@@ -8,7 +8,7 @@
 
   onNavigate(() => {
     transitioning = true;
-    setTimeout(() => showLogo = true, 1000);
+    setTimeout(() => showLogo = true, 500);
 
     return new Promise(resolve => {
       setTimeout(() => {
@@ -19,7 +19,7 @@
           exitTransition = false;
           resolve();
         }, 300);
-      }, 2500);
+      }, 1500);
     });
   });
 </script>
