@@ -1,58 +1,58 @@
 <script lang="ts">
-    import FeaturedProducts from "$lib/components/FeaturedProducts.svelte";
-    import Newsletter from "$lib/components/Newsletter.svelte";
-    import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
-    import CategoriesCarousel from "$lib/components/CategoriesCarousel.svelte";
-    import HeroCarousel from "$lib/components/HeroCarousel.svelte";
-    import RoomCategories from "$lib/components/RoomCategories.svelte";
-    import InstagramGallery from "$lib/components/InstagramGallery.svelte";
-    import ProductCarousel from "$lib/components/ProductCarousel.svelte";
-    import RecentPosts from "$lib/components/RecentPosts.svelte";
-    import RecentPostNew from "$lib/components/RecentPostNew.svelte";
-    import FeaturedSection from "$lib/components/FeaturedSection.svelte";
-    import CollectionCarousel from "$lib/components/CollectionCarousel.svelte";
-    import CollectionCarousel2 from "$lib/components/CollectionCarousel2.svelte";
-    import Header from "$lib/components/Header.svelte";
-	import NewCategories from "$lib/components/ui/NewCategories.svelte";
-	import Hero from "$lib/components/Hero.svelte";
+	import FeaturedProducts from '$lib/components/FeaturedProducts.svelte';
+	import Newsletter from '$lib/components/Newsletter.svelte';
+	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
+	import CategoriesCarousel from '$lib/components/CategoriesCarousel.svelte';
+	import HeroCarousel from '$lib/components/HeroCarousel.svelte';
+	import RoomCategories from '$lib/components/RoomCategories.svelte';
+	import InstagramGallery from '$lib/components/InstagramGallery.svelte';
+	import ProductCarousel from '$lib/components/ProductCarousel.svelte';
+	import RecentPosts from '$lib/components/RecentPosts.svelte';
+	import RecentPostNew from '$lib/components/RecentPostNew.svelte';
+	import FeaturedSection from '$lib/components/FeaturedSection.svelte';
+	import CollectionCarousel from '$lib/components/CollectionCarousel.svelte';
+	import CollectionCarousel2 from '$lib/components/CollectionCarousel2.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import NewCategories from '$lib/components/ui/NewCategories.svelte';
+	import Hero from '$lib/components/Hero.svelte';
 
-    export let data;
+	export let data;
 </script>
 
 <svelte:head>
 	<title>Trisara Homeware | Home</title>
-	<meta
-		name="description"
-		content="Trisara Homeware | Home"
-	/>
+	<meta name="description" content="Trisara Homeware | Home" />
 </svelte:head>
 
 <div class="flex min-h-screen w-full flex-col">
-    <Hero/>
-    <!-- <HeroCarousel/> -->
-    <!--    <Hero/>-->
-    <main class="flex flex-1 flex-col gap-4  md:gap-8">
-        <div class="md:px-8 md:pt-6">
-            <CategoriesCarousel categories={data.categories}/>
-        </div>̥
-        <NewCategories series={data.series} />
-        <CollectionCarousel collection="{data.collection1}" />
+	<Hero />
+	<!-- <HeroCarousel/> -->
+	<!--    <Hero/>-->
+	<main class="flex flex-1 flex-col gap-4 md:gap-8">
+		<div class="md:px-8 md:pt-6">
+			<CategoriesCarousel categories={data.categories} />
+		</div>
+		̥
+		<div class="md:mb-10">
+			<NewCategories series={data.series} />
+		</div>
+		<CollectionCarousel collection={data.collection1} />
 
-               <!-- <Categories/>-->
-<!--        <RoomCategories/>-->
-        <!-- <div class="md:px-8">
+		<!-- <Categories/>-->
+		<!--        <RoomCategories/>-->
+		<!-- <div class="md:px-8">
             <InfiniteScroll/>
         </div> -->
-        <!-- <div class="bg-orange-100">
+		<!-- <div class="bg-orange-100">
         <CollectionCarousel collection="{data.collection2}" />
         </div> -->
-        <InstagramGallery instagramPosts={data.instagramPosts}/>
+		<InstagramGallery instagramPosts={data.instagramPosts} />
 
-<!--        <ProductCarousel products={data.collection1.products}/>-->
-<!--        <CollectionCarousel2 />-->
-<!--                <Newsletter/>-->
-<!--        <FeaturedSection products="{data.collection1.products}"/>-->
-        <!--        <RecentPosts/>-->
-        <RecentPostNew posts={data.blogPosts}/>
-    </main>
+		<!--        <ProductCarousel products={data.collection1.products}/>-->
+		<!--        <CollectionCarousel2 />-->
+		<!--                <Newsletter/>-->
+		<!--        <FeaturedSection products="{data.collection1.products}"/>-->
+		<!--        <RecentPosts/>-->
+		<RecentPostNew posts={data.blogPosts} />
+	</main>
 </div>

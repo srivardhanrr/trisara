@@ -45,12 +45,12 @@
 			>
 				<a href="/products/{product.slug}">
 					<div class="relative overflow-hidden">
-						{#if product.images[0].image}
+                        {#if product.images[0].image}
 							<img
 								loading="lazy"
 								src={product.images[0].image}
-								alt="Product"
-								class="aspect-square h-full w-full transform object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+								alt="Product Hover"
+								class="absolute inset-0 aspect-square h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
 							/>
 						{:else}
 							<img
@@ -64,8 +64,8 @@
 							<img
 								loading="lazy"
 								src={product.images[1].image}
-								alt="Product Hover"
-								class="absolute inset-0 aspect-square h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-in-out hover:opacity-100"
+								alt="Product"
+								class="aspect-square h-full w-full transform object-cover transition-transform duration-500 ease-in-out hover:scale-110"
 							/>
 						{:else}
 							<img
