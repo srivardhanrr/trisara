@@ -53,7 +53,7 @@
         {/if}
       </div>
     </div>
-    <div class="p-2 md:p-4 bg-white">
+    <div class="p-2 md:p-4 bg-orange-50">
       <h4 class="text-sm font-medium product-title text-gray-900 truncate">{product.name}</h4>
       <div class="mt-2 flex items-center justify-between">
       </div>

@@ -34,6 +34,7 @@
 <header class="bg-background z-50 sticky top-0 h-20 md:h-22 border-b md:px-8 lg:px-12">
     <div class="container mx-auto h-full flex items-center justify-between">
         <nav class="hidden md:flex items-center space-x-6 flex-1">
+            <a href="/" class="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="/our-story" class="text-foreground hover:text-primary transition-colors">Our Story</a>
             
             <div class="dropdown" on:mouseenter={openProducts} on:mouseleave={closeProducts}>

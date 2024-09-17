@@ -8,7 +8,7 @@
 
 <div class="bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 text-gray-800 mb-8">Our Story</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-8">Our Story</h1>
 
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src="/images/hero1.png" alt="Trisara Kitchenware"
@@ -54,15 +54,15 @@
                     been continuously improved to better meet their needs, with a strong focus on value-for-money.
                 </p>
 
-                <div class="bg-gray-100 p-6 rounded-lg my-12">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-4">Building Bonds with Our Customers</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        At Trisara, we are more than just a brand; we are an integral part of your kitchen, your daily
+                
+                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Building Bonds with Our Customers</h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    At Trisara, we are more than just a brand; we are an integral part of your kitchen, your daily
                         routine, and your home. We understand the importance of reliable and budget-friendly kitchenware
                         in your everyday life, and we are proud to be the choice of so many new movers, students, and
                         families across India.
-                    </p>
-                </div>
+                </p>
+
 
                 <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Looking Ahead</h2>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
