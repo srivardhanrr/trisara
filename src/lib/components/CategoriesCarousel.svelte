@@ -15,7 +15,7 @@
         <Carousel.Root
                 opts={{align: "start"}}
                 plugins={[plugin]}
-                class="w-full"
+                class="w-full justify-center"
                 on:mousenter={plugin.stop}
                 on:mouseleave={plugin.reset}>
             <Carousel.Content>
@@ -33,7 +33,6 @@
                     </Carousel.Item>
                 {/each}
             </Carousel.Content>
-
             <Carousel.Previous class="ml-12 overflow-hidden"/>
             <Carousel.Next class="mr-12 overflow-hidden"/>
         </Carousel.Root>
