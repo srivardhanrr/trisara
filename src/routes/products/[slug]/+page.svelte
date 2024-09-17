@@ -70,7 +70,7 @@
 		<img
 			src={product.images[currentImageIndex].image}
 			alt={product.name}
-			class="object-fit flex h-fit w-full items-center md:px-8"
+			class="object-fit aspect-square flex h-fit w-full items-center md:px-8"
 		/>
 
 		<!-- Thumbnail images -->
