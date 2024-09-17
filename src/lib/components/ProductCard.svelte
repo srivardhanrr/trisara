@@ -17,26 +17,31 @@
 >
   <a href="/products/{product.slug}" class="block">
     <div class="relative aspect-square overflow-hidden bg-gray-100">
-      {#if product.images.length > 0}
+      {#if product.images.length > 1}
         <img 
           loading="lazy" 
-          src="{product.images[0].image}" 
+          src="{product.images[1].image}" 
           alt="{product.name}" 
           class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
-        {#if product.images.length > 1}
-          <img 
-            loading="lazy" 
-            src="{product.images[1].image}" 
-            alt="{product.name} - Alternate View" 
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
-          />
-        {/if}
       {:else}
         <div class="w-full h-full flex items-center justify-center text-gray-400">
           No Image Available
         </div>
       {/if}
+      {#if product.images.length > 0}
+          <img 
+            loading="lazy" 
+            src="{product.images[0].image}" 
+            alt="{product.name} - Alternate View" 
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+          />
+          {:else}
+        <div class="w-full h-full flex items-center justify-center text-gray-400">
+          No Image Available
+        </div>
+        {/if}
+
       
       <!-- Badges -->
       <div class="absolute top-3 left-3 flex flex-col gap-2">
