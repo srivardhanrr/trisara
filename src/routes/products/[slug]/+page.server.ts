@@ -1,5 +1,7 @@
-
 import type { PageServerLoad } from './$types';
+
+export const prerender = false;
+
 import { api } from '$lib/api';
 import { HOME_COLLECTION_1 } from '$env/static/private';
 
