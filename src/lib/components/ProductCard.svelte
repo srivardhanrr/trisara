@@ -56,7 +56,7 @@
     <div class="p-2 md:pt-4 md:px-4 md:pb-2 bg-orange-50">
       <h4 class="text-sm font-medium text-gray-900 truncate">{product.name}</h4>
 
-      <p class="text-sm bg-orange-50 text-gray-700">{product.set}</p>
+      <p class="text-sm bg-orange-50 text-gray-700 truncate">{product.set}</p>
       <!-- </div> -->
     </div>
   </a>
