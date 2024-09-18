@@ -33,7 +33,7 @@
 		<div class="pt-20 hidden md:block">
 			<CategoriesOpacity categories={data.categories} />
 		</div>
-		<div class="md:hidden">
+		<div class="md:px-8">
 			<CategoriesCarousel categories={data.categories} />
 		</div>
 		<CollectionCarousel collection={data.collection1} />

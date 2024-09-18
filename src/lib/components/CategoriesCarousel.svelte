@@ -19,7 +19,7 @@
                 on:mouseleave={plugin.reset}>
             <Carousel.Content class="flex justify-center">
                 {#each categories as category}
-                    <Carousel.Item class="lg:basis-1/5 md:basis-1/4 sm:basis-1/3 basis-1/2 flex-grow-0 flex-shrink-0">
+                    <Carousel.Item class="lg:basis-1/4 md:basis-1/4 sm:basis-1/3 basis-1/2 flex-grow-0 flex-shrink-0">
                         <a href="/categories/{category.slug}">
                             <div class="relative w-full overflow-hidden">
                                 <img class="aspect-square top-0 left-0 w-full h-full object-cover" src="{category.image}"
