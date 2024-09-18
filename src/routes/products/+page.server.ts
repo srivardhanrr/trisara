@@ -6,4 +6,3 @@ export const load: PageServerLoad = async () => {
   const products = await api.getProducts();
   return { products };
 };
-

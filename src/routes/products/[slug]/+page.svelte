@@ -133,7 +133,7 @@
 			</a>
 		{/if} -->
 		
-		{#if product.features > 0}
+		{#if product.features.length > 0}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -156,6 +156,7 @@
 			</Card.Root>
 		</div>
 		{/if}
+
 		{#if product.description}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
@@ -175,6 +176,7 @@
 			</Card.Root>
 		</div>
 		{/if}
+
 		<div class="mt-8">
 			<Card.Root class="bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -209,7 +211,8 @@
 				</Accordion.Root>
 			</Card.Root>
 		</div>
-		{#if product.specifications > 0}
+
+		{#if product.specifications.length > 0}
 		<div class="mt-8">
 			<Card.Root class="border-orange-200 bg-orange-50">
 				<Accordion.Root value="item-1">
@@ -239,7 +242,7 @@
 			</div>
 		{/if}
 
-		{#if product.instructions > 0}
+		{#if product.instructions.length > 0}
 			<div class="mt-8">
 				<Card.Root class="border-orange-200 bg-orange-50">
 					<Accordion.Root value="item-1">
