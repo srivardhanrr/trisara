@@ -15,6 +15,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import NewCategories from '$lib/components/ui/NewCategories.svelte';
 	import Hero from '$lib/components/Hero.svelte';
+	import CategoriesOpacity from '$lib/components/CategoriesOpacity.svelte';
 
 	export let data;
 </script>
@@ -29,14 +30,17 @@
 	<!-- <HeroCarousel/> -->
 	<!--    <Hero/>-->
 	<main class="flex flex-1 flex-col gap-4 md:gap-8">
-		<div class="md:px-8 md:pt-6">
+		<div class="pt-20 hidden md:block">
+			<CategoriesOpacity categories={data.categories} />
+		</div>
+		<div class="md:hidden">
 			<CategoriesCarousel categories={data.categories} />
 		</div>
+		<CollectionCarousel collection={data.collection1} />
 		̥
 		<div class="md:mb-10">
 			<NewCategories series={data.series} />
 		</div>
-		<CollectionCarousel collection={data.collection1} />
 
 		<!-- <Categories/>-->
 		<!--        <RoomCategories/>-->

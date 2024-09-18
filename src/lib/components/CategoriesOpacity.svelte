@@ -3,14 +3,15 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Carousel from '$lib/components/ui/carousel';
 
-	interface Series {
+	interface Category {
 		name: string;
 		description: string;
 		image: string;
 		slug: string;
 	}
 
-	export let series: Series[];
+	export let categories: Category[];
+
 
 	let isMobile: boolean = false;
 
@@ -31,12 +32,11 @@
 {#if !isMobile}
 	<div class="relative hidden h-[450px] w-full overflow-hidden md:block">
 		<div class="flex h-full">
-			{#each series as category, index}
+			{#each categories as category, index}
 				<div
 					class="relative flex flex-1 flex-col items-center justify-center overflow-hidden p-4 text-white transition-all duration-300 ease-in-out"
 				>
 				<a href="/series/{category.slug}">
-
 					{#if category.image}
 						<div
 							class="absolute inset-0 bg-cover bg-center"
@@ -49,9 +49,9 @@
 					<div class="absolute inset-0 hover:bg-orange-700 hover:bg-opacity-20 transition-all duration-300 ease-in-out"></div>
 					<div class="relative z-10">
 						<h3 class="mb-2 text-center text-2xl font-bold uppercase">{category.name}</h3>
-						<p class="text-center">{category.description}</p>
+						<!-- <p class="text-center">{category.description}</p> -->
 					</div>
-					{#if index < series.length - 1}
+					{#if index < category.length - 1}
 						<Separator orientation="vertical" class="absolute right-0 h-full bg-white/20" />
 					{/if}
 				</a>
@@ -64,7 +64,7 @@
 		<!-- Mobile Version -->
 		<Carousel.Root class="w-full">
 			<Carousel.Content>
-				{#each series as category}
+				{#each categories as category}
 					<Carousel.Item class="md:basis-1/2 lg:basis-1/3">
 						<div class="relative aspect-square overflow-hidden">
 							{#if category.image}

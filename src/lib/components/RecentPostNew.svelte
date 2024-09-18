@@ -103,10 +103,10 @@
           </div>
           <div class="p-6">
             {#if post.title}
-            <h3 class="text-xl font-semibold mb-2">{post.title}</h3>
+            <a class="text-orange-500 hover:underline" href='blogs/{post.slug}'>
+                <h3 class="text-xl font-semibold mb-2">{post.title}</h3>
+            </a>
             {/if}
-            <!-- <p class="text-sm text-gray-600 mb-4">by {post.author} on {post.date}</p> -->
-            
             <p class="text-gray-700 mb-4">{post.description}</p>
             <a href='blogs/{post.slug}' class="text-orange-500 hover:underline">
               View Details

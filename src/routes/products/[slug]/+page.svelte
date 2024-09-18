@@ -115,12 +115,20 @@
 			{/each}
 		</div>
 
-		{#if product.amazon_buy_link}
-			<a href={product.amazon_buy_link} target="_blank">
+		<a href={product.buy_link} target="_blank">
+			<button
+				class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
+			>
+				<span class="text-center align-text-top">Buy Now</span>
+			</button>
+		</a>
+
+		{#if product.buy_link}
+			<a href={product.buy_link} target="_blank">
 				<button
 					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
 				>
-					<span class="text-center align-text-top">Buy On Amazon</span>
+					<span class="text-center align-text-top">Buy Now</span>
 				</button>
 			</a>
 		{/if}
