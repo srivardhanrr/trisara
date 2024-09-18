@@ -122,7 +122,7 @@
 				<span class="text-center align-text-top">Buy Now</span>
 			</button>
 		</a>
-
+<!-- 
 		{#if product.buy_link}
 			<a href={product.buy_link} target="_blank">
 				<button
@@ -131,35 +131,7 @@
 					<span class="text-center align-text-top">Buy Now</span>
 				</button>
 			</a>
-		{/if}
-
-		{#if product.flipkart_buy_link}
-			<a href={product.flipkart_buy_link} target="_blank">
-				<button
-					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
-				>
-					<span class="text-center align-text-top">Buy On Flipkart</span>
-				</button>
-			</a>
-		{/if}
-		{#if product.zepto_buy_link}
-			<a href={product.zepto_buy_link} target="_blank">
-				<button
-					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
-				>
-					<span class="text-center align-text-top">Buy On Zepto</span>
-				</button>
-			</a>
-		{/if}
-		{#if product.blinkIt_buy_link}
-			<a href={product.blinkIt_buy_link} target="_blank">
-				<button
-					class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
-				>
-					<span class="text-center align-text-top">Buy On BlinkIt</span>
-				</button>
-			</a>
-		{/if}
+		{/if} -->
 		
 		{#if product.features > 0}
 		<div class="mt-8">

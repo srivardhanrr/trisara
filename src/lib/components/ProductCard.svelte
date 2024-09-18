@@ -61,19 +61,3 @@
     </div>
   </a>
 </div>
-
-
-<style>
-  .product-title {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.875rem; /* text-sm */
-    font-weight: 500; /* font-medium */
-    color: #111827; /* text-gray-900 */
-    line-height: 1.25rem; /* Adjust as needed */
-    max-height: 2.5rem; /* 2 lines * 1.25rem line-height */
-  }
-</style>
