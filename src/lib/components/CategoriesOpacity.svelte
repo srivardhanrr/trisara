@@ -36,7 +36,7 @@
 				<div
 					class="relative flex flex-1 flex-col items-center justify-center overflow-hidden p-4 text-white transition-all duration-300 ease-in-out"
 				>
-				<a href="/series/{category.slug}">
+				<a href="/categories/{category.slug}">
 					{#if category.image}
 						<div
 							class="absolute inset-0 bg-cover bg-center"
