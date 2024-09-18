@@ -53,10 +53,11 @@
         {/if}
       </div>
     </div>
-    <div class="p-2 md:p-4 bg-orange-50">
-      <h4 class="text-sm font-medium product-title text-gray-900 truncate">{product.name}</h4>
-      <div class="mt-2 flex items-center justify-between">
-      </div>
+    <div class="p-2 md:pt-4 md:px-4 md:pb-2 bg-orange-50">
+      <h4 class="text-sm font-medium text-gray-900 truncate">{product.name}</h4>
+
+      <p class="text-sm bg-orange-50 text-gray-700">{product.set}</p>
+      <!-- </div> -->
     </div>
   </a>
 </div>
