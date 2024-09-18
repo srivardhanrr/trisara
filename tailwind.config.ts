@@ -7,7 +7,8 @@ const config: Config = {
         "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
     ],
     plugins: [
-        require('flowbite/plugin')
+        require('flowbite/plugin'),
+        require('@tailwindcss/typography'),
     ],
     safelist: ["dark"],
     animation: {
