@@ -1,26 +1,25 @@
 <script lang="ts">
     import * as Carousel from "$lib/components/ui/carousel/index.js";
-
     import Autoplay from "embla-carousel-autoplay";
-
     export let categories;
-
     const plugin = Autoplay({delay: 2000, stopOnInteraction: true});
 </script>
 
-<section class="mt-8">
+<section class="mt-12">
     <div class="container mx-auto px-4">
-        <h2 class="text-xl md:text-2xl font-bold text-orange-500 mb-2">Popular Category</h2>
-        <p class="text-gray-600 text-sm mb-4">Search By Category of the products listed.</p>
         <Carousel.Root
-                opts={{align: "start"}}
+                opts={{
+                    align: "center",
+                    containScroll: "trimSnaps",
+                    dragFree: true
+                }}
                 plugins={[plugin]}
-                class="w-full justify-center"
+                class="w-full"
                 on:mousenter={plugin.stop}
                 on:mouseleave={plugin.reset}>
-            <Carousel.Content>
+            <Carousel.Content class="flex justify-center">
                 {#each categories as category}
-                    <Carousel.Item class="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <Carousel.Item class="lg:basis-1/5 md:basis-1/4 sm:basis-1/3 basis-1/2 flex-grow-0 flex-shrink-0">
                         <a href="/categories/{category.slug}">
                             <div class="relative w-full overflow-hidden">
                                 <img class="aspect-square top-0 left-0 w-full h-full object-cover" src="{category.image}"
