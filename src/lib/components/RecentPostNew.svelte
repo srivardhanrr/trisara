@@ -22,13 +22,13 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-8">
             <h2 class="text-3xl font-bold">Recent Posts</h2>
-            <a href="/blogs" class="text-orange-500 hover:underline">Read More</a>
+            <a href="/blogs" class="text-orange-500 hover:underline">View All</a>
         </div>
 
         {#if isMobile}
             <Carousel.Root opts={{ align: "start" }}>
                 <Carousel.Content>
-                    {#each posts as post}
+                    {#each posts.slice(0, 3) as post}
                         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
                             <div class="bg-white rounded-lg overflow-hidden">
                                 {#if post.image}
