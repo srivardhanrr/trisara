@@ -10,7 +10,7 @@
 
 <div class="bg-gray-100 min-h-screen py-12">
     <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-12">Our Cookbooks</h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">Cookbooks</h1>
 
         {#each data.cookbookCategories as cookbookCategory}
             <div class="mb-16">
@@ -26,10 +26,10 @@
                                 />
                             </div>
                             <div class="p-4">
-                                <a href="/cookbooks/{cookbook.slug}">
+                                <a href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}">
                                     <h3 class="text-xl font-semibold text-gray-800 mb-2">{cookbook.title}</h3>
                                 </a>
-                                <p class="text-gray-600">{cookbook.description}</p>
+                                <p class="text-gray-600 truncate">{cookbook.description}</p>
                             </div>
                         </div>
                     {/each}

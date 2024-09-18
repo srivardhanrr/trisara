@@ -15,29 +15,6 @@
 
     export let posts;
 
-    // const recentPosts = [
-    //     {
-    //         title: "Deumanto Sollicitudin Delo",
-    //         author: "Trisara Community",
-    //         date: "Jul 18, 2024",
-    //         excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius...",
-    //         image: "https://new-ella-demo-11.myshopify.com/cdn/shop/articles/blog-fur-1_560x.jpg?v=1658202489"
-    //     },
-    //     {
-    //         title: "Loremous Comodous: Trending",
-    //         author: "Trisara Community",
-    //         date: "Jul 18, 2024",
-    //         excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius...",
-    //         image: "https://new-ella-demo-11.myshopify.com/cdn/shop/articles/blog-fur-3_560x.jpg?v=1658202656"
-    //     },
-    //     {
-    //         title: "Commodo Muso Magna",
-    //         author: "Trisara Community",
-    //         date: "Jul 18, 2024",
-    //         excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus leo, elementum in malesuada an darius...",
-    //         image: "https://new-ella-demo-11.myshopify.com/cdn/shop/articles/blog-fur-2_560x.jpg?v=1658202563"
-    //     }
-    // ];
 </script>
 
 {#if posts.length > 0}
@@ -73,7 +50,7 @@
                                     {/if}
                                     <a href='blogs/{post.slug}'
                                        class="text-orange-500 hover:underline">
-                                        View Details
+                                        Read More
                                     </a>
                                 </div>
                             </div>
@@ -89,16 +66,15 @@
                 <span class="h-2 w-2 rounded-full bg-gray-300 mx-1"></span>
             </div>
         {:else}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {#each posts as post}
                     <div class="bg-white rounded-lg overflow-hidden shadow-md">
-          <div class="relative overflow-hidden">
-            {#if post.image}
-            <img
+                        <div class="relative overflow-hidden">
+                            {#if post.image}
+                                <img
               src={post.image}
               alt={post.title}
-              class="w-full h-64 object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
-            />
+              class="w-full h-64 object-cover transition-transform duration-300 ease-in-out transform hover:scale-110" />
             {/if}
           </div>
           <div class="p-6">
@@ -109,7 +85,7 @@
             {/if}
             <p class="text-gray-700 mb-4">{post.description}</p>
             <a href='blogs/{post.slug}' class="text-orange-500 hover:underline">
-              View Details
+              Read More
             </a>
           </div>
         </div>
