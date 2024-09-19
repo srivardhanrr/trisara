@@ -3,21 +3,7 @@
 
 	import Autoplay from 'embla-carousel-autoplay';
 
-	export let heroImages = [
-		{
-			title: 'Hero 1',
-			image: '/images/home/hero1.jpg'
-		},
-		{
-			title: 'Hero 1',
-			image: '/images/home/hero3.jpg'
-		},
-		{
-			title: 'Hero 1',
-			image: '/images/home/hero2.jpg'
-		},
-		
-	]; 
+	export let heroImages;
 
 	const plugin = Autoplay({ delay: 4000, stopOnInteraction: true });
 </script>
@@ -29,6 +15,7 @@
 	on:mousenter={plugin.stop}
 	on:mouseleave={plugin.reset}
 >
+{#if heroImages.length > 1}
 	<Carousel.Content>
 		{#each heroImages as heroImage}
 			<Carousel.Item>
@@ -43,10 +30,9 @@
 					</div> -->
 				</div>
 			</Carousel.Item>
-			
 		{/each}
-		<!--    </div>-->
 	</Carousel.Content>
+	{/if}
 	<!-- <Carousel.Previous class="ml-16" />
 	<Carousel.Next class="mr-16" /> -->
 </Carousel.Root>
