@@ -11,12 +11,12 @@
         <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-8">Our Story</h1>
 
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="/images/hero1.png" alt="Trisara Kitchenware"
+            <img src="/images/our-story-1.png" alt="Trisara Kitchenware"
                  class="w-full h-64 object-cover object-center">
 
             <div class="p-6 md:p-10">
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                    Welcome to Trisara, where we bring the essence of everyday cooking into your home with warmth and
+                    Welcome to <span class="text-orange-500 font-bold">Trisara</span>, where we bring the essence of everyday cooking into your home with warmth and
                     simplicity. Inspired by the Sanskrit term meaning 'Third Garden in Heaven,' our brand is dedicated
                     to creating kitchenware that is accessible, reliable, and affordable, designed specifically to meet
                     your daily needs.
@@ -25,16 +25,16 @@
                 <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">The Beginning</h2>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
                     Trisara was founded with a straightforward idea: to provide quality kitchenware at prices that are
-                    affordable for all. We noticed that many kitchen products were out of reach for those setting up
-                    their first home, whether students, young professionals, or families on a budget. Our goal was to
+                    affordable for all. We noticed that many kitchen products are out of reach for those setting up
+                    their first home, whether students, young professionals, or families on a budget. Our goal is to
                     fill that gap by offering practical and cost-effective kitchen essentials that don't compromise on
                     performance.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-                    <img src="/images/hero2.png" alt="Affordable Cooking"
+                    <img src="/images/our-story-2.jpg" alt="Affordable Cooking"
                          class="w-full h-64 object-cover rounded-lg shadow-md">
-                    <img src="/images/hero3.png" alt="Quality Kitchenware"
+                    <img src="/images/our-story-3.jpg" alt="Quality Kitchenware"
                          class="w-full h-64 object-cover rounded-lg shadow-md">
                 </div>
 
@@ -72,7 +72,7 @@
                 </p>
 
                 <p class="text-xl text-gray-800 font-semibold mt-12 text-center">
-                    Thank you for choosing Trisara, where affordable kitchenware guarantees daily durability.
+                    Thank you for choosing <span class="text-orange-500 font-bold">Trisara</span>, where affordable kitchenware guarantees daily durability.
                 </p>
             </div>
         </div>
