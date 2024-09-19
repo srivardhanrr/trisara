@@ -81,7 +81,7 @@
 								class="absolute inset-0 flex flex-1 flex-col items-center justify-center text-white"
 							>
 								<h3 class="text-center text-2xl font-bold uppercase">{category.name}</h3>
-								<p class="mt-5 text-center">{category.description}</p>
+								<p class="mt-5 text-center">{@html category.description}</p>
 							</div>
 						</div>
 					</Carousel.Item>

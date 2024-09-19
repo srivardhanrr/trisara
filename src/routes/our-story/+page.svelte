@@ -1,4 +1,5 @@
 <script>
+    import * as Breadcrumb from '$lib/components/ui/breadcrumb';
     // You can add any necessary JavaScript here
 </script>
 
@@ -6,9 +7,10 @@
 	<title>Trisara | Our Story</title>
 </svelte:head>
 
-<div class="bg-gray-100 min-h-screen">
+<div class="bg-gray-100">
     <div class="container mx-auto px-4 py-12">
         <h1 class="text-4xl md:text-5xl font-bold text-center text-orange-500 mb-8">Our Story</h1>
+
 
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src="/images/our-story-1.png" alt="Trisara Kitchenware"

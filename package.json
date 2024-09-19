@@ -34,6 +34,7 @@
 		"@vercel/postgres": "^0.9.0",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
+		"embla-carousel": "^8.1.8",
 		"embla-carousel-autoplay": "^8.1.8",
 		"embla-carousel-svelte": "^8.1.8",
 		"flowbite": "^2.5.1",

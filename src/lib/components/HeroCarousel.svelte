@@ -32,9 +32,9 @@
 	<Carousel.Content>
 		{#each items as item}
 			<Carousel.Item>
-				<div class="relative md:min-h-screen h-64 overflow-hidden lg:h-full">
+				<div class="relative md:min-h-[calc(100vh-80px)] h-64 overflow-hidden">
 					<img
-						class="left-0 top-0 h-full w-full object-cover"
+						class="left-0 top-0 h-full w-full object-fit"
 						src={item.src}
 						alt="Kitchen utilities"
 					/>
