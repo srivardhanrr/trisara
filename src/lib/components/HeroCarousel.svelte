@@ -43,6 +43,7 @@
 					</div> -->
 				</div>
 			</Carousel.Item>
+			
 		{/each}
 		<!--    </div>-->
 	</Carousel.Content>

@@ -189,7 +189,7 @@
 			</div>
 		{/if}
 
-		{#if product.description}
+		<!-- {#if product.description}
 			<div class="mt-8">
 				<Card.Root class="border-orange-200 bg-orange-50">
 					<Accordion.Root value="item-1">
@@ -207,7 +207,7 @@
 					</Accordion.Root>
 				</Card.Root>
 			</div>
-		{/if}
+		{/if} -->
 
 		<div class="mt-8">
 			<Card.Root class="bg-orange-50">

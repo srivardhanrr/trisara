@@ -49,10 +49,11 @@
 					<div class="absolute inset-0 hover:bg-orange-700 hover:bg-opacity-40 transition-all duration-300 ease-in-out"></div>
 					<div class="relative z-10">
 						<h3 class="mb-2 text-center text-2xl font-bold uppercase">{category.name}</h3>
-						<p class="text-center">{category.description}</p>
+						<p class="text-center">{@html category.description}</p>
 					</div>
 					{#if index < series.length - 1}
-						<Separator orientation="vertical" class="absolute right-0 h-full bg-white/20" />
+					
+						<!-- <Separator orientation="vertical" class="absolute right-0 h-full bg-white/20" /> -->
 					{/if}
 				</a>
 				</div>
