@@ -45,6 +45,6 @@
 		{/each}
 		<!--    </div>-->
 	</Carousel.Content>
-	<Carousel.Previous class="ml-16" />
-	<Carousel.Next class="mr-16" />
+	<!-- <Carousel.Previous class="ml-16" />
+	<Carousel.Next class="mr-16" /> -->
 </Carousel.Root>
