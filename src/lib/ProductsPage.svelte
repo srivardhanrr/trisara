@@ -16,12 +16,12 @@
 			{/if}
 			<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
 				<div class="text-center">
-					<h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+					<h2 class="text-3xl font-extrabold tracking-tight text-white md:text-5xl">
 						{title}
 					</h2>
-					<p class="mx-auto mt-3 max-w-md truncate text-sm text-white md:text-xl">
+					<!-- <p class="mx-auto mt-3 max-w-md truncate text-sm text-white md:text-xl">
 						{description}
-					</p>
+					</p> -->
 				</div>
 			</div>
 		</div>
