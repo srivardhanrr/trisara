@@ -32,7 +32,16 @@
 			</Carousel.Item>
 		{/each}
 	</Carousel.Content>
-	{/if}
-	<!-- <Carousel.Previous class="ml-16" />
-	<Carousel.Next class="mr-16" /> -->
+	{:else}
+		<Carousel.Item>
+			<div class="relative md:min-h-[calc(100vh-80px)] h-64 overflow-hidden">
+				<img
+					class="left-0 top-0 h-full w-full object-fit"
+					src="https://placehold.co/1920x1080"
+					alt="Placeholder"
+				/>
+			</div>
+		</Carousel.Item>
+{/if}
+
 </Carousel.Root>
