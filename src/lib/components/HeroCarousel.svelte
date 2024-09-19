@@ -32,7 +32,7 @@
 	<Carousel.Content>
 		{#each items as item}
 			<Carousel.Item>
-				<div class="relative min-h-screen h-64 overflow-hidden lg:h-full">
+				<div class="relative md:min-h-screen h-64 overflow-hidden lg:h-full">
 					<img
 						class="left-0 top-0 h-full w-full object-cover"
 						src={item.src}
