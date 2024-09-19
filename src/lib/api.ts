@@ -10,7 +10,6 @@ async function fetchAPI(endpoint: string) {
 }
 
 export const api = {
-    getHeroImages: () => fetchAPI('/hero-images/'),
     getCategories: () => fetchAPI('/categories/'),
     getCategory: (slug: string) => fetchAPI(`/categories/${slug}/`),
     getSeries: () => fetchAPI('/series/'),
@@ -26,4 +25,5 @@ export const api = {
     getCookbookCategory: (slug: string) => fetchAPI(`/cookbook-categories/${slug}/`),
     getBlogPosts: () => fetchAPI('/blogs/'),
     getBlogPost: (slug: string) => fetchAPI(`/blogs/${slug}/`),
+    getHeroImages: () => fetchAPI('/hero-images/'),
 };
