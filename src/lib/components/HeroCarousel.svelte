@@ -10,15 +10,16 @@
 		},
 		{
 			name: 'Hero 1',
+			src: '/images/home/hero3.jpg'
+		},
+		{
+			name: 'Hero 1',
 			src: '/images/home/hero2.jpg'
 		},
-		// {
-		// 	name: 'Hero 1',
-		// 	src: '/images/hero3.png'
-		// }
+		
 	];
 
-	const plugin = Autoplay({ delay: 3000, stopOnInteraction: true });
+	const plugin = Autoplay({ delay: 4000, stopOnInteraction: true });
 </script>
 
 <Carousel.Root
