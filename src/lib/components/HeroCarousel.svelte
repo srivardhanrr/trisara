@@ -15,7 +15,7 @@
 	on:mousenter={plugin.stop}
 	on:mouseleave={plugin.reset}
 >
-{#if heroImages.length > 1}
+{#if heroImages.length > 0}
 	<Carousel.Content>
 		{#each heroImages as heroImage}
 			<Carousel.Item>
