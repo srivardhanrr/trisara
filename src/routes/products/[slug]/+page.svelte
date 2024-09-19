@@ -111,14 +111,14 @@
 			</Breadcrumb.List>
 		</Breadcrumb.Root>
 		<h1 class="mb-2 mt-4 text-2xl font-bold md:text-3xl lg:mt-10">{product.name}</h1>
-		<p class="mb-4 mt-5 text-gray-600 lg:mt-10">{product.description}</p>
+		<p class="mb-4 mt-5 text-black lg:mt-10">{product.description}</p>
 
 		<!-- Star rating placeholder -->
-		<div class="mb-4 flex">
+		<!-- <div class="mb-4 flex">
 			{#each Array(5) as _, i}
 				<span class={i < 4 ? 'text-yellow-400' : 'text-gray-300'}>★</span>
 			{/each}
-		</div>
+		</div> -->
 
 		{#if product.variants && product.variants.length > 0}
 			<div class="mb-6">
@@ -201,7 +201,7 @@
 							</Card.Title>
 
 							<Accordion.Content class="mx-4">
-								<p>{product.description}</p>
+								<p class="text-black leading-6">{product.description}</p>
 							</Accordion.Content>
 						</Accordion.Item>
 					</Accordion.Root>
@@ -260,8 +260,8 @@
 										<tbody>
 											{#each product.specifications as specification}
 												<tr class="border-b border-gray-200 last:border-b-0">
-													<td class="py-3 font-semibold text-gray-700">{specification.label}</td>
-													<td class="py-3 text-right text-gray-600">{specification.value}</td>
+													<td class="py-3 font-semibold">{specification.label}</td>
+													<td class="py-3 text-right">{specification.value}</td>
 												</tr>
 											{/each}
 										</tbody>

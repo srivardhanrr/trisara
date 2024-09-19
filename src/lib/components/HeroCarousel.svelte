@@ -6,19 +6,19 @@
 	const items = [
 		{
 			name: 'Hero 1',
-			src: '/images/hero1.png'
+			src: '/images/home/hero1.jpg'
 		},
 		{
 			name: 'Hero 1',
-			src: '/images/hero2.png'
+			src: '/images/home/hero2.jpg'
 		},
-		{
-			name: 'Hero 1',
-			src: '/images/hero3.png'
-		}
+		// {
+		// 	name: 'Hero 1',
+		// 	src: '/images/hero3.png'
+		// }
 	];
 
-	const plugin = Autoplay({ delay: 5000, stopOnInteraction: true });
+	const plugin = Autoplay({ delay: 3000, stopOnInteraction: true });
 </script>
 
 <Carousel.Root
@@ -31,15 +31,15 @@
 	<Carousel.Content>
 		{#each items as item}
 			<Carousel.Item>
-				<div class="relative h-64 overflow-hidden lg:h-full">
+				<div class="relative min-h-screen h-64 overflow-hidden lg:h-full">
 					<img
 						class="left-0 top-0 h-full w-full object-cover"
 						src={item.src}
 						alt="Kitchen utilities"
 					/>
-					<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+					<!-- <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
 						<h2 class="text-xl text-white">{item.name}</h2>
-					</div>
+					</div> -->
 				</div>
 			</Carousel.Item>
 		{/each}
