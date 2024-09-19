@@ -8,6 +8,9 @@
 	import CollectionCarousel from '$lib/components/CollectionCarousel.svelte';
 	import { ChevronDown } from 'lucide-svelte';
 
+	let selectedVariant: string | null = null;
+
+
 	export let data;
 
 	$: ({ product, collection } = data);
@@ -60,7 +63,7 @@
 
 <div
 	bind:this={ref}
-	class="product-container flex flex-col mb-8 gap-8 p-2 transition ease-in-out sm:p-6 md:flex-row"
+	class="product-container mb-8 flex flex-col gap-8 p-2 transition ease-in-out sm:p-6 md:flex-row"
 >
 	<div
 		class:sticky={!isMobile}
@@ -70,7 +73,7 @@
 		<img
 			src={product.images[currentImageIndex].image}
 			alt={product.name}
-			class="object-fit aspect-square flex h-fit w-full items-center md:px-8"
+			class="object-fit flex aspect-square h-fit w-full items-center md:px-8"
 		/>
 
 		<!-- Thumbnail images -->
@@ -101,7 +104,9 @@
 				</Breadcrumb.Item>
 				<Breadcrumb.Separator />
 				<Breadcrumb.Item>
-					<Breadcrumb.Page class="truncate overflow-hidden text-orange-600">{product.name}</Breadcrumb.Page>
+					<Breadcrumb.Page class="overflow-hidden truncate text-orange-600"
+						>{product.name}</Breadcrumb.Page
+					>
 				</Breadcrumb.Item>
 			</Breadcrumb.List>
 		</Breadcrumb.Root>
@@ -115,6 +120,33 @@
 			{/each}
 		</div>
 
+		{#if product.variants && product.variants.length > 0}
+			<div class="mb-6">
+				<h3 class="mb-3 text-lg font-semibold">Available Variants</h3>
+				<div class="flex flex-wrap gap-3">
+					{#each product.variants as variant}
+						<label class="flex items-center">
+							<input
+								type="radio"
+								name="variant"
+								value={variant.variant}
+								bind:group={selectedVariant}
+								class="hidden"
+							/>	
+							<span
+								class="cursor-pointer rounded-full border-2 border-orange-500 px-4 py-2 text-sm transition-colors duration-200 ease-in-out"
+								class:bg-orange-500={selectedVariant === variant.name}
+								class:text-white={selectedVariant === variant.name}
+								class:text-orange-500={selectedVariant !== variant.name}
+							>
+								{variant.variant}
+							</span>
+						</label>
+					{/each}
+				</div>
+			</div>
+		{/if}
+
 		<a href={product.buy_link} target="_blank">
 			<button
 				class="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-yellow-200 bg-orange-500 px-4 py-2 font-bold text-black transition duration-200 ease-in-out hover:bg-orange-400 active:bg-orange-400"
@@ -122,7 +154,7 @@
 				<span class="text-center align-text-top">Buy Now</span>
 			</button>
 		</a>
-<!-- 
+		<!-- 
 		{#if product.buy_link}
 			<a href={product.buy_link} target="_blank">
 				<button
@@ -132,49 +164,49 @@
 				</button>
 			</a>
 		{/if} -->
-		
-		{#if product.features.length > 0}
-		<div class="mt-8">
-			<Card.Root class="border-orange-200 bg-orange-50">
-				<Accordion.Root value="item-1">
-					<Accordion.Item value="item-1">
-						<Card.Title class="mx-5 text-xl">
-							<Accordion.Trigger>
-								<h2 class="text-lg text-orange-500">PRODUCT FEATURES</h2>
-							</Accordion.Trigger>
-						</Card.Title>
 
-						<Accordion.Content>
-							<ul class="mx-4 list-disc space-y-2 pl-5">
-								{#each product.features as feature}
-									<li>{feature.feature}</li>
-								{/each}
-							</ul>
-						</Accordion.Content>
-					</Accordion.Item>
-				</Accordion.Root>
-			</Card.Root>
-		</div>
+		{#if product.features.length > 0}
+			<div class="mt-8">
+				<Card.Root class="border-orange-200 bg-orange-50">
+					<Accordion.Root value="item-1">
+						<Accordion.Item value="item-1">
+							<Card.Title class="mx-5 text-xl">
+								<Accordion.Trigger>
+									<h2 class="text-lg text-orange-500">PRODUCT FEATURES</h2>
+								</Accordion.Trigger>
+							</Card.Title>
+
+							<Accordion.Content>
+								<ul class="mx-4 list-disc space-y-2 pl-5">
+									{#each product.features as feature}
+										<li>{feature.feature}</li>
+									{/each}
+								</ul>
+							</Accordion.Content>
+						</Accordion.Item>
+					</Accordion.Root>
+				</Card.Root>
+			</div>
 		{/if}
 
 		{#if product.description}
-		<div class="mt-8">
-			<Card.Root class="border-orange-200 bg-orange-50">
-				<Accordion.Root value="item-1">
-					<Accordion.Item value="item-1">
-						<Card.Title class="mx-5 text-xl">
-							<Accordion.Trigger>
-								<h2 class="text-lg text-orange-500">PRODUCT DESCRIPTION</h2>
-							</Accordion.Trigger>
-						</Card.Title>
+			<div class="mt-8">
+				<Card.Root class="border-orange-200 bg-orange-50">
+					<Accordion.Root value="item-1">
+						<Accordion.Item value="item-1">
+							<Card.Title class="mx-5 text-xl">
+								<Accordion.Trigger>
+									<h2 class="text-lg text-orange-500">PRODUCT DESCRIPTION</h2>
+								</Accordion.Trigger>
+							</Card.Title>
 
-						<Accordion.Content class="mx-4">
-							<p>{product.description}</p>
-						</Accordion.Content>
-					</Accordion.Item>
-				</Accordion.Root>
-			</Card.Root>
-		</div>
+							<Accordion.Content class="mx-4">
+								<p>{product.description}</p>
+							</Accordion.Content>
+						</Accordion.Item>
+					</Accordion.Root>
+				</Card.Root>
+			</div>
 		{/if}
 
 		<div class="mt-8">
@@ -213,32 +245,32 @@
 		</div>
 
 		{#if product.specifications.length > 0}
-		<div class="mt-8">
-			<Card.Root class="border-orange-200 bg-orange-50">
-				<Accordion.Root value="item-1">
-					<Accordion.Item value="item-1">
-						<Card.Title class="mx-5 text-xl">
-							<Accordion.Trigger>
-								<h2 class="text-lg text-orange-500">PRODUCT SPECIFICATIONS</h2>
-							</Accordion.Trigger>
-						</Card.Title>
-						<Accordion.Content>
-							<div class="px-4 pb-4">
-								<table class="w-full">
-									<tbody>
-										{#each product.specifications as specification}
-											<tr class="border-b border-gray-200 last:border-b-0">
-												<td class="py-3 font-semibold text-gray-700">{specification.label}</td>
-												<td class="py-3 text-right text-gray-600">{specification.value}</td>
-											</tr>
-										{/each}
-									</tbody>
-								</table>
-							</div>
-						</Accordion.Content>
-					</Accordion.Item>
-				</Accordion.Root>
-			</Card.Root>
+			<div class="mt-8">
+				<Card.Root class="border-orange-200 bg-orange-50">
+					<Accordion.Root value="item-1">
+						<Accordion.Item value="item-1">
+							<Card.Title class="mx-5 text-xl">
+								<Accordion.Trigger>
+									<h2 class="text-lg text-orange-500">PRODUCT SPECIFICATIONS</h2>
+								</Accordion.Trigger>
+							</Card.Title>
+							<Accordion.Content>
+								<div class="px-4 pb-4">
+									<table class="w-full">
+										<tbody>
+											{#each product.specifications as specification}
+												<tr class="border-b border-gray-200 last:border-b-0">
+													<td class="py-3 font-semibold text-gray-700">{specification.label}</td>
+													<td class="py-3 text-right text-gray-600">{specification.value}</td>
+												</tr>
+											{/each}
+										</tbody>
+									</table>
+								</div>
+							</Accordion.Content>
+						</Accordion.Item>
+					</Accordion.Root>
+				</Card.Root>
 			</div>
 		{/if}
 
