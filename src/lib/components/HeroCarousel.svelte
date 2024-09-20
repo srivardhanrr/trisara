@@ -58,7 +58,7 @@
 <!-- <div class="py-2 text-center text-sm text-muted-foreground">
 	Slide {current} of {count}
 </div> -->
-<div class="py-2 text-center text-sm text-muted-foreground space-x-3 -m-10 z-50">
+<div class="text-center text-sm space-x-3 -mt-10 z-10">
 	{#each Array(count) as _, i}
 	  <button
 		on:click={() => api?.scrollTo(i)}
@@ -68,4 +68,4 @@
 		aria-label={`Go to slide ${i + 1}`}
 	  />
 	{/each}
-  </div>
+</div>
