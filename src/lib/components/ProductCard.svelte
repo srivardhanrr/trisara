@@ -1,17 +1,11 @@
 <script lang="ts">
   export let product;
-
   let isHovered = false;
-
-  // Assuming these properties exist in your product object
-  // If not, you'll need to add logic to determine when to show these badges
-  $: isNew = product.isNew;
-  $: isBestSeller = product.isBestSeller;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div 
-  class="group relative w-full max-w-72 shadow-xl overflow-hidden my-4 rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
+  class="group relative w-full shadow-xl overflow-hidden rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
   on:mouseenter={() => isHovered = true}
   on:mouseleave={() => isHovered = false}
 >
@@ -30,18 +24,17 @@
         </div>
       {/if}
       {#if product.images.length > 0}
-          <img 
-            loading="lazy" 
-            src="{product.images[0].image}" 
-            alt="{product.name} - Alternate View" 
-            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
-          />
-          {:else}
+        <img 
+          loading="lazy" 
+          src="{product.images[0].image}" 
+          alt="{product.name} - Alternate View" 
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100"
+        />
+      {:else}
         <div class="w-full h-full flex items-center justify-center text-gray-400">
           No Image Available
         </div>
-        {/if}
-
+      {/if}
       
       <!-- Badges -->
       <div class="absolute top-3 left-3 flex flex-col gap-2">
@@ -53,11 +46,13 @@
         {/if}
       </div>
     </div>
-    <div class="p-2 md:pt-4 md:px-4 md:pb-2 bg-orange-50">
+    <div class="p-2 md:p-4 bg-orange-50">
       <h4 class="text-sm font-medium text-gray-900 truncate">{product.name}</h4>
-
-      <p class="text-sm bg-orange-50 text-gray-700 truncate">{product.set}</p>
-      <!-- </div> -->
+      {#if product.set}
+        <p class="text-sm text-gray-700 truncate">{product.set}</p>
+      {:else}
+        <div class="h-4"></div> <!-- Placeholder to maintain consistent height -->
+      {/if}
     </div>
   </a>
 </div>

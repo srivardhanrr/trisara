@@ -5,7 +5,7 @@
     const plugin = Autoplay({delay: 2000, stopOnInteraction: true});
 </script>
 
-<section class="mt-12">
+<section class="mt-6 md:mt-12">
     <div class="container mx-auto px-4">
         <Carousel.Root
                 opts={{
@@ -17,7 +17,7 @@
                 class="w-full"
                 on:mousenter={plugin.stop}
                 on:mouseleave={plugin.reset}>
-            <Carousel.Content class="flex justify-center">
+            <Carousel.Content class="flex md:justify-center">
                 {#each categories as category}
                     <Carousel.Item class="lg:basis-1/4 md:basis-1/4 sm:basis-1/3 basis-1/2 flex-grow-0 flex-shrink-0">
                         <a href="/categories/{category.slug}">

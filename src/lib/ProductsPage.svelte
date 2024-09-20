@@ -19,9 +19,6 @@
 					<h2 class="text-3xl font-extrabold tracking-tight text-white md:text-5xl">
 						{title}
 					</h2>
-					<!-- <p class="mx-auto mt-3 max-w-md truncate text-sm text-white md:text-xl">
-						{description}
-					</p> -->
 				</div>
 			</div>
 		</div>
@@ -31,9 +28,9 @@
 		{title}
 	</h1> -->
 
-	<div class="grid grid-cols-2 gap-2 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+	<div class="my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
 		{#each products as product}
-            <ProductCard product={product} />
+		  <ProductCard {product} />
 		{/each}
-	</div>
+	  </div>
 </main>

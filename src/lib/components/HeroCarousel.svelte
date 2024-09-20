@@ -37,9 +37,7 @@
 						src={heroImage.image}
 						alt={heroImage.title}
 					/>
-					<!-- <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-						<h2 class="text-xl text-white">{item.name}</h2>
-					</div> -->
+
 				</div>
 			</Carousel.Item>
 		{/each}
