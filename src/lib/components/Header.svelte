@@ -34,11 +34,13 @@
 <header class="bg-background z-50 sticky top-0 h-20 md:h-22 border-b md:px-8 lg:px-12">
     <div class="container mx-auto h-full flex items-center justify-between">
         <nav class="hidden lg:flex items-center space-x-6 flex-1">
-            <a href="/" class="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="/our-story" class="text-foreground hover:text-primary transition-colors">Our Story</a>
+            <a href="/" class="text-black hover:text-primary transition-colors">Home</a>
+            <a href="/our-story" class="text-black hover:text-primary transition-colors">Our Story</a>
             
             <div class="dropdown" on:mouseenter={openProducts} on:mouseleave={closeProducts}>
+                <a href="/products">
                 <button class="dropdown-trigger">All Products</button>
+                </a>
                 {#if productsOpen}
                     <div class="dropdown-content">
                         <div class="dropdown-group">
@@ -54,7 +56,9 @@
             </div>
             
             <div class="dropdown" on:mouseenter={openCookbooks} on:mouseleave={closeCookbooks}>
-                <button class="dropdown-trigger">Cookbooks</button>
+                <a href="/cookbooks">
+                <button class="dropdown-trigger text-black">Cookbooks</button>
+                </a>
                 {#if cookbooksOpen}
                     <div class="dropdown-content">
                         <div class="dropdown-group">
@@ -78,7 +82,7 @@
                 {/if}
             </div>
 
-            <a href="/contact" class="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <a href="/contact" class="text-black hover:text-primary transition-colors">Contact Us</a>
         </nav>
 
         <Sheet.Root>

@@ -8,7 +8,7 @@
 
 <div class="min-h-screen bg-gray-100 py-12">
 	<div class="container mx-auto px-4">
-		<h1 class="mb-12 text-center text-4xl font-bold md:text-5xl">Cookbooks</h1>
+		<h1 class="mb-12 text-center text-4xl font-bold md:text-5xl">Cookbook</h1>
 
 		{#each data.cookbookCategories as cookbookCategory}
 			<div class="mb-16">

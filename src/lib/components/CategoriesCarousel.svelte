@@ -7,6 +7,8 @@
 
 <section class="mt-6 md:mt-12">
     <div class="container mx-auto px-4">
+        <h2 class="text-xl md:text-2xl font-bold text-orange-500 mb-2">Shop by Category</h2>
+        <p class="text-gray-600 text-sm mb-4">Search By Category of the products listed.</p>
         <Carousel.Root
                 opts={{
                     align: "center",

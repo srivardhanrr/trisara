@@ -46,9 +46,9 @@
 		<!-- <div class="md:px-8">
             <InfiniteScroll/>
         </div> -->
-		<!-- <div class="bg-orange-100">
+		{#if data.collection2}
         <CollectionCarousel collection="{data.collection2}" />
-        </div> -->
+		{/if}
 		<InstagramGallery instagramPosts={data.instagramPosts} />
 
 		<!--        <ProductCarousel products={data.collection1.products}/>-->
