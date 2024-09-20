@@ -167,6 +167,7 @@
 	  </div> -->
 
 		<div class:sticky={!isMobile} class="sticky w-full overflow-hidden md:w-1/2">
+			
 			<!-- Main image carousel -->
 			<Carousel.Root
 				opts={{

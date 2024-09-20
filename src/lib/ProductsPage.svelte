@@ -12,7 +12,7 @@
 	{#if showBanner}
 		<div class="relative">
 			{#if bannerImage}
-				<img src={bannerImage} alt="Summer Sale Banner" class="h-64 w-full object-cover sm:h-80" />
+				<img src={bannerImage} alt="products" class="h-64 w-full object-cover sm:h-80" />
 			{/if}
 			<div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
 				<div class="text-center">
