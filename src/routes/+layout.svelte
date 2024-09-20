@@ -8,8 +8,8 @@
 	import { fly } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import '@fontsource/noto-serif-jp';
-    import WhatsAppButton from '$lib/components/WhatsAppButton.svelte';
-	import BackToTopButton from '$lib/components/BackToTopButton.svelte';
+    // import WhatsAppButton from '$lib/components/WhatsAppButton.svelte';
+	// import BackToTopButton from '$lib/components/BackToTopButton.svelte';
 
 	export let data;
 </script>
@@ -24,8 +24,8 @@
 			</div>
 		{/key}
 		<Footer />
-        <BackToTopButton />
-		<WhatsAppButton />
+        <!-- <BackToTopButton />
+		<WhatsAppButton /> -->
 	</main>
 </div>
 

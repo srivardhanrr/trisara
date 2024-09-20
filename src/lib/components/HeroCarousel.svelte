@@ -9,13 +9,9 @@
 			image: '/images/hero2.png'
 		},
 		{
-			title: 'Hero 1',
+			title: 'Hero 2',
 			image: '/images/hero3.png'
 		},
-		// {
-		// 	title: 'Hero 1',
-		// 	image: '/images/home/hero2.jpg'
-		// }
 	];
 
 	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
@@ -41,7 +37,6 @@
 				</div>
 			</Carousel.Item>
 		{/each}
-		<!--    </div>-->
 	</Carousel.Content>
 	<Carousel.Previous class="ml-16" />
 	<Carousel.Next class="mr-16" />

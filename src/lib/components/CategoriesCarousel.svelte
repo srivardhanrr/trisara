@@ -25,7 +25,7 @@
                                 <img class="aspect-square top-0 left-0 w-full h-full object-cover" src="{category.image}"
                                      alt="Kitchen utilities">
                                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h2 class="text-white text-lg ">{category.name}</h2>
+                                    <h2 class="text-white text-md md:text-lg lg:text-xl">{category.name}</h2>
                                 </div>
                             </div>
                         </a>
