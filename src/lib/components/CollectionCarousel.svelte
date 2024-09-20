@@ -16,7 +16,7 @@
         <Carousel.Root opts={{ align: "start" }}>
             <Carousel.Content>
                 {#each collection.products as product}
-                    <Carousel.Item class="basis-1/2 md:basis-1/3 lg:basis-1/4 2xl:basis-1/5">
+                    <Carousel.Item class="basis-1/2 md:basis-1/3 lg:basis-1/4">
                         <ProductCard product={product} />
                     </Carousel.Item>
                 {/each}
