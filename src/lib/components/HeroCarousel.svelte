@@ -6,19 +6,19 @@
 	export let heroImages = [
 		{
 			title: 'Hero 1',
-			image: '/images/home/hero1.jpg'
+			image: '/images/hero2.png'
 		},
 		{
 			title: 'Hero 1',
-			image: '/images/home/hero3.jpg'
+			image: '/images/hero3.png'
 		},
-		{
-			title: 'Hero 1',
-			image: '/images/home/hero2.jpg'
-		}
+		// {
+		// 	title: 'Hero 1',
+		// 	image: '/images/home/hero2.jpg'
+		// }
 	];
 
-	const plugin = Autoplay({ delay: 4000, stopOnInteraction: true });
+	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
 </script>
 
 <Carousel.Root
@@ -31,7 +31,7 @@
 	<Carousel.Content>
 		{#each heroImages as heroImage}
 			<Carousel.Item>
-				<div class="relative h-64 overflow-hidden md:min-h-[calc(100vh-80px)]">
+				<div class="relative h-64 overflow-hidden md:h-full">
 					<img
 						class="object-fit left-0 top-0 h-full w-full"
 						src={heroImage.image}
@@ -43,6 +43,6 @@
 		{/each}
 		<!--    </div>-->
 	</Carousel.Content>
-	<!-- <Carousel.Previous class="ml-16" />
-	<Carousel.Next class="mr-16" /> -->
+	<Carousel.Previous class="ml-16" />
+	<Carousel.Next class="mr-16" />
 </Carousel.Root>
