@@ -42,7 +42,7 @@
 	<Carousel.Content>
 		{#each heroImages as heroImage}
 			<Carousel.Item>
-				<div class="relative h-64 overflow-hidden max-h-[60vh] md:h-full">
+				<div class="relative h-64 overflow-hidden md:h-full">
 					<img
 						class="object-fit left-0 top-0 h-full w-full"
 						src={heroImage.image}
