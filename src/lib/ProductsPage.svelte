@@ -4,7 +4,6 @@
 	export let products;
 	export let showBanner = false;
 	export let title = 'All Products';
-	export let description = 'All the Products that meet your daily needs';
 	export let bannerImage = '/images/hero1.png';
 </script>
 

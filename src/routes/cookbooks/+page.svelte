@@ -1,40 +1,38 @@
 <script>
-
-    export let data;
-
+	export let data;
 </script>
 
 <svelte:head>
 	<title>Trisara | Cookbooks</title>
 </svelte:head>
 
-<div class="bg-gray-100 min-h-screen py-12">
-    <div class="container mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12">Cookbooks</h1>
+<div class="min-h-screen bg-gray-100 py-12">
+	<div class="container mx-auto px-4">
+		<h1 class="mb-12 text-center text-4xl font-bold md:text-5xl">Cookbooks</h1>
 
-        {#each data.cookbookCategories as cookbookCategory}
-            <div class="mb-16">
-                <h2 class="text-3xl font-semibold text-orange-500 mb-6">{cookbookCategory.name}</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    {#each cookbookCategory.cookbooks as cookbook}
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="relative pb-[100%]">
-                                <img
-                                        src={cookbook.image}
-                                        alt={cookbook.name}
-                                        class="absolute top-0 left-0 w-full h-full object-cover"
-                                />
-                            </div>
-                            <div class="p-4">
-                                <a href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}">
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">{cookbook.title}</h3>
-                                </a>
-                                <p class="text-gray-600 truncate">{cookbook.description}</p>
-                            </div>
-                        </div>
-                    {/each}
-                </div>
-            </div>
-        {/each}
-    </div>
+		{#each data.cookbookCategories as cookbookCategory}
+			<div class="mb-16">
+				<h2 class="mb-6 text-3xl font-semibold text-orange-500">{cookbookCategory.name}</h2>
+				<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+					{#each cookbookCategory.cookbooks as cookbook}
+						<div class="overflow-hidden rounded-lg bg-white shadow-md">
+							<div class="relative pb-[100%]">
+								<img
+									src={cookbook.image}
+									alt={cookbook.name}
+									class="absolute left-0 top-0 h-full w-full object-cover"
+								/>
+							</div>
+							<div class="p-4">
+								<a href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}">
+									<h3 class="mb-2 text-xl font-semibold text-gray-800">{cookbook.title}</h3>
+								</a>
+								<p class="truncate text-gray-600">{cookbook.description}</p>
+							</div>
+						</div>
+					{/each}
+				</div>
+			</div>
+		{/each}
+	</div>
 </div>
