@@ -27,7 +27,9 @@
 
 <div class="flex  w-full flex-col">
 	<!-- <Hero /> -->
-	<HeroCarousel />
+	 <div class="overflow-hidden">
+	<HeroCarousel heroImages={data.heroImages} />
+</div>
 	<main class="flex flex-1 flex-col gap-4 md:gap-8">
 		<!-- <div class="pt-20 hidden md:block">
 			<CategoriesOpacity categories={data.categories} />

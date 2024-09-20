@@ -8,7 +8,7 @@ import type { PageServerLoad } from './$types';
 import { api } from '$lib/api';
 
 export const load: PageServerLoad = async () => {
-    const [categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts] = await Promise.all([
+    const [categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts, heroImages] = await Promise.all([
         api.getCategories(),
         api.getProducts(),
         api.getSeries(),
@@ -17,7 +17,7 @@ export const load: PageServerLoad = async () => {
         api.getCollection(HOME_COLLECTION_2),
         api.getInstagramPosts(),
         api.getBlogPosts(),
-        // api.getHeroImages(),
+        api.getHeroImages(),
     ]);
-    return {categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts};
+    return {categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts, heroImages};
 };

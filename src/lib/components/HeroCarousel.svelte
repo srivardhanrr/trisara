@@ -1,5 +1,10 @@
 <script lang="ts">
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
+
+	let api: CarouselAPI;
+	let current = 0;
+	let count = 0;
 
 	import Autoplay from 'embla-carousel-autoplay';
 
@@ -11,13 +16,23 @@
 		{
 			title: 'Hero 2',
 			image: '/images/hero3.png'
-		},
+		}
 	];
 
-	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
+	$: if (api) {
+		count = api.scrollSnapList().length;
+		current = api.selectedScrollSnap() + 1;
+
+		api.on('select', () => {
+			current = api.selectedScrollSnap() + 1;
+		});
+	}
+
+	const plugin = Autoplay({ delay: 4500, stopOnInteraction: true });
 </script>
 
 <Carousel.Root
+	bind:api
 	opts={{ align: 'start' }}
 	plugins={[plugin]}
 	class="w-full"
@@ -27,13 +42,12 @@
 	<Carousel.Content>
 		{#each heroImages as heroImage}
 			<Carousel.Item>
-				<div class="relative h-64 overflow-hidden md:h-full">
+				<div class="relative h-64 overflow-hidden max-h-[60vh] md:h-full">
 					<img
 						class="object-fit left-0 top-0 h-full w-full"
 						src={heroImage.image}
 						alt={heroImage.title}
 					/>
-
 				</div>
 			</Carousel.Item>
 		{/each}
@@ -41,3 +55,17 @@
 	<Carousel.Previous class="ml-16" />
 	<Carousel.Next class="mr-16" />
 </Carousel.Root>
+<!-- <div class="py-2 text-center text-sm text-muted-foreground">
+	Slide {current} of {count}
+</div> -->
+<div class="py-2 text-center text-sm text-muted-foreground space-x-3 -m-10 z-50">
+	{#each Array(count) as _, i}
+	  <button
+		on:click={() => api?.scrollTo(i)}
+		class="w-3 h-3 rounded-full transition-all duration-300 focus:outline-none"
+		class:bg-orange-500={current === i}
+		class:bg-gray-400={current !== i}
+		aria-label={`Go to slide ${i + 1}`}
+	  />
+	{/each}
+  </div>
