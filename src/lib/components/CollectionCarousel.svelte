@@ -8,7 +8,7 @@
 {#if (collection)}
  <section class="py-8 md:p-8 bg-opacity-15" style="background-image: url('/images/background-2.png'); background-size: cover; background-position: center;">
     <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center lg:mb-6">
+        <div class="flex justify-between items-center mb-6">
             <h2 class="text-lg sm:text-2xl font-bold text-orange-500">{collection.name}</h2>
             <a href="/collections/{collection.slug}" class="text-sm text-orange-500 hover:underline">View All</a>
         </div>

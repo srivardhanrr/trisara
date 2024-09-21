@@ -68,6 +68,8 @@
 				{#each series as category}
 					<Carousel.Item class="md:basis-1/2 lg:basis-1/3">
 						<div class="relative aspect-square overflow-hidden">
+						<a href="/series/{category.slug}">
+
 							{#if category.image}
 							<div
 								class="absolute inset-0 bg-cover bg-center"
@@ -83,6 +85,7 @@
 								<h3 class="text-center text-2xl font-bold uppercase">{category.name}</h3>
 								<p class="mt-5 text-center">{@html category.description}</p>
 							</div>
+						</a>
 						</div>
 					</Carousel.Item>
 				{/each}

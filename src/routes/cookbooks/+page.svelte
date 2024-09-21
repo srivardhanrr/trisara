@@ -16,6 +16,7 @@
 				<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
 					{#each cookbookCategory.cookbooks as cookbook}
 						<div class="overflow-hidden rounded-lg bg-white shadow-md">
+								<a href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}">
 							<div class="relative pb-[100%]">
 								<img
 									src={cookbook.image}
@@ -24,11 +25,11 @@
 								/>
 							</div>
 							<div class="p-4">
-								<a href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}">
-									<h3 class="mb-2 text-xl font-semibold text-gray-800">{cookbook.title}</h3>
-								</a>
-								<p class="truncate text-gray-600">{cookbook.description}</p>
+									<h3 class="mb-2 text-xl font-semibold text-orange-500">{cookbook.title}</h3>
+								<!-- <p class="truncate text-gray-600">{cookbook.description}</p> -->
 							</div>
+								</a>
+
 						</div>
 					{/each}
 				</div>
