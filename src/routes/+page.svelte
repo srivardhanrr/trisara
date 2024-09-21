@@ -31,9 +31,6 @@
 	<HeroCarousel />
 <!-- </div> -->
 	<main class="flex flex-1 flex-col gap-4 md:gap-8">
-		<!-- <div class="pt-20 hidden md:block">
-			<CategoriesOpacity categories={data.categories} />
-		</div> -->
 		<div class="md:px-8 pt-8 pb-10">
 			<CategoriesCarousel categories={data.categories} />
 		</div>
@@ -42,12 +39,7 @@
 		<div class="md:mb-10">
 			<NewCategories series={data.series} />
 		</div>
-
-		<!-- <Categories/>-->
-		<!--        <RoomCategories/>-->
-		<!-- <div class="md:px-8">
-            <InfiniteScroll/>
-        </div> -->
+		
 		{#if data.collection2}
         <CollectionCarousel collection="{data.collection2}" />
 		{/if}

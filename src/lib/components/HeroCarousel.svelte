@@ -11,6 +11,10 @@
 	export let heroImages = [
 		{
 			title: 'Hero 1',
+			image: '/images/hero4.jpg'
+		},
+		{
+			title: 'Hero 1',
 			image: '/images/hero2.png'
 		},
 		{

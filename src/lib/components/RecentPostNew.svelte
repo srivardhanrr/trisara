@@ -66,7 +66,7 @@
                 <span class="h-2 w-2 rounded-full bg-gray-300 mx-1"></span>
             </div>
         {:else}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {#each posts as post}
                     <div class="bg-white rounded-lg overflow-hidden shadow-md">
                         <div class="relative overflow-hidden">
