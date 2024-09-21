@@ -167,7 +167,6 @@
 	  </div> -->
 
 		<div class:sticky={!isMobile} class="sticky w-full overflow-hidden md:w-1/2">
-			
 			<!-- Main image carousel -->
 			<Carousel.Root
 				opts={{
@@ -349,6 +348,16 @@
 
 							<Accordion.Content class="mx-4 mt-4">
 								<div class="grid grid-cols-4 gap-4 md:flex md:justify-center md:space-x-4">
+									{#if product.infographics && product.infographics.length > 0}
+										{#each product.infographics as infographics}
+											<img
+												src="{infographics.image}"
+												alt="{infographics.name}"
+												class="h-16 w-16 rounded-lg object-cover md:h-24 md:w-24"
+											/>
+										{/each}
+									{:else}
+
 									<img
 										src="/images/feature/eth.png"
 										alt="Feature 1"
@@ -369,6 +378,7 @@
 										alt="Feature 4"
 										class="h-16 w-16 rounded-lg object-cover md:h-24 md:w-24"
 									/>
+									{/if}
 								</div>
 							</Accordion.Content>
 						</Accordion.Item>
