@@ -26,4 +26,5 @@ export const api = {
     getBlogPosts: () => fetchAPI('/blogs/'),
     getBlogPost: (slug: string) => fetchAPI(`/blogs/${slug}/`),
     getHeroImages: () => fetchAPI('/hero-images/'),
+    getSearch: (query: string) => fetchAPI(`/products/?search=${encodeURIComponent(query)}`)
 };

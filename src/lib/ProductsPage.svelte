@@ -28,7 +28,7 @@
 {/if}
 
 
-	<div class="my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+	<div class="my-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 		{#each products as product}
 		  <ProductCard {product} />
 		{/each}

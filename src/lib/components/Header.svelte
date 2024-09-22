@@ -7,12 +7,14 @@
     import {Button} from "$lib/components/ui/button";
     import {Input} from "$lib/components/ui/input";
     import * as Sheet from "$lib/components/ui/sheet";
+	import { goto } from '$app/navigation';
 
     export let categories;
     export let cookbookCategories;
 
     let productsOpen = false;
     let cookbooksOpen = false;
+    let searchTerm = '';
 
     function openProducts() {
         productsOpen = true;
@@ -28,6 +30,13 @@
 
     function closeCookbooks() {
         cookbooksOpen = false;
+    }
+
+    function handleSearch(event: Event) {
+        event.preventDefault();
+        if (searchTerm.trim()) {
+            goto(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+        }
     }
 </script>
 
@@ -115,24 +124,36 @@
         </div>
 
         <div class="flex items-center space-x-4 flex-1 justify-end">
-            <form class="hidden md:block">
+            <form class="hidden md:flex gap-4 items-center" on:submit={handleSearch}>
                 <div class="relative">
                     <Search class="text-muted-foreground absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4"/>
                     <Input
-                            type="search"
-                            placeholder="Search products..."
-                            class="pl-10 w-[200px] lg:w-[250px]"
+                        type="search"
+                        placeholder="Search products..."
+                        class="pl-10 w-[200px] lg:w-[250px]"
+                        bind:value={searchTerm}
                     />
                 </div>
+                <Button
+                variant="outline"
+                type="submit"
+                size="icon"
+                class="rounded-full bg-orange-500 justify-center hidden md:flex"
+            >
+                <Search class="text-white h-5 w-5"/>
+                <span class="sr-only">Toggle Social Links</span>
+            </Button>
             </form>
+            <a href="/search">
             <Button
                 variant="ghost"
                 size="icon"
-                class="rounded-full"
+                class="rounded-full md:hidden"
             >
-                <Share2 class="h-6 w-6"/>
+                <Search class="h-6 w-6"/>
                 <span class="sr-only">Toggle Social Links</span>
             </Button>
+            </a>
         </div>
     </div>
 </header>
