@@ -38,15 +38,14 @@
 		<div class="md:px-8 pt-8 pb-10">
 			<CategoriesCarousel categories={data.categories} />
 		</div>
-		<CollectionCarousel collection={data.collection1} />
+		<CollectionCarousel collection={data.homePageSettings['collection_1']} />
 		̥
 		<div class="md:mb-10">
 			<NewCategories series={data.series} />
 		</div>
 		
-		{#if data.collection2}
-        <CollectionCarousel collection="{data.collection2}" />
-		{/if}
+        <CollectionCarousel collection="{data.homePageSettings['collection_2']}" />
+	
 		<InstagramGallery instagramPosts={data.instagramPosts} />
 
 		<!--        <ProductCarousel products={data.collection1.products}/>-->

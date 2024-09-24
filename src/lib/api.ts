@@ -10,6 +10,7 @@ async function fetchAPI(endpoint: string) {
 }
 
 export const api = {
+    getHomePageSettings: () => fetchAPI('/home-page-settings/'),
     getCategories: () => fetchAPI('/categories/'),
     getCategory: (slug: string) => fetchAPI(`/categories/${slug}/`),
     getSeries: () => fetchAPI('/series/'),

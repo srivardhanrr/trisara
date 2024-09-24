@@ -16,8 +16,8 @@ export const load: PageServerLoad = async () => {
         api.getInstagramPosts(),
         api.getBlogPosts(),
     ]);
-
+    const homePageSettings = await api.getHomePageSettings();
     const homeHeroImages = await api.getHeroImages();
-    return {categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts, homeHeroImages};
+    return {categories, products, series, collections, collection1, collection2, instagramPosts, blogPosts, homeHeroImages, homePageSettings};
 };
 

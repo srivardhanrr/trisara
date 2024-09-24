@@ -18,7 +18,7 @@
     </div>
     <div class='w-full md:w-3/5 p-2 md:p-4'>
       <div class='text-center md:text-left'>
-        <h2 class='text-4xl font-extrabold tracking-tight text-orange-500 md:text-5xl'>{title}</h2>
+        <h2 class='text-4xl font-extrabold tracking-tight text-orange-500 md:text-4xl'>{title}</h2>
         <p class='mt-4 text-md lg:text-lg text-black'>          
 			{description.length > 500 ? description.slice(0, 500) + '...' : description}
 		</p>
