@@ -26,7 +26,7 @@
 
                 <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">The Beginning</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
-                    Trisara was founded with a straightforward idea: to provide quality kitchenware at prices that are
+                    Trisara was founded with a straightforward idea to provide quality kitchenware at prices that are
                     affordable for all. We noticed that many kitchen products are out of reach for those setting up
                     their first home, whether students, young professionals, or families on a budget. Our goal is to
                     fill that gap by offering practical and cost-effective kitchen essentials that don't compromise on
