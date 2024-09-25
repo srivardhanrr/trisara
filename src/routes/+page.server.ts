@@ -1,9 +1,5 @@
 import {HOME_COLLECTION_1, HOME_COLLECTION_2} from "$env/static/private";
-import { inject } from '@vercel/analytics'
-import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 
-injectSpeedInsights();
-inject();
 export const prerender = false;
 
 import type { PageServerLoad } from './$types';
