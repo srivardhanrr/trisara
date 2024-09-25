@@ -25,17 +25,17 @@
 	<meta name="description" content="Trisara Homeware | Home" />
 </svelte:head>
 
-<div class="flex  w-full flex-col">
+<div class="flex w-full flex-col">
 	<!-- <Hero /> -->
-	 <!-- <div class="overflow-hidden"> -->
-	  {#if data.homeHeroImages}
-	<HeroCarousel heroImages={data.homeHeroImages} />
+	<!-- <div class="overflow-hidden"> -->
+	{#if data.homePageSettings['hero_images']}
+		<HeroCarousel heroImages={data.homePageSettings['hero_images']} />
 	{:else}
-	<HeroCarousel />
+		<HeroCarousel />
 	{/if}
-<!-- </div> -->
+	<!-- </div> -->
 	<main class="flex flex-1 flex-col gap-4 md:gap-8">
-		<div class="md:px-8 pt-8 pb-10">
+		<div class="pb-10 pt-8 md:px-8">
 			<CategoriesCarousel categories={data.categories} />
 		</div>
 		<CollectionCarousel collection={data.homePageSettings['collection_1']} />
@@ -43,9 +43,9 @@
 		<div class="md:mb-10">
 			<NewCategories series={data.series} />
 		</div>
-		
-        <CollectionCarousel collection="{data.homePageSettings['collection_2']}" />
-	
+
+		<CollectionCarousel collection={data.homePageSettings['collection_2']} />
+
 		<InstagramGallery instagramPosts={data.instagramPosts} />
 
 		<!--        <ProductCarousel products={data.collection1.products}/>-->
