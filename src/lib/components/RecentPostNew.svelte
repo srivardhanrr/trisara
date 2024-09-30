@@ -21,7 +21,7 @@
 <section class=" bg-white">
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-3xl font-bold">Blogs</h2>
+            <h2 class="text-2xl text-orange-500 font-bold">Blogs</h2>
             <a href="/blogs" class="text-orange-500 hover:underline">View All</a>
         </div>
 

@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="p-2 md:p-4 bg-orange-50">
-      <h4 class="text-xs font-medium text-gray-900 truncate">{product.name}</h4>
+      <h4 class="text-sm font-medium text-black truncate">{product.name}</h4>
       {#if product.set}
         <p class="text-xs text-gray-700 truncate">{product.set}</p>
       {:else}
