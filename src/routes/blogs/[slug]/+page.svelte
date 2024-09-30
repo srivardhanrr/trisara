@@ -20,7 +20,7 @@
             <span class="ml-2 font-bricolage">Back to all posts</span>
           </a>
   
-          <h1 class="font-playfair text-4xl md:text-5xl text-center font-bold mb-6 text-brand-burgundy">{post.title}</h1>
+          <h1 class="font-playfair text-3xl md:text-4xl text-center font-bold mb-6 text-brand-burgundy">{post.title}</h1>
         <div class="bg-white md:p-8 shadow-lg rounded-lg overflow-hidden">
           {#if post.image}
           <img 

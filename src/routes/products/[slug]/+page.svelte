@@ -35,13 +35,13 @@
 		const handleScroll = (event: Event) => {
 			const target = event.target as HTMLElement;
 			scrollYProgress = target.scrollTop / target.scrollHeight;
-			const cardsBreakpoints = content.map((_, index) => index / content.length);
+			// const cardsBreakpoints = content.map((_, index) => index / content.length);
 
-			cardsBreakpoints.forEach((breakpoint, index) => {
-				if (scrollYProgress > breakpoint - 0.2 && scrollYProgress <= breakpoint) {
-					activeCard = index;
-				}
-			});
+			// cardsBreakpoints.forEach((breakpoint, index) => {
+			// 	if (scrollYProgress > breakpoint - 0.2 && scrollYProgress <= breakpoint) {
+			// 		activeCard = index;
+			// 	}
+			// });
 		};
 
 		ref.addEventListener('scroll', handleScroll);
@@ -209,7 +209,7 @@
 									<img
 										src={image.image}
 										alt={`${product.name} - Thumbnail ${index + 1}`}
-										class="flex h-20 w-full items-center justify-center rounded-lg object-cover"
+										class="flex h-20 w-full aspect-square items-center justify-center rounded-lg object-cover"
 										class:border-2={index === currentImageIndex}
 										class:border-orange-500={index === currentImageIndex}
 									/>
@@ -241,15 +241,11 @@
 					</Breadcrumb.Item>
 				</Breadcrumb.List>
 			</Breadcrumb.Root>
-			<h1 class="mb-2 mt-4 text-2xl font-bold md:text-3xl lg:mt-10">{product.name}</h1>
-			<p class="mb-4 mt-5 text-black lg:mt-10">{product.description}</p>
-
-			<!-- Star rating placeholder -->
-			<!-- <div class="mb-4 flex">
-			{#each Array(5) as _, i}
-				<span class={i < 4 ? 'text-yellow-400' : 'text-gray-300'}>★</span>
-			{/each}
-		</div> -->
+			<h1 class="mb-2 mt-4 text-xl font-bold md:text-3xl lg:mt-10">{product.name}</h1>
+			{#if product.set}
+			<h6 class="text-md">{product.set}</h6>
+			{/if}
+			<p class="mb-4 text-sm md:text-md text-black lg:mt-10">{product.description}</p>
 
 			{#if product.variants && product.variants.length > 0}
 				<div class="mb-6">

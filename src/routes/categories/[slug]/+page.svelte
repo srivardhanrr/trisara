@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Categories from './../../../lib/components/Categories.svelte';
     import ProductsPage from "$lib/ProductsPage.svelte";
 
     export let data;
@@ -15,4 +16,11 @@
 	/>
 </svelte:head>
 
-<ProductsPage products={category.products} bannerImage={category.image} showBanner=true title={category.name} description={category.description} />
+<ProductsPage 
+    products={category.products} 
+    bannerImage={category.image} 
+    showBanner={true} 
+    title={category.name} 
+    description={category.description} 
+    categories={data.categories}
+/>

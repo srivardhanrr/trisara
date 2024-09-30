@@ -15,4 +15,11 @@
 	/>
 </svelte:head>
 
-<ProductsPage products={collection.products} bannerImage={collection.image} showBanner=true title={collection.name} description={collection.description} />
+<ProductsPage 
+    products={collection.products} 
+    bannerImage={collection.image} 
+    showBanner={true} 
+    title={collection.name} 
+    description={collection.description}
+    categories={collection.categories} 
+/>

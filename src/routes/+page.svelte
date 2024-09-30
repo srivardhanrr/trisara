@@ -1,21 +1,10 @@
 <script lang="ts">
-	import FeaturedProducts from '$lib/components/FeaturedProducts.svelte';
-	import Newsletter from '$lib/components/Newsletter.svelte';
-	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
 	import CategoriesCarousel from '$lib/components/CategoriesCarousel.svelte';
 	import HeroCarousel from '$lib/components/HeroCarousel.svelte';
-	import RoomCategories from '$lib/components/RoomCategories.svelte';
 	import InstagramGallery from '$lib/components/InstagramGallery.svelte';
-	import ProductCarousel from '$lib/components/ProductCarousel.svelte';
-	import RecentPosts from '$lib/components/RecentPosts.svelte';
 	import RecentPostNew from '$lib/components/RecentPostNew.svelte';
-	import FeaturedSection from '$lib/components/FeaturedSection.svelte';
 	import CollectionCarousel from '$lib/components/CollectionCarousel.svelte';
-	import CollectionCarousel2 from '$lib/components/CollectionCarousel2.svelte';
-	import Header from '$lib/components/Header.svelte';
 	import NewCategories from '$lib/components/ui/NewCategories.svelte';
-	import Hero from '$lib/components/Hero.svelte';
-	import CategoriesOpacity from '$lib/components/CategoriesOpacity.svelte';
 
 	export let data;
 </script>
@@ -26,14 +15,11 @@
 </svelte:head>
 
 <div class="flex w-full flex-col">
-	<!-- <Hero /> -->
-	<!-- <div class="overflow-hidden"> -->
 	{#if data.homePageSettings['hero_images']}
 		<HeroCarousel heroImages={data.homePageSettings['hero_images']} />
 	{:else}
 		<HeroCarousel />
 	{/if}
-	<!-- </div> -->
 	<main class="flex flex-1 flex-col gap-4 md:gap-8">
 		<div class="pb-10 pt-8 md:px-8">
 			<CategoriesCarousel categories={data.categories} />
@@ -48,11 +34,6 @@
 
 		<InstagramGallery instagramPosts={data.instagramPosts} />
 
-		<!--        <ProductCarousel products={data.collection1.products}/>-->
-		<!--        <CollectionCarousel2 />-->
-		<!--                <Newsletter/>-->
-		<!--        <FeaturedSection products="{data.collection1.products}"/>-->
-		<!--        <RecentPosts/>-->
 		<RecentPostNew posts={data.blogPosts} />
 	</main>
 </div>
