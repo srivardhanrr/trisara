@@ -24,7 +24,7 @@
                     your daily needs.
                 </p>
 
-                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">The Beginning</h2>
+                <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">The Beginning</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
                     Trisara was founded with a straightforward idea to provide quality kitchenware at prices that are
                     affordable for all. We noticed that many kitchen products are out of reach for those setting up
@@ -40,7 +40,7 @@
                          class="w-full h-64 object-cover rounded-lg shadow-md">
                 </div>
 
-                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Our Mission</h2>
+                <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">Our Mission</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
                     Our mission is to make everyday cooking easier and more enjoyable with products that fit perfectly
                     into your life. We design our kitchenware to be durable, reliable, and, most importantly,
@@ -48,7 +48,7 @@
                     Trisara is here to offer the essentials you need without the hefty price tag.
                 </p>
 
-                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Our Journey</h2>
+                <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">Our Journey</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
                     Our journey has been shaped by a commitment to meeting the real needs of our customers. From
                     selecting high-quality materials to ensuring every product is durable, we have made great efforts to
@@ -56,7 +56,7 @@
                     been continuously improved to better meet their needs, with a strong focus on value-for-money.
                 </p>
 
-                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Building Bonds with Our Customers</h2>
+                <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">Building Bonds with Our Customers</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
                     At Trisara, we are more than just a brand; we are an integral part of your kitchen, your daily
                         routine, and your home. We understand the importance of reliable and budget-friendly kitchenware
@@ -64,7 +64,7 @@
                         families across India.
                 </p>
 
-                <h2 class="text-3xl font-semibold text-orange-500 mt-12 mb-4">Looking Ahead</h2>
+                <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">Looking Ahead</h2>
                 <p class="text-lg text-black mb-6 leading-relaxed">
                     As we move forward, our vision remains focused on providing kitchenware that combines practicality,
                     reliability, and affordability. We are excited to keep expanding our range and bringing new,
