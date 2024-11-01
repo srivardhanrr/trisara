@@ -23,7 +23,7 @@
         <div class="mt-4 sm:flex sm:items-center justify-center items-center">
             <div class="text-sm text-gray-500 dark:text-gray-400">
                 <p class="text-center"><strong class="text-orange-500">Phone:</strong> <a href="tel:+919353258820" class="hover:underline">+91 93532 58820</a></p>
-                <p class="text-center"><strong class="text-orange-500">Address:</strong> #45, Embassy Square, 4th Main, Chamrajpet, Bangalore, 560018</p>
+                <p class="text-center"><strong class="text-orange-500">Address:</strong> #45, Embassy Square, 4th Main, Chamarajpet, Bangalore, 560018</p>
             </div>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

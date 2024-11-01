@@ -1,10 +1,12 @@
+import { error } from "@sveltejs/kit";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 async function fetchAPI(endpoint: string) {
     const response = await fetch(`${API_URL}${endpoint}`);
     if (!response.ok) {
-        // throw new Error(`HTTP error! status: ${response.status}`);
-        return null;
+        const err = await response.text();
+        throw error(response.status, err);
     }
     return await response.json();
 }

@@ -11,4 +11,4 @@
 	<title>Trisara | All Products</title>
 </svelte:head>
 
-<ProductsPage products={products} showBanner=true categories={data.categories} />
+<ProductsPage products={products} showBanner={true} categories={data.categories} />

@@ -5,9 +5,9 @@ export const prerender = false;
 import type { PageServerLoad } from './$types';
 import { api } from '$lib/api';
 
-export const load: PageServerLoad = async () => {
-    const [categories, products, series, collections, instagramPosts, blogPosts] = await Promise.all([
-        api.getCategories(),
+export const load: PageServerLoad = async ({parent}) => {
+    const [products, series, collections, instagramPosts, blogPosts] = await Promise.all([
+        // api.getCategories(),
         api.getProducts(),
         api.getSeries(),
         api.getCollections(),
@@ -15,6 +15,6 @@ export const load: PageServerLoad = async () => {
         api.getBlogPosts(),
     ]);
     const homePageSettings = await api.getHomePageSettings();
-    return {categories, products, series, collections, instagramPosts, blogPosts, homePageSettings};
+    return {products, series, collections, instagramPosts, blogPosts, homePageSettings};
 };
 
