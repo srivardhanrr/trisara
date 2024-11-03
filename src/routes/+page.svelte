@@ -32,7 +32,7 @@
 			<NewCategories series={data.series} />
 		</div>
 		<HowWeWork />
-		<InfiniteScroll />
+		<!-- <InfiniteScroll /> -->
 
 		<CollectionCarousel collection={data.homePageSettings['collection_2']} />
 
