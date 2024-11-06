@@ -5,7 +5,6 @@
   
   <footer class="my-3 border">
     <div class="mx-auto px-4 flex flex-col md:flex-row relative">
-      
       <!-- Contact Section -->
       <div class="space-y-4 flex-1 py-16 bg-orange-50 justify-center">
         <div class="flex mt-10 items-center space-x-2">
