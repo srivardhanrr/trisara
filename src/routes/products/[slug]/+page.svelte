@@ -80,92 +80,6 @@
 		bind:this={ref}
 		class="mb-8 flex flex-col gap-8 p-2 transition ease-in-out sm:p-6 md:flex-row"
 	>
-		<!-- <div
-		class:sticky={!isMobile}
-		class="sticky w-full overflow-hidden md:w-1/2"
-	>
-
-		<img
-			src={product.images[currentImageIndex].image}
-			alt={product.name}
-			class="object-fit flex aspect-square h-full w-full md:px-8"
-		/>
-
-
-		<div class="mt-4 flex items-center justify-center gap-2">
-			{#each product.images as image, index}
-				
-				<button class="cursor-pointer" on:click={() => changeImage(index)}>
-					<img
-						src={image.image}
-						alt={product.name}
-						class="flex h-20 w-20 items-center justify-center rounded-lg"
-						class:border-2={index === currentImageIndex}
-						class:border-orange-500={index === currentImageIndex}
-					/>
-				</button>
-			{/each}
-		</div>
-	</div> -->
-
-		<!-- <div class:sticky={!isMobile} class="sticky w-full overflow-hidden md:w-1/2">
-
-		<Carousel.Root
-		  opts={{
-			loop: true,
-			align: "start",
-		  }}
-		  class="w-full"
-		  on:change={handleCarouselChange}
-		>
-		  <Carousel.Content>
-			{#each product.images as image, index}
-			  <Carousel.Item class="basis-full">
-				<img
-				  src={image.image}
-				  alt={`${product.name} - Image ${index + 1}`}
-				  class="object-cover aspect-square h-full w-full md:px-8"
-				/>
-			  </Carousel.Item>
-			{/each}
-		  </Carousel.Content>
-		  <Carousel.Previous />
-		  <Carousel.Next />
-		</Carousel.Root>
-	  
-		<div class="mt-4">
-		  <Carousel.Root
-			opts={{
-			  align: "start",
-			  containScroll: "trimSnaps",
-			}}
-			class="w-full"
-			bind:api={carouselApi}
-		  >
-			<Carousel.Content class="-ml-2">
-			  {#each product.images as image, index}
-				<Carousel.Item class="pl-2 basis-1/4 sm:basis-1/5 md:basis-1/6 lg:basis-1/7">
-				  <button
-					class="cursor-pointer w-full"
-					on:click={() => changeImage(index)}
-				  >
-					<img
-					  src={image.image}
-					  alt={`${product.name} - Thumbnail ${index + 1}`}
-					  class="flex h-20 w-full items-center justify-center rounded-lg object-cover"
-					  class:border-2={index === currentImageIndex}
-					  class:border-orange-500={index === currentImageIndex}
-					/>
-				  </button>
-				</Carousel.Item>
-			  {/each}
-			</Carousel.Content>
-			<Carousel.Previous />
-			<Carousel.Next />
-		  </Carousel.Root>
-		</div>
-	  </div> -->
-
 		<div class:sticky={!isMobile} class="sticky w-full overflow-hidden md:w-1/2">
 			<!-- Main image carousel -->
 			<Carousel.Root
@@ -192,7 +106,6 @@
 				<Carousel.Next />
 			</Carousel.Root>
 
-			<!-- Thumbnail carousel -->
 			<div class="mt-4">
 				<Carousel.Root
 					opts={{
@@ -302,11 +215,11 @@
 										<h2 class="text-lg text-orange-500">PRODUCT FEATURES</h2>
 									</Accordion.Trigger>
 								</Card.Title>
-
 								<Accordion.Content>
 									<ul class="mx-4 list-disc space-y-2 pl-5">
 										{#each product.features as feature}
-											<li>{feature.feature}</li>
+											<li><b>{#if feature.feature}{feature.feature}: {/if}</b>
+												{#if feature.description}{feature.description}{/if}</li>
 										{/each}
 									</ul>
 								</Accordion.Content>
@@ -315,27 +228,6 @@
 					</Card.Root>
 				</div>
 			{/if}
-
-			<!-- {#if product.description}
-			<div class="mt-8">
-				<Card.Root class="border-orange-200 bg-orange-50">
-					<Accordion.Root value="item-1">
-						<Accordion.Item value="item-1">
-							<Card.Title class="mx-5 text-xl">
-								<Accordion.Trigger>
-									<h2 class="text-lg text-orange-500">PRODUCT DESCRIPTION</h2>
-								</Accordion.Trigger>
-							</Card.Title>
-
-							<Accordion.Content class="mx-4">
-								<p class="text-black leading-6">{product.description}</p>
-							</Accordion.Content>
-						</Accordion.Item>
-					</Accordion.Root>
-				</Card.Root>
-			</div>
-		{/if} -->
-
 			<div class="mt-8">
 				<Card.Root class="bg-orange-50">
 					<Accordion.Root value="item-1">
@@ -426,7 +318,9 @@
 								<Accordion.Content>
 									<ul class="mx-4 list-disc space-y-2 pl-5">
 										{#each product.instructions as instruction}
-											<li>{instruction.instruction}</li>
+											<li><b>{#if instruction.instruction}
+												{instruction.instruction}: 
+											{/if}</b>{#if instruction.description}{instruction.description}{/if}</li>
 										{/each}
 									</ul>
 								</Accordion.Content>

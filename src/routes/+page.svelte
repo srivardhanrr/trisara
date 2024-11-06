@@ -28,6 +28,9 @@
 			<CategoriesCarousel categories={data.categories} />
 		</div>
 		<CollectionCarousel collection={data.homePageSettings['collection_1']} />
+		<div class="container">
+			<InfiniteScroll />
+		</div>
 		<div class="md:mb-10">
 			<NewCategories series={data.series} />
 		</div>

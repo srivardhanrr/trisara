@@ -42,7 +42,7 @@
   </div>
   <div class="bg-muted hidden lg:block">
     <img
-      src="/images/hero1.png"
+      src="/images/our-story-1.png"
       alt="placeholder"
       width="1920"
       height="1080"

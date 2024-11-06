@@ -34,10 +34,10 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-                    <img src="/images/our-story-2.jpg" alt="Affordable Cooking"
-                         class="w-full h-64 object-cover rounded-lg shadow-md">
-                    <img src="/images/our-story-3.jpg" alt="Quality Kitchenware"
-                         class="w-full h-64 object-cover rounded-lg shadow-md">
+                    <img src="/images/our-story-2a.webp" alt="Affordable Cooking"
+                         class="w-full h-80 object-cover rounded-lg shadow-md">
+                    <img src="/images/our-story-2b.webp" alt="Quality Kitchenware"
+                         class="w-full h-80 object-cover rounded-lg shadow-md">
                 </div>
 
                 <h2 class="text-2xl font-semibold text-orange-500 mt-12 mb-4">Our Mission</h2>

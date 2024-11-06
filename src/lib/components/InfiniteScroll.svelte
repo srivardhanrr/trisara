@@ -41,7 +41,7 @@
 </script>
 
 <div class="flex items-center">
-    <div class="mr-4 text-lg font-semibold">Available on</div>
+    <div class="mr-4 text-xl text-orange-500 font-semibold">Available on</div>
     <div
         class="relative flex-1 overflow-hidden bg-background"
         bind:this={containerRef}

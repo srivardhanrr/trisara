@@ -33,8 +33,8 @@
             <div class="bg-gray-50 p-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 h-full flex flex-col justify-between">
               <div>
                 <div class="text-4xl mb-4">{step.icon}</div>
-                <h3 class="text-2xl font-bricolage text-brand-burgundy mb-4">{step.title}</h3>
-                <p class="text-gray-700 leading-relaxed">{step.description}</p>
+                <h3 class="text-xl font-bricolage text-orange-500 mb-4">{step.title}</h3>
+                <p class="text-black leading-relaxed">{step.description}</p>
               </div>
               <div class="mt-6 flex justify-between items-center">
                 <span class="text-brand-gold font-bold text-lg">{index + 1}</span>
