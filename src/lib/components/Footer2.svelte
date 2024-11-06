@@ -18,9 +18,9 @@
               care@trisara.com
             </a>
           </div>
-          <a href="mailto:corporate@trisara.com" class="text-gray-600 hover:text-orange-500 ml-7">
+          <!-- <a href="mailto:corporate@trisara.com" class="text-gray-600 hover:text-orange-500 ml-7">
             corporate@trisara.com
-          </a>
+          </a> -->
         </div>
         
         <div class="space-y-2">
