@@ -10,6 +10,21 @@
 	import '@fontsource/noto-serif-jp';
     import WhatsAppButton from '$lib/components/WhatsAppButton.svelte';
 	import BackToTopButton from '$lib/components/BackToTopButton.svelte';
+	import { browser } from '$app/environment'
+    import { onMount, onDestroy } from 'svelte'
+    import { initLenis, destroyLenis } from '$lib/lenis'
+
+    onMount(() => {
+        if (browser) {
+            initLenis()
+        }
+    })
+
+    onDestroy(() => {
+        if (browser) {
+            destroyLenis()
+        }
+    })
 
 	export let data;
 </script>
