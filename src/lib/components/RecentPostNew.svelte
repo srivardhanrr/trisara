@@ -2,7 +2,7 @@
     import * as Carousel from "$lib/components/ui/carousel";
     import {onMount} from 'svelte';
 
-    let isMobile = false;
+    let isMobile = $state(false);
 
     onMount(() => {
         const checkMobile = () => {
@@ -13,7 +13,11 @@
         return () => window.removeEventListener('resize', checkMobile);
     });
 
-    export let posts;
+    interface Props {
+        posts: any;
+    }
+
+    let { posts }: Props = $props();
 
 </script>
 

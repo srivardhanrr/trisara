@@ -9,24 +9,28 @@
 	import { ChevronDown } from 'lucide-svelte';
 	import type { EmblaCarouselType } from 'embla-carousel';
 
-	let selectedVariant: string | null = null;
-	let mainCarouselApi: EmblaCarouselType;
-	let thumbnailCarouselApi: EmblaCarouselType;
+	let selectedVariant: string | null = $state(null);
+	let mainCarouselApi: EmblaCarouselType = $state();
+	let thumbnailCarouselApi: EmblaCarouselType = $state();
 
-	export let data;
+	interface Props {
+		data: any;
+	}
 
-	$: ({ product, collection } = data);
+	let { data }: Props = $props();
+
+	let { product, collection } = $derived(data);
 
 	let activeCard = 0;
 	let scrollYProgress = 0;
-	let isMobile: boolean;
-	let currentImageIndex = 0; // New: Track the current image index
+	let isMobile: boolean = $state();
+	let currentImageIndex = $state(0); // New: Track the current image index
 
 	function checkMobile() {
 		isMobile = window.innerWidth < 768;
 	}
 
-	let ref: HTMLDivElement;
+	let ref: HTMLDivElement = $state();
 
 	onMount(() => {
 		checkMobile();
@@ -94,8 +98,8 @@
 				<Carousel.Content>
 					{#each product.images as image, index}
 						<Carousel.Item class="basis-full">
-							<img
-								src={image.image}
+							<enhanced:img
+								src="{image.image}?blur=15"
 								alt={`${product.name} - Image ${index + 1}`}
 								class="aspect-square h-full w-full object-cover"
 							/>
@@ -118,7 +122,7 @@
 					<Carousel.Content class="-ml-2">
 						{#each product.images as image, index}
 							<Carousel.Item class="lg:basis-1/7 basis-1/4 pl-2 sm:basis-1/5 md:basis-1/6">
-								<button class="w-full cursor-pointer" on:click={() => changeImage(index)}>
+								<button class="w-full cursor-pointer" onclick={() => changeImage(index)}>
 									<img
 										src={image.image}
 										alt={`${product.name} - Thumbnail ${index + 1}`}

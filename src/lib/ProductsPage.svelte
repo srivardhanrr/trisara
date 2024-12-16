@@ -2,12 +2,23 @@
 	import ProductCard from '$lib/components/ProductCard.svelte';
 	import CategoriesCarousel from './components/CategoriesCarousel.svelte';
 
-	export let products;
-	export let showBanner: boolean = false;
-	export let title = 'All Products';
-	export let bannerImage = '/images/our-story-1.png';
-	export let description = 'Check out our latest products';
-	export let categories;
+	interface Props {
+		products: any;
+		showBanner?: boolean;
+		title?: string;
+		bannerImage?: string;
+		description?: string;
+		categories: any;
+	}
+
+	let {
+		products,
+		showBanner = false,
+		title = 'All Products',
+		bannerImage = '/images/our-story-1.png',
+		description = 'Check out our latest products',
+		categories
+	}: Props = $props();
 </script>
 
 <main class="container mx-auto px-4 py-8">

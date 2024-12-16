@@ -5,9 +5,9 @@
     import { Input } from "$lib/components/ui/input";
     import { Button } from "$lib/components/ui/button";
 
-    let searchTerm = '';
-    let searchResults: string | any[] = [];
-    let loading = false;
+    let searchTerm = $state('');
+    let searchResults: string | any[] = $state([]);
+    let loading = $state(false);
 
     onMount(() => {
         searchTerm = $page.url.searchParams.get('q') || '';
@@ -43,7 +43,7 @@
 </script>
 
 <div class="container mx-auto py-8">
-    <form on:submit={handleSearch} class="mb-8">
+    <form onsubmit={handleSearch} class="mb-8">
         <div class="flex gap-2">
             <Input
                 type="search"

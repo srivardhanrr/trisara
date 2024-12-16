@@ -7,7 +7,11 @@
         art: string;
     };
 
-    export let products;
+    interface Props {
+        products: any;
+    }
+
+    let { products }: Props = $props();
 
     const works: Artwork[] = [
         {

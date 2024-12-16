@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     
-    let showButton = false;
+    let showButton = $state(false);
   
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -21,7 +21,7 @@
   
   {#if showButton}
     <button
-      on:click={scrollToTop}
+      onclick={scrollToTop}
       class="fixed bottom-28 right-8 border-2 border-orange-500 text-white rounded-full p-3 shadow-lg transition-colors duration-300 z-50"
       aria-label="Back to top"
     >

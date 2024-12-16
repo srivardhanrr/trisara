@@ -6,14 +6,18 @@
     import 'swiper/css/navigation';
     import 'swiper/css/thumbs';
 
-    export let images: string[] = [
+    interface Props {
+        images?: string[];
+    }
+
+    let { images = [
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
         'https://www.allamerican1930.com/cdn/shop/files/Canner-Mustard.png?v=1713339918&width=500',
-    ];
+    ] }: Props = $props();
 
     let mainSwiper: Swiper;
     let thumbsSwiper: Swiper;

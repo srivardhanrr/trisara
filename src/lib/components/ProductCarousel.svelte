@@ -2,7 +2,11 @@
     import * as Carousel from "$lib/components/ui/carousel";
     import * as Card from "$lib/components/ui/card";
     import ProductCard from "$lib/components/ProductCard.svelte";
-    export let products;
+    interface Props {
+        products: any;
+    }
+
+    let { products }: Props = $props();
 </script>
 
 <section class="py-8">

@@ -1,7 +1,11 @@
 <script lang="ts">
     import * as Carousel from "$lib/components/ui/carousel/index.js";
     import Autoplay from "embla-carousel-autoplay";
-    export let categories;
+    interface Props {
+        categories: any;
+    }
+
+    let { categories }: Props = $props();
     const plugin = Autoplay({delay: 2000, stopOnInteraction: true});
 </script>
 

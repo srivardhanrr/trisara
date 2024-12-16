@@ -10,10 +10,14 @@
 		slug: string;
 	}
 
-	export let categories: Category[];
+	interface Props {
+		categories: Category[];
+	}
+
+	let { categories }: Props = $props();
 
 
-	let isMobile: boolean = false;
+	let isMobile: boolean = $state(false);
 
 	onMount(() => {
 		const checkMobile = () => {

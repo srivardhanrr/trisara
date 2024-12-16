@@ -2,8 +2,8 @@
   import { onNavigate } from '$app/navigation';
   import { fade, fly } from 'svelte/transition';
 
-  let transitioning = false;
-  let showLogo = false;
+  let transitioning = $state(false);
+  let showLogo = $state(false);
   let exitTransition = false;
 
   onNavigate(() => {

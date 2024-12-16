@@ -1,28 +1,39 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import CircleUser from 'lucide-svelte/icons/circle-user';
-	import { Share2 } from 'lucide-svelte';
-	import Menu from 'lucide-svelte/icons/menu';
-	import Search from 'lucide-svelte/icons/search';
+	import { Menu, Search } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import * as Sheet from '$lib/components/ui/sheet';
 	import { goto } from '$app/navigation';
-
 	import { navigating } from '$app/stores';
 
+	interface Category {
+		slug: string;
+		name: string;
+	}
+
+	interface Cookbook {
+		slug: string;
+		title: string;
+	}
+
+	interface CookbookCategory {
+		slug: string;
+		name: string;
+		cookbooks: Cookbook[];
+	}
+
+	export let categories: Category[] = [];
+	export let cookbookCategories: CookbookCategory[] = [];
+
 	let isOpen = false;
+	let productsOpen = false;
+	let cookbooksOpen = false;
+	let searchTerm = '';
 
 	$: if ($navigating) {
 		isOpen = false;
 	}
-
-	export let categories;
-	export let cookbookCategories;
-
-	let productsOpen = false;
-	let cookbooksOpen = false;
-	let searchTerm = '';
 
 	function openProducts() {
 		productsOpen = true;
@@ -48,55 +59,91 @@
 	}
 </script>
 
-<header class="md:h-22 sticky top-0 z-50 h-20 border-b bg-background md:px-8 lg:px-12">
+<header class="sticky top-0 z-50 h-20 border-b bg-background md:h-22 md:px-8 lg:px-12">
 	<div class="container mx-auto flex h-full items-center justify-between">
 		<nav class="hidden flex-1 items-center space-x-6 lg:flex">
 			<a href="/" class="text-black transition-colors hover:text-primary">Home</a>
 			<a href="/our-story" class="text-black transition-colors hover:text-primary">Our Story</a>
 
-			<div class="dropdown" on:mouseenter={openProducts} on:mouseleave={closeProducts}>
+			<div
+					class="dropdown"
+					role="navigation"
+					on:mouseenter={openProducts}
+					on:mouseleave={closeProducts}
+			>
 				<a href="/products">
-					<button class="dropdown-trigger">All Products</button>
+					<button
+							class="dropdown-trigger"
+							aria-label="Products menu"
+					>
+						All Products
+					</button>
 				</a>
 				{#if productsOpen}
-					<div class="dropdown-content">
+					<div class="dropdown-content" role="menu">
 						<div class="dropdown-group">
-							<div class="dropdown-label">Categories</div>
+							<div class="dropdown-label" role="menuitem">Categories</div>
 							<hr class="dropdown-separator" />
 							{#each categories as category}
-								<a href="/categories/{category.slug}" class="dropdown-item">{category.name}</a>
+								<a
+										href="/categories/{category.slug}"
+										class="dropdown-item"
+										role="menuitem"
+								>
+									{category.name}
+								</a>
 							{/each}
-							<a href="/products" class="dropdown-item view-all">View All</a>
+							<a href="/products" class="dropdown-item view-all" role="menuitem">View All</a>
 						</div>
 					</div>
 				{/if}
 			</div>
 
-			<div class="dropdown" on:mouseenter={openCookbooks} on:mouseleave={closeCookbooks}>
+			<div
+					class="dropdown"
+					role="navigation"
+					on:mouseenter={openCookbooks}
+					on:mouseleave={closeCookbooks}
+			>
 				<a href="/cookbooks">
-					<button class="dropdown-trigger text-black">Cookbooks</button>
+					<button
+							class="dropdown-trigger text-black"
+							aria-label="Cookbooks menu"
+					>
+						Cookbooks
+					</button>
 				</a>
 				{#if cookbooksOpen}
-					<div class="dropdown-content">
+					<div class="dropdown-content" role="menu">
 						<div class="dropdown-group">
-							<div class="dropdown-label">Cookbook Categories</div>
+							<div class="dropdown-label" role="menuitem">Cookbook Categories</div>
 							<hr class="dropdown-separator" />
 							{#each cookbookCategories as cookbookCategory}
-								<div class="dropdown-sub">
+								<div
+										class="dropdown-sub"
+										role="menuitem"
+										aria-haspopup="true"
+										aria-expanded="false"
+								>
 									<a href="/cookbooks/{cookbookCategory.slug}">
-										<button class="dropdown-sub-trigger">{cookbookCategory.name}</button>
+										<button class="dropdown-sub-trigger">
+											{cookbookCategory.name}
+										</button>
 									</a>
-									<div class="dropdown-sub-content">
+									<div class="dropdown-sub-content" role="menu">
 										{#each cookbookCategory.cookbooks as cookbook}
 											<a
-												href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}"
-												class="dropdown-item truncate">{cookbook.title}</a
+													href="/cookbooks/{cookbookCategory.slug}/{cookbook.slug}"
+													class="dropdown-item truncate"
+													role="menuitem"
 											>
+												{cookbook.title}
+											</a>
 										{/each}
 									</div>
 								</div>
 							{/each}
-							<a href="/cookbooks" class="dropdown-item view-all">View All</a>
+							<a href="/cookbooks" class="dropdown-item view-all" role="menuitem">View All</a>
 						</div>
 					</div>
 				{/if}
@@ -106,8 +153,8 @@
 		</nav>
 
 		<Sheet.Root bind:open={isOpen}>
-			<Sheet.Trigger asChild let:builder>
-				<Button variant="ghost" size="icon" class="lg:hidden" builders={[builder]}>
+			<Sheet.Trigger asChild>
+				<Button variant="ghost" size="icon" class="lg:hidden">
 					<Menu class="h-6 w-6" />
 					<span class="sr-only">Toggle navigation menu</span>
 				</Button>
@@ -133,20 +180,20 @@
 			<form class="hidden items-center gap-4 md:flex" on:submit={handleSearch}>
 				<div class="relative">
 					<Search
-						class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground"
+							class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-muted-foreground"
 					/>
 					<Input
-						type="search"
-						placeholder="Search products..."
-						class="w-[200px] pl-10 lg:w-[250px]"
-						bind:value={searchTerm}
+							type="search"
+							placeholder="Search products..."
+							class="w-[200px] pl-10 lg:w-[250px]"
+							bind:value={searchTerm}
 					/>
 				</div>
 				<Button
-					variant="outline"
-					type="submit"
-					size="icon"
-					class="hidden justify-center rounded-full bg-orange-500 md:flex"
+						variant="outline"
+						type="submit"
+						size="icon"
+						class="hidden justify-center rounded-full bg-orange-500 md:flex"
 				>
 					<Search class="h-5 w-5 text-white" />
 					<span class="sr-only">Search</span>
@@ -165,7 +212,6 @@
 <style>
 	.dropdown {
 		position: relative;
-		/* display: inline-block; */
 	}
 
 	.dropdown-trigger {
@@ -173,12 +219,11 @@
 		border: none;
 		cursor: pointer;
 		font-size: 1rem;
-		/* padding: 0.5rem 1rem; */
 		transition: color 0.3s ease;
 	}
 
 	.dropdown-trigger:hover {
-		color: #ff6b35; /* Adjust this color to match your primary color */
+		color: #ff6b35;
 	}
 
 	.dropdown-content {
@@ -188,16 +233,16 @@
 		background-color: #ffffff;
 		min-width: 220px;
 		box-shadow:
-			0 10px 15px -3px rgba(0, 0, 0, 0.1),
-			0 4px 6px -2px rgba(0, 0, 0, 0.05);
+				0 10px 15px -3px rgba(0, 0, 0, 0.1),
+				0 4px 6px -2px rgba(0, 0, 0, 0.05);
 		border-radius: 0.5rem;
 		padding: 1rem;
 		z-index: 1000;
 		opacity: 0;
 		transform: translateY(-10px);
 		transition:
-			opacity 0.3s ease,
-			transform 0.3s ease;
+				opacity 0.3s ease,
+				transform 0.3s ease;
 	}
 
 	.dropdown:hover .dropdown-content {
@@ -212,7 +257,7 @@
 
 	.dropdown-label {
 		font-weight: 600;
-		color: #ff6b35; /* Adjust this color to match your primary color */
+		color: #ff6b35;
 		margin-bottom: 0.5rem;
 	}
 
@@ -228,12 +273,12 @@
 		text-decoration: none;
 		display: block;
 		transition:
-			color 0.2s ease,
-			padding-left 0.2s ease;
+				color 0.2s ease,
+				padding-left 0.2s ease;
 	}
 
 	.dropdown-item:hover {
-		color: #ff6b35; /* Adjust this color to match your primary color */
+		color: #ff6b35;
 		padding-left: 0.5rem;
 	}
 
@@ -255,12 +300,12 @@
 		padding: 0.5rem 0;
 		color: #4a5568;
 		transition:
-			color 0.2s ease,
-			padding-left 0.2s ease;
+				color 0.2s ease,
+				padding-left 0.2s ease;
 	}
 
 	.dropdown-sub-trigger:hover {
-		color: #ff6b35; /* Adjust this color to match your primary color */
+		color: #ff6b35;
 		padding-left: 0.5rem;
 	}
 
@@ -272,8 +317,8 @@
 		background-color: #ffffff;
 		min-width: 200px;
 		box-shadow:
-			0 10px 15px -3px rgba(0, 0, 0, 0.1),
-			0 4px 6px -2px rgba(0, 0, 0, 0.05);
+				0 10px 15px -3px rgba(0, 0, 0, 0.1),
+				0 4px 6px -2px rgba(0, 0, 0, 0.05);
 		border-radius: 0.5rem;
 		padding: 1rem;
 		z-index: 1000;

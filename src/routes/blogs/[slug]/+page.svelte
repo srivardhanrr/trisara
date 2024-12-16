@@ -2,7 +2,11 @@
     import { fade } from 'svelte/transition';
     import { Calendar, Clock, ChevronLeft } from 'lucide-svelte';
   
-    export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
     let post = data.post;
     let updatedContent = data.updatedContent;
   </script>

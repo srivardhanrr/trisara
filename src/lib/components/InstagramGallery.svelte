@@ -3,7 +3,11 @@
 	import Autoplay from 'embla-carousel-autoplay';
 	import { Instagram } from 'lucide-svelte';
 
-	export let instagramPosts;
+	interface Props {
+		instagramPosts: any;
+	}
+
+	let { instagramPosts }: Props = $props();
 
 	const images = [
 		{

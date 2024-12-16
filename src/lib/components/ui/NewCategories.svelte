@@ -10,9 +10,13 @@
 		slug: string;
 	}
 
-	export let series: Series[];
+	interface Props {
+		series: Series[];
+	}
 
-	let isMobile: boolean = false;
+	let { series }: Props = $props();
+
+	let isMobile: boolean = $state(false);
 
 	onMount(() => {
 		const checkMobile = () => {

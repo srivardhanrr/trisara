@@ -26,7 +26,12 @@
         }
     })
 
-	export let data;
+	interface Props {
+		data: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
 </script>
 
 <div class="app">
@@ -35,7 +40,7 @@
 	<main>
 		{#key $page.url.pathname}
 			<div in:fly={{ y: 50, duration: 100, delay: 100 }}>
-				<slot />
+				{@render children?.()}
 			</div>
 		{/key}
 		<Footer />

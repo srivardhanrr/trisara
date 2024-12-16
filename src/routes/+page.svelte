@@ -9,7 +9,11 @@
 	import { Card, CardHeader, CardTitle, CardContent } from '$lib/components/ui/card';
 	import HowWeWork from '$lib/components/HowWeWork.svelte';
 	// import { Heading, Text } from '@/components/ui/typography';
-	export let data;
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <svelte:head>

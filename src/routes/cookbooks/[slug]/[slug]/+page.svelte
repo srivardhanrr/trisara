@@ -1,8 +1,9 @@
 <script>
 
-      export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
 
-    $: ({cookbook} = data);
+    let {cookbook} = $derived(data);
 
   const recipe = {
     name: "Paneer Bhurji Wraps",

@@ -9,7 +9,11 @@
       link: string;
     }
 
-    export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
     let galleryItems: GalleryItem[] = data.galleryItems;
   
   </script>

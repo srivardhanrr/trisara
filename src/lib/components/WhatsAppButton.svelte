@@ -1,6 +1,6 @@
 <script>
-	export let phoneNumber = '+919353258820'; // Default phone number
-	export let message = 'Hello! I have a question.'; // Default message
+	/** @type {{phoneNumber?: string, message?: string}} */
+	let { phoneNumber = '+919353258820', message = 'Hello! I have a question.' } = $props();
 </script>
 
 <a

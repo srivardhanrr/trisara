@@ -1,13 +1,17 @@
 <script lang="ts">
-  export let product;
-  let isHovered = false;
+  interface Props {
+    product: any;
+  }
+
+  let { product }: Props = $props();
+  let isHovered = $state(false);
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div 
   class="group relative w-full shadow-xl overflow-hidden rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl"
-  on:mouseenter={() => isHovered = true}
-  on:mouseleave={() => isHovered = false}
+  onmouseenter={() => isHovered = true}
+  onmouseleave={() => isHovered = false}
 >
   <a href="/products/{product.slug}" class="block">
     <div class="relative aspect-square overflow-hidden bg-gray-100">

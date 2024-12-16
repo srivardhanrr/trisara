@@ -5,10 +5,14 @@
     import { Button } from "$lib/components/ui/button";
 	import ProductCard from '$lib/components/ProductCard.svelte';
 
-    export let data;
+    interface Props {
+        data: any;
+    }
 
-    let searchTerm = data?.searchTerm || '';
-    $: searchResults = data?.searchResults || [];
+    let { data }: Props = $props();
+
+    let searchTerm = $state(data?.searchTerm || '');
+    let searchResults = $derived(data?.searchResults || []);
 
     console.log('Page data:', data);  // Log the page data
 
@@ -37,7 +41,7 @@
         </div>
     </div>
     <div class="container mx-auto px-4 py-8">
-    <form on:submit={handleSearch} class="mb-8">
+    <form onsubmit={handleSearch} class="mb-8">
         <div class="flex justify-center gap-2">
             <Input
                 type="search"

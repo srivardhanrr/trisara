@@ -2,9 +2,13 @@
 	import Categories from './../../../lib/components/Categories.svelte';
     import ProductsPage from "$lib/ProductsPage.svelte";
 
-    export let data;
+    interface Props {
+        data: any;
+    }
 
-    $: ({category} = data);
+    let { data }: Props = $props();
+
+    let {category} = $derived(data);
 
 </script>
 

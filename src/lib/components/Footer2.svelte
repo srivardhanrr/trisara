@@ -1,96 +1,171 @@
-<script>
-    import { MapPin, Mail, Phone } from 'lucide-svelte';
-    import { Facebook, Twitter, Instagram, Linkedin, Send } from 'lucide-svelte';
-  </script>
-  
-  <footer class="my-3 border">
-    <div class="mx-auto px-4 flex flex-col md:flex-row relative">
-      <!-- Contact Section -->
-      <div class="space-y-4 flex-1 py-16 bg-orange-50 justify-center">
-        <div class="flex mt-10 items-center space-x-2">
-          <MapPin class="w-5 h-5 text-orange-500" />
-          <span class="text-sm">#45, Embassy Square, 4th Main, Chamarajpet, Bangalore, 560018</span>
-        </div>
-        <div class="space-y-2">
-          <div class="flex items-center space-x-2">
-            <Mail class="w-5 h-5 text-orange-500" />
-            <a href="mailto:care@trisara.com" class="text-gray-600 hover:text-orange-500">
-              care@trisara.com
-            </a>
-          </div>
-          <!-- <a href="mailto:corporate@trisara.com" class="text-gray-600 hover:text-orange-500 ml-7">
-            corporate@trisara.com
-          </a> -->
-        </div>
-        
-        <div class="space-y-2">
-          <div class="flex items-center space-x-2">
-            <Phone class="w-5 h-5 text-orange-500" />
-            <a href="tel:+919353258820" class="text-gray-600 hover:text-orange-500">+91 93532 58820</a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Vertical Divider -->
-      <div class="hidden md:block w-px bg-gray-200 h-full"></div>
-  
-      <!-- About Section -->
-      <div class="flex-1 text-center py-16">
-        <h3 class="font-bold text-xl text-orange-500 mb-4">About us</h3>
-        <ul class="space-y-3">
-          <li><a href="/our-story" class="text-gray-600 hover:text-orange-500">Our story</a></li>
-          <li><a href="/press" class="text-gray-600 hover:text-orange-500">All Products</a></li>
-          <li><a href="/contact" class="text-gray-600 hover:text-orange-500">Contact us</a></li>
-        </ul>
-        <div class="flex space-x-4 justify-center mt-4">
-            <!-- <a href="#" class="text-brand-burgundy hover:text-brand-gold transition-colors">
-      <Facebook size={20} />
-    </a> -->
-            <!-- <a
-                href="https://x.com/liw_symposium"
-                class="text-orange-500 transition-colors hover:text-brand-gold"
-            >
-                <Twitter size={20} />
-            </a> -->
-            <a
-                href="https://www.instagram.com/leadershipinnovationworld"
-                class="text-orange-500 transition-colors hover:text-brand-gold"
-            >
-                <Instagram size={20} />
-            </a>
-            <!-- <a href="#" class="text-brand-burgundy hover:text-brand-gold transition-colors">
-      <Linkedin size={20} />
-    </a> -->
-        </div>
-      </div>
-  
-      <!-- Vertical Divider -->
-      <div class="hidden md:block w-px bg-gray-200 h-full"></div>
-  
-      <!-- Quick Links -->
-      <div class="flex-1 text-center py-16 border-x">
-        <h3 class="font-bold text-xl text-orange-500 mb-4">Quick links</h3>
-        <ul class="space-y-3">
-            <li><a href="/cookbooks" class=" hover:text-orange-500">Cookbooks</a></li>
-            <li><a href="/products" class=" hover:text-orange-500">All Products</a></li>
-            <li><a href="/privacy" class=" hover:text-orange-500">Privacy policy</a></li>
-            <li><a href="/terms" class=" hover:text-orange-500">Terms & Conditions</a></li>
-        </ul>
-      </div>
-  
-      <!-- Vertical Divider -->
-      <div class="hidden md:block w-px bg-gray-200 h-full"></div>
-  
-      <!-- Logo Section -->
-      <div class="flex-1 flex flex-col items-center py-16">
-        <img 
-          src="images/trisara-logo.png" 
-          alt="Trisara Logo" 
-          class="h-32 mt-5 w-auto mb-auto"
-        />
-        <p class="text-gray-500 text-sm mt-8">
-          Arvind Industries All Rights Reserved © 2024
+<script lang="ts">
+  import { Instagram, Facebook, Twitter, Mail } from 'lucide-svelte';
+  import { Button } from '$lib/components/ui/button';
+  import { Input } from '$lib/components/ui/input';
+  import type { ComponentProps } from 'svelte';
+
+  interface FooterLink {
+    label: string;
+    href: string;
+  }
+
+  interface SocialLink extends FooterLink {
+    icon: ComponentProps<any>;
+  }
+
+  const quickLinks: FooterLink[] = [
+    { label: 'Home', href: '/' },
+    { label: 'Our Story', href: '/our-story' },
+    { label: 'Products', href: '/products' },
+    { label: 'Cookbooks', href: '/cookbooks' },
+    { label: 'Contact', href: '/contact' }
+  ];
+
+  const customerService: FooterLink[] = [
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Terms of Service', href: '/track-order' },
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Contact Us', href: '/contact' }
+  ];
+
+  const socialLinks: SocialLink[] = [
+    { label: 'Instagram', href: 'https://instagram.com', icon: Instagram },
+    { label: 'Facebook', href: 'https://facebook.com', icon: Facebook },
+    { label: 'Twitter', href: 'https://twitter.com', icon: Twitter },
+    { label: 'Email', href: 'mailto:contact@trisara.com', icon: Mail }
+  ];
+
+  let email = '';
+
+  function handleSubscribe(event: SubmitEvent) {
+    event.preventDefault();
+    if (email.trim()) {
+      // Handle newsletter subscription
+      console.log('Subscribe:', email);
+      email = '';
+    }
+  }
+</script>
+
+<footer class="bg-gray-50">
+  <div class="container mx-auto px-4 py-8 md:px-6 md:py-12 lg:px-8">
+    <!-- Top Section with Newsletter -->
+    <div class="mb-8 md:mb-12">
+      <div class="mx-auto max-w-md text-center">
+        <h3 class="mb-3 text-lg font-semibold text-gray-900 md:mb-4">Subscribe to Our Newsletter</h3>
+        <p class="mb-4 text-sm text-gray-600 md:text-base">
+          Stay updated with our latest products, recipes, and cooking tips.
         </p>
+        <form on:submit={handleSubscribe} class="flex flex-col gap-3 sm:flex-row sm:gap-2">
+          <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="flex-grow"
+                  bind:value={email}
+                  required
+          />
+          <Button
+                  type="submit"
+                  variant="default"
+                  class="w-full bg-orange-500 hover:bg-orange-600 sm:w-auto"
+          >
+            Subscribe
+          </Button>
+        </form>
       </div>
     </div>
-  </footer>
+
+    <!-- Main Footer Content -->
+    <div class="grid gap-8 border-t border-gray-200 pt-8 sm:grid-cols-2 md:pt-12 lg:grid-cols-4">
+      <!-- Logo and Social Links Section -->
+      <div class="order-1 sm:col-span-2 lg:col-span-1">
+        <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
+          <img src="/images/trisara-logo.png" alt="Trisara" class="mb-4 h-16 w-16 rounded-full" />
+          <p class="mb-4 max-w-md text-sm text-gray-600 md:text-base">
+            Affordable Kitchenware and Cookware for Home Cooks and Professional Chefs.
+          </p>
+          <div class="flex space-x-4">
+            {#each socialLinks as link}
+              <a
+                      href={link.href}
+                      class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-600 shadow-sm transition-colors hover:bg-orange-500 hover:text-white md:h-10 md:w-10"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+              >
+                <svelte:component this={link.icon} class="h-4 w-4 md:h-5 md:w-5" />
+              </a>
+            {/each}
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="order-2">
+        <h3 class="mb-3 text-base font-semibold text-gray-900 md:mb-4 md:text-lg">Quick Links</h3>
+        <ul class="space-y-2 text-sm md:text-base">
+          {#each quickLinks as link}
+            <li>
+              <a
+                      href={link.href}
+                      class="text-gray-600 transition-colors hover:text-orange-500"
+              >
+                {link.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <!-- Customer Service -->
+      <div class="order-3">
+        <h3 class="mb-3 text-base font-semibold text-gray-900 md:mb-4 md:text-lg">Customer Service</h3>
+        <ul class="space-y-2 text-sm md:text-base">
+          {#each customerService as link}
+            <li>
+              <a
+                      href={link.href}
+                      class="text-gray-600 transition-colors hover:text-orange-500"
+              >
+                {link.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="order-4">
+        <h3 class="mb-3 text-base font-semibold text-gray-900 md:mb-4 md:text-lg">Contact Us</h3>
+        <address class="not-italic text-sm md:text-base">
+          <p class="mb-2 text-gray-600">Rajagopalnagar, Chamrajpet</p>
+          <p class="mb-2 text-gray-600"> Bengaluru, Karnataka 560018</p>
+          <p class="mb-2">
+            <a href="tel:+918041513947" class="text-gray-600 hover:text-orange-500">
+              +91 80 4151 3947
+            </a>
+          </p>
+          <p>
+            <a href="mailto:contact@trisara.com" class="text-gray-600 hover:text-orange-500">
+              contact@trisara.com
+            </a>
+          </p>
+        </address>
+      </div>
+    </div>
+
+    <!-- Bottom Section with Copyright -->
+    <div class="mt-8 border-t border-gray-200 pt-6 text-center md:mt-12 md:pt-8">
+      <p class="text-xs text-gray-600 md:text-sm">
+        © {new Date().getFullYear()} Trisara. All rights reserved.
+      </p>
+      <p class="mt-2 space-x-2 text-xs text-gray-500 md:text-sm">
+        <a href="/terms" class="hover:text-orange-500">Terms of Service</a>
+        <span>•</span>
+        <a href="/privacy" class="hover:text-orange-500">Privacy Policy</a>
+        <span>•</span>
+        <a href="/sitemap.xml" class="hover:text-orange-500">Sitemap</a>
+      </p>
+    </div>
+  </div>
+</footer>

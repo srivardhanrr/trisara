@@ -1,7 +1,8 @@
 <script>
-	export let data;
+	/** @type {{data: any}} */
+	let { data } = $props();
 
-	$: ({ cookbookCategory } = data);
+	let { cookbookCategory } = $derived(data);
 </script>
 
 <svelte:head>

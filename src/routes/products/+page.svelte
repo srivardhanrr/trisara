@@ -1,9 +1,13 @@
 <script lang="ts">
     import ProductsPage from "$lib/ProductsPage.svelte";
 
-    export let data;
+    interface Props {
+        data: any;
+    }
 
-    $: ({products} = data);
+    let { data }: Props = $props();
+
+    let {products} = $derived(data);
 
 </script>
 
