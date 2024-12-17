@@ -98,7 +98,7 @@
 				<Carousel.Content>
 					{#each product.images as image, index}
 						<Carousel.Item class="basis-full">
-							<enhanced:img
+							<img
 								src="{image.image}?blur=15"
 								alt={`${product.name} - Image ${index + 1}`}
 								class="aspect-square h-full w-full object-cover"
