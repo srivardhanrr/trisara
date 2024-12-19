@@ -1,6 +1,6 @@
 <script>
 	/** @type {{phoneNumber?: string, message?: string}} */
-	let { phoneNumber = '+919353258820', message = 'Hello! I have a question.' } = $props();
+	let { phoneNumber = '+919353258820', message = 'Hello! Trisara Homeware.' } = $props();
 </script>
 
 <a

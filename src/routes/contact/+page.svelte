@@ -35,13 +35,13 @@
     {
       icon: Mail,
       title: 'Email',
-      details: ['contact@trisara.com'],
-      link: 'mailto:contact@trisara.com'
+      details: ['support@trisara.com'],
+      link: 'mailto:support@trisara.com'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: ['Rajagopalnagar, Chamrajpet', 'Bengaluru, Karnataka 560018']
+      details: ['#45, Embassy Square', '4th Main, Chamrajpet','Bengaluru - 560 018']
     },
     {
       icon: Clock,
@@ -53,7 +53,7 @@
 
 <div class="bg-gray-50">
   <!-- Hero Section -->
-  <div class="relative bg-orange-500 py-16 sm:py-24">
+  <div class="relative bg-orange-200 py-16 sm:py-24">
     <div class="absolute inset-0">
       <img
               src="/images/our-story-2.jpg"
@@ -91,12 +91,12 @@
               {#if info.link}
                 <a
                         href={info.link}
-                        class="block text-gray-600 transition-colors hover:text-orange-500"
+                        class="block  transition-colors hover:text-orange-500"
                 >
                   {detail}
                 </a>
               {:else}
-                <p class="text-gray-600">{detail}</p>
+                <p class="">{detail}</p>
               {/if}
             {/each}
           </div>
@@ -109,7 +109,7 @@
           <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-600 to-orange-400" />
           <div class="relative rounded-xl bg-white p-8">
             <h2 class="text-2xl font-bold text-gray-900">Send us a Message</h2>
-            <p class="mt-2 text-gray-600">
+            <p class="mt-2 ">
               Fill out the form below and we'll get back to you as soon as possible.
             </p>
 

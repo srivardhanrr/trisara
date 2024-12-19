@@ -34,7 +34,7 @@
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-                    <img src="/images/our-story-2a.webp" alt="Affordable Cooking"
+                    <img src="/images/our-story-4.avif" alt="Affordable Cooking"
                          class="w-full h-80 object-cover rounded-lg shadow-md">
                     <img src="/images/our-story-2b.webp" alt="Quality Kitchenware"
                          class="w-full h-80 object-cover rounded-lg shadow-md">

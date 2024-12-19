@@ -29,9 +29,7 @@
   ];
 
   const socialLinks: SocialLink[] = [
-    { label: 'Instagram', href: 'https://instagram.com', icon: Instagram },
-    { label: 'Facebook', href: 'https://facebook.com', icon: Facebook },
-    { label: 'Twitter', href: 'https://twitter.com', icon: Twitter },
+    { label: 'Instagram', href: 'https://instagram.com/', icon: Instagram },
     { label: 'Email', href: 'mailto:contact@trisara.com', icon: Mail }
   ];
 
@@ -53,7 +51,7 @@
     <div class="mb-8 md:mb-12">
       <div class="mx-auto max-w-md text-center">
         <h3 class="mb-3 text-lg font-semibold text-gray-900 md:mb-4">Subscribe to Our Newsletter</h3>
-        <p class="mb-4 text-sm text-gray-600 md:text-base">
+        <p class="mb-4 text-sm md:text-base">
           Stay updated with our latest products, recipes, and cooking tips.
         </p>
         <form on:submit={handleSubscribe} class="flex flex-col gap-3 sm:flex-row sm:gap-2">
@@ -81,14 +79,14 @@
       <div class="order-1 sm:col-span-2 lg:col-span-1">
         <div class="flex flex-col items-center text-center sm:items-start sm:text-left">
           <img src="/images/trisara-logo.png" alt="Trisara" class="mb-4 h-16 w-16 rounded-full" />
-          <p class="mb-4 max-w-md text-sm text-gray-600 md:text-base">
+          <p class="mb-4 max-w-md text-sm  md:text-base">
             Affordable Kitchenware and Cookware for Home Cooks and Professional Chefs.
           </p>
           <div class="flex space-x-4">
             {#each socialLinks as link}
               <a
                       href={link.href}
-                      class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-600 shadow-sm transition-colors hover:bg-orange-500 hover:text-white md:h-10 md:w-10"
+                      class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white  shadow-sm transition-colors hover:bg-orange-500 hover:text-white md:h-10 md:w-10"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
@@ -108,7 +106,7 @@
             <li>
               <a
                       href={link.href}
-                      class="text-gray-600 transition-colors hover:text-orange-500"
+                      class=" transition-colors hover:text-orange-500"
               >
                 {link.label}
               </a>
@@ -125,7 +123,7 @@
             <li>
               <a
                       href={link.href}
-                      class="text-gray-600 transition-colors hover:text-orange-500"
+                      class=" transition-colors hover:text-orange-500"
               >
                 {link.label}
               </a>
@@ -138,16 +136,17 @@
       <div class="order-4">
         <h3 class="mb-3 text-base font-semibold text-gray-900 md:mb-4 md:text-lg">Contact Us</h3>
         <address class="not-italic text-sm md:text-base">
-          <p class="mb-2 text-gray-600">Rajagopalnagar, Chamrajpet</p>
-          <p class="mb-2 text-gray-600"> Bengaluru, Karnataka 560018</p>
+          <p class="mb-2 ">#45, Embassy Square</p>
+          <p class="mb-2 ">4th Main, Chamrajpet</p>
+          <p class="mb-2 ">Bengaluru - 560 018</p>
           <p class="mb-2">
-            <a href="tel:+918041513947" class="text-gray-600 hover:text-orange-500">
+            <a href="tel:+918041513947" class=" hover:text-orange-500">
               +91 80 4151 3947
             </a>
           </p>
           <p>
-            <a href="mailto:contact@trisara.com" class="text-gray-600 hover:text-orange-500">
-              contact@trisara.com
+            <a href="mailto:support@trisara.com" class=" hover:text-orange-500">
+              support@trisara.com
             </a>
           </p>
         </address>
@@ -156,10 +155,10 @@
 
     <!-- Bottom Section with Copyright -->
     <div class="mt-8 border-t border-gray-200 pt-6 text-center md:mt-12 md:pt-8">
-      <p class="text-xs text-gray-600 md:text-sm">
+      <p class="text-xs  md:text-sm">
         © {new Date().getFullYear()} Trisara. All rights reserved.
       </p>
-      <p class="mt-2 space-x-2 text-xs text-gray-500 md:text-sm">
+      <p class="mt-2 space-x-2 text-xs  md:text-sm">
         <a href="/terms" class="hover:text-orange-500">Terms of Service</a>
         <span>•</span>
         <a href="/privacy" class="hover:text-orange-500">Privacy Policy</a>
