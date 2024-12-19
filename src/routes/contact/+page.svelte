@@ -51,23 +51,23 @@
   ];
 </script>
 
-<div class="bg-gray-50">
+<div class="bg-orange-50">
   <!-- Hero Section -->
-  <div class="relative bg-orange-200 py-16 sm:py-24">
+  <div class="relative  py-16 sm:py-24">
     <div class="absolute inset-0">
-      <img
-              src="/images/our-story-2.jpg"
-              alt="Contact Us"
-              class="h-full w-full object-cover opacity-30"
-      />
+<!--      <img-->
+<!--              src="/images/our-story-2.jpg"-->
+<!--              alt="Contact Us"-->
+<!--              class="h-full w-full object-cover opacity-30"-->
+<!--      />-->
     </div>
     <div class="relative">
       <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Get in Touch
+          <h1 class="text-4xl font-bold tracking-tight  sm:text-5xl lg:text-6xl">
+            Contact Us
           </h1>
-          <p class="mx-auto mt-6 max-w-2xl text-lg text-orange-50">
+          <p class="mx-auto mt-6 max-w-2xl text-lg ">
             Have questions about our products or services? We're here to help you find the perfect Thai
             culinary experience.
           </p>
