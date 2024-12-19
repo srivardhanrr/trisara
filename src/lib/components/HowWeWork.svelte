@@ -37,7 +37,7 @@
                 <p class="text-black leading-relaxed">{step.description}</p>
               </div>
               <div class="mt-6 flex justify-between items-center">
-                <span class="text-brand-gold font-bold text-lg">{index + 1}</span>
+<!--                <span class="text-brand-gold font-bold text-lg">{index + 1}</span>-->
                 <div class="w-16 h-1 bg-orange-500"></div>
               </div>
             </div>

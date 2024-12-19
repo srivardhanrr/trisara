@@ -14,7 +14,6 @@
         { name: 'Swiggy', logo: '/images/swiggy.png' },
         { name: 'Amazon', logo: '/images/amazon.png' },
         { name: 'Flipkart', logo: '/images/flipkart-new.png' },
-
     ];
 
     let containerRef: HTMLDivElement;
