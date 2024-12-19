@@ -11,8 +11,10 @@
     export let brands: Brand[] = [
         { name: 'Zepto', logo: '/images/zepto-new.png' },
         { name: 'Blinkit', logo: '/images/blinkit.png' },
+        { name: 'Swiggy', logo: '/images/swiggy.png' },
         { name: 'Amazon', logo: '/images/amazon.png' },
-        { name: 'Flipkart', logo: '/images/flipkart-new.png' }
+        { name: 'Flipkart', logo: '/images/flipkart-new.png' },
+
     ];
 
     let containerRef: HTMLDivElement;
