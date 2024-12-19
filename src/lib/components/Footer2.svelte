@@ -45,7 +45,7 @@
   }
 </script>
 
-<footer class="bg-gray-50">
+<footer class="bg-gray-50 mt-5">
   <div class="container mx-auto px-4 py-8 md:px-6 md:py-12 lg:px-8">
     <!-- Top Section with Newsletter -->
     <div class="mb-8 md:mb-12">

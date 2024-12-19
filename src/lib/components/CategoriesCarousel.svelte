@@ -33,7 +33,7 @@
                                 <div class="absolute inset-0 bg-orange-100 bg-opacity-40 flex items-center justify-center">
                                     <h2 class=" text-md md:text-lg lg:text-xl">{category.name}</h2>
                                 </div>
-                            </div>
+                               </div>
                         </a>
                     </Carousel.Item>
                 {/each}
