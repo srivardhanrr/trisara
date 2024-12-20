@@ -181,7 +181,6 @@
 									class="cursor-pointer rounded-full border-2 border-orange-500 px-4 py-2 text-sm transition-colors duration-200 ease-in-out"
 									class:bg-orange-500={selectedVariant === variant.name}
 									class:text-white={selectedVariant === variant.name}
-									class:text-orange-500={selectedVariant !== variant.name}
 								>
 									{variant.variant}
 								</span>

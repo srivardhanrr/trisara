@@ -145,8 +145,8 @@
             </a>
           </p>
           <p>
-            <a href="mailto:support@trisara.com" class=" hover:text-orange-500">
-              support@trisara.com
+            <a href="mailto:support@trisara.in" class=" hover:text-orange-500">
+              support@trisara.in
             </a>
           </p>
         </address>

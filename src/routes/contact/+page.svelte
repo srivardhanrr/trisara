@@ -35,8 +35,8 @@
     {
       icon: Mail,
       title: 'Email',
-      details: ['support@trisara.com'],
-      link: 'mailto:support@trisara.com'
+      details: ['support@trisara.in'],
+      link: 'mailto:support@trisara.in'
     },
     {
       icon: MapPin,
