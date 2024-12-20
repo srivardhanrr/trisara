@@ -26,11 +26,14 @@
 		<div class="flex flex-col items-center bg-orange-50 p-4 md:flex-row">
 			<div class="mb-4 w-full md:mb-0 md:w-3/5">
 				{#if bannerImage}
-					<img
-						src={bannerImage}
-						alt="products"
-						class="aspect-[3/2] h-[40vh] max-h-96 object-cover"
-					/>
+					<div class="relative">
+						<img
+								src={bannerImage}
+								alt="products"
+								class="aspect-[3/2] h-[40vh] max-h-96 object-cover"
+						/>
+						<div class="absolute inset-0 bg-orange-50 opacity-50"></div>
+					</div>
 				{/if}
 			</div>
 			<div class="w-full p-2 md:w-3/5 md:p-4">
@@ -45,7 +48,6 @@
 			</div>
 		</div>
 	{/if}
-
 	<div class="my-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
 		{#each products as product}
 			<ProductCard {product} />
