@@ -22,7 +22,7 @@
   {#if showButton}
     <button
       onclick={scrollToTop}
-      class="fixed bottom-28 right-8 border-2 border-orange-500 text-white rounded-full p-3 shadow-lg transition-colors duration-300 z-50"
+      class="fixed bottom-28 right-8 border-2 border-orange-500 text-white bg-white rounded-full p-3 shadow-lg transition-colors duration-300 z-50"
       aria-label="Back to top"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
